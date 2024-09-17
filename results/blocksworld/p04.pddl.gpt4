@@ -1,0 +1,21 @@
+In the order to achieve the desired configuration (b1 on b2, b2 on b3, b3 on b4), a sequence of optimal operations can be set as follows:
+
+1. unstack(b3, b1) - The arm will pick up b3. So, the arm is now holding b3, b1 is clear.
+
+2. putdown(b3) - The arm places b3 on the table. Now b3 is on the table and the arm is empty.
+
+3. unstack(b1, b4) - The arm will pick up b1. So, the arm is now holding b1, b4 is clear.
+
+4. putdown(b1) - The arm places b1 on the table. So, b1 is on the table and the arm is empty.
+
+5. unstack(b4, b2) - The arm will pick up b4. So, the arm is now holding b4, b2 is clear.
+
+6. stack(b4, b3) - The arm stacks b4 on b3. Now the arm is empty and b3 is not clear.
+
+7. pickup(b1) - The arm picks up b1 from the table. Now, the arm is holding b1.
+
+8. stack(b1, b2) - The arm stacks b1 on b2. Now, the arm is empty and b2 is not clear.
+
+9. pickup(b2) - The arm picks up b2 (with b1 on top of it). Now, the arm is holding b2.
+
+10. stack(b2, b3) - The arm stacks b2 (with b1 on top of it) on b3. Now, the arm is empty and the final configuration is achieved: b1 is on b2, b2 is on b3 and b3 is on b4.

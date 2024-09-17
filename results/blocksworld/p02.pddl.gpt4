@@ -1,0 +1,13 @@
+The optimal plan, in the way of a sequence of behaviors, to solve the problem is as follows:
+
+1. The Unstack action: Unstack block b1 from block b3. The result of this action leaves you holding b1, b3 becomes clear, and is still on top of b2.
+
+2. The Putdown action: Putdown block b1 onto the table. After this, b1 becomes clear and on the table, and your arm is empty.
+
+3. The Unstack action: Unstack block b3 from block b2. The result leaves you holding b3, b2 becomes clear and is still on the table.
+
+4. The Stack action: Stack block b3 onto block b1. The result is that b1 becomes the base for b3, your arm is empty, and b3 is no longer clear.
+
+5. The Stack action: Finally, stack block b2 onto block b3. The result is that b2 is stacked onto b3, arm is empty, and b3 is no longer clear. You've reached your goal state.
+
+The key to this problem is to make sure that you make the most of each action and not to pick up a block until it's time to move it to its final location. This plan does this by only picking up each block once.

@@ -1,0 +1,79 @@
+To solve the planning problem optimally, we need to devise a sequence of actions that will transform the initial state into the goal state using the minimal number of steps. Here's the optimal plan with 12 actions:
+
+**Initial State Summary:**
+
+- **Arm:** empty
+- **Blocks Configuration:**
+  - `b2` is on the table.
+  - `b4` is on top of `b2`.
+  - `b1` is on top of `b4`.
+  - `b3` is on top of `b1`.
+  - `b3` is clear.
+
+**Goal State Summary:**
+
+- `b4` is on the table.
+- `b3` is on top of `b4`.
+- `b2` is on top of `b3`.
+- `b1` is on top of `b2`.
+
+**Optimal Plan (Sequence of Actions):**
+
+1. **Unstack `b3` from `b1`:**
+   - *Preconditions:* `on(b3, b1)`, `clear(b3)`, `arm empty`.
+   - *Effect:* `holding(b3)`, `clear(b1)`, `not(on(b3, b1))`, `not(clear(b3))`, `not(arm empty)`.
+
+2. **Putdown `b3` on the table:**
+   - *Precondition:* `holding(b3)`.
+   - *Effect:* `ontable(b3)`, `clear(b3)`, `arm empty`, `not(holding(b3))`.
+
+3. **Unstack `b1` from `b4`:**
+   - *Preconditions:* `on(b1, b4)`, `clear(b1)`, `arm empty`.
+   - *Effect:* `holding(b1)`, `clear(b4)`, `not(on(b1, b4))`, `not(clear(b1))`, `not(arm empty)`.
+
+4. **Putdown `b1` on the table:**
+   - *Precondition:* `holding(b1)`.
+   - *Effect:* `ontable(b1)`, `clear(b1)`, `arm empty`, `not(holding(b1))`.
+
+5. **Unstack `b4` from `b2`:**
+   - *Preconditions:* `on(b4, b2)`, `clear(b4)`, `arm empty`.
+   - *Effect:* `holding(b4)`, `clear(b2)`, `not(on(b4, b2))`, `not(clear(b4))`, `not(arm empty)`.
+
+6. **Putdown `b4` on the table:**
+   - *Precondition:* `holding(b4)`.
+   - *Effect:* `ontable(b4)`, `clear(b4)`, `arm empty`, `not(holding(b4))`.
+
+7. **Pickup `b3` from the table:**
+   - *Preconditions:* `ontable(b3)`, `clear(b3)`, `arm empty`.
+   - *Effect:* `holding(b3)`, `not(ontable(b3))`, `not(clear(b3))`, `not(arm empty)`.
+
+8. **Stack `b3` onto `b4`:**
+   - *Preconditions:* `holding(b3)`, `clear(b4)`.
+   - *Effect:* `on(b3, b4)`, `arm empty`, `not(holding(b3))`, `not(clear(b4))`.
+
+9. **Pickup `b2` from the table:**
+   - *Preconditions:* `ontable(b2)`, `clear(b2)`, `arm empty`.
+   - *Effect:* `holding(b2)`, `not(ontable(b2))`, `not(clear(b2))`, `not(arm empty)`.
+
+10. **Stack `b2` onto `b3`:**
+    - *Preconditions:* `holding(b2)`, `clear(b3)`.
+    - *Effect:* `on(b2, b3)`, `arm empty`, `not(holding(b2))`, `not(clear(b3))`.
+
+11. **Pickup `b1` from the table:**
+    - *Preconditions:* `ontable(b1)`, `clear(b1)`, `arm empty`.
+    - *Effect:* `holding(b1)`, `not(ontable(b1))`, `not(clear(b1))`, `not(arm empty)`.
+
+12. **Stack `b1` onto `b2`:**
+    - *Preconditions:* `holding(b1)`, `clear(b2)`.
+    - *Effect:* `on(b1, b2)`, `arm empty`, `not(holding(b1))`, `not(clear(b2))`.
+
+**Explanation:**
+
+- **Steps 1-6:** We unstack all blocks to the table to clear the way for constructing the goal stack. This involves unstacking `b3`, `b1`, and `b4`, and placing them individually on the table.
+  
+- **Steps 7-12:** We rebuild the stack according to the goal configuration:
+  - Stack `b3` onto `b4`.
+  - Stack `b2` onto `b3`.
+  - Stack `b1` onto `b2`.
+
+This plan optimizes the number of actions by minimizing unnecessary moves and ensuring each action brings us closer to the goal state.

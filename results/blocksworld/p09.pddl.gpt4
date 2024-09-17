@@ -1,0 +1,26 @@
+To reorder the blocks we can follow the actions below:
+
+1. unstack the block b4 from b7 (the arm is holding b4)
+2. putdown b4 on the table (the arm is empty, b4 is clear)
+3. unstack the block b3 from b7 (the arm is holding b3)
+4. putdown b3 on the table (the arm is empty, b3 is clear)
+5. pickup b7 from the table (the arm is holding b7)
+6. stack b7 on top of b4 (the arm is empty, b4 is no longer clear)
+7. pickup b6 from the table (the arm is holding b6)
+8. stack b6 on top b2 (the arm is empty, b2 is no longer clear)
+9. pickup b3 from the table (the arm is holding b3)
+10. stack b3 on top of b7 (the arm is empty, b7 is no longer clear)
+11. pickup b5 from the table (the arm is holding b5)
+12. stack b5 on top of b3 (the arm is empty, b3 is no longer clear)
+13. pickup b6 who is on top of b2 (the arm is holding b6)
+14. stack b6 on b5 (the arm is empty, b5 is no longer clear)
+15. pickup b1 from the table (the arm is holding b1)
+16. stack b1 on top of b2 (the arm is empty, b2 is no longer clear)
+
+These steps lead us to an optimal plan to reach the goal state where:
+- b1 is on top of b2,
+- b2 is on top of b6,
+- b6 is on top of b5,
+- b5 is on top of b3,
+- b3 is on top of b7,
+- b7 is on top of b4.

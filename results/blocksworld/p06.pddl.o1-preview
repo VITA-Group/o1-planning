@@ -1,0 +1,54 @@
+Yes, here's an optimal plan consisting of 12 actions to achieve your goal:
+
+1. **Unstack b5 from b3**  
+   - *Preconditions*: Arm empty, b5 is clear, b5 is on b3  
+   - *Effects*: Arm holding b5, b3 becomes clear, b5 no longer on b3
+
+2. **Putdown b5 onto the table**  
+   - *Preconditions*: Arm holding b5  
+   - *Effects*: Arm empty, b5 is on the table, b5 is clear
+
+3. **Unstack b3 from b4**  
+   - *Preconditions*: Arm empty, b3 is clear, b3 is on b4  
+   - *Effects*: Arm holding b3, b4 becomes clear, b3 no longer on b4
+
+4. **Stack b3 onto b5**  
+   - *Preconditions*: Arm holding b3, b5 is clear  
+   - *Effects*: Arm empty, b3 is on b5, b3 is clear, b5 is not clear  
+   - *Goal Achieved*: b3 is on top of b5
+
+5. **Unstack b4 from b2**  
+   - *Preconditions*: Arm empty, b4 is clear, b4 is on b2  
+   - *Effects*: Arm holding b4, b2 becomes clear, b4 no longer on b2
+
+6. **Putdown b4 onto the table**  
+   - *Preconditions*: Arm holding b4  
+   - *Effects*: Arm empty, b4 is on the table, b4 is clear
+
+7. **Unstack b2 from b1**  
+   - *Preconditions*: Arm empty, b2 is clear, b2 is on b1  
+   - *Effects*: Arm holding b2, b1 becomes clear, b2 no longer on b1
+
+8. **Putdown b2 onto the table**  
+   - *Preconditions*: Arm holding b2  
+   - *Effects*: Arm empty, b2 is on the table, b2 is clear
+
+9. **Pickup b1 from the table**  
+   - *Preconditions*: Arm empty, b1 is clear, b1 is on the table  
+   - *Effects*: Arm holding b1, b1 no longer on the table
+
+10. **Stack b1 onto b2**  
+    - *Preconditions*: Arm holding b1, b2 is clear  
+    - *Effects*: Arm empty, b1 is on b2, b1 is clear, b2 is not clear  
+    - *Goal Achieved*: b1 is on top of b2
+
+11. **Pickup b4 from the table**  
+    - *Preconditions*: Arm empty, b4 is clear, b4 is on the table  
+    - *Effects*: Arm holding b4, b4 no longer on the table
+
+12. **Stack b4 onto b1**  
+    - *Preconditions*: Arm holding b4, b1 is clear  
+    - *Effects*: Arm empty, b4 is on b1, b4 is clear, b1 is not clear  
+    - *Goal Achieved*: b4 is on top of b1
+
+This plan rearranges the blocks to satisfy all your goals with the minimum number of actions, given the constraints of the domain.

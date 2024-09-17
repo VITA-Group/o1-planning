@@ -1,0 +1,109 @@
+Certainly! Below is an **optimal plan** consisting of **8 actions** to achieve the desired goal state in the blocks world problem you've described.
+
+### **Initial State:**
+- **Stacks:**
+  - `b1` on the table
+  - `b3` on `b1`
+  - `b2` on `b3`
+  - `b5` on `b2`
+- **On the Table (Clear):**
+  - `b4`
+  - `b6`
+- **Arm:**
+  - Empty
+
+### **Goal State:**
+- `b3` should be on top of `b5`
+- `b4` should be on top of `b3`
+  
+### **Action Sequence:**
+
+1. **Unstack `b5` from `b2`**
+   - **Preconditions:** 
+     - `b5` is clear.
+     - `b2` has `b5` on top.
+     - Arm is empty.
+   - **After Action:**
+     - Arm is holding `b5`.
+     - `b2` is now clear.
+
+2. **Putdown `b5` on the Table**
+   - **Preconditions:** 
+     - Arm is holding `b5`.
+   - **After Action:**
+     - `b5` is on the table and clear.
+     - Arm is empty.
+
+3. **Unstack `b2` from `b3`**
+   - **Preconditions:** 
+     - `b2` is clear.
+     - `b3` has `b2` on top.
+     - Arm is empty.
+   - **After Action:**
+     - Arm is holding `b2`.
+     - `b3` is now clear.
+
+4. **Putdown `b2` on the Table**
+   - **Preconditions:** 
+     - Arm is holding `b2`.
+   - **After Action:**
+     - `b2` is on the table and clear.
+     - Arm is empty.
+
+5. **Pickup `b3` from the Table**
+   - **Preconditions:** 
+     - `b3` is clear and on the table.
+     - Arm is empty.
+   - **After Action:**
+     - Arm is holding `b3`.
+     - `b3` is no longer on the table.
+
+6. **Stack `b3` on `b5`**
+   - **Preconditions:** 
+     - Arm is holding `b3`.
+     - `b5` is clear on the table.
+   - **After Action:**
+     - `b3` is on top of `b5`.
+     - `b5` is no longer clear.
+     - Arm is empty.
+
+7. **Pickup `b4` from the Table**
+   - **Preconditions:** 
+     - `b4` is clear and on the table.
+     - Arm is empty.
+   - **After Action:**
+     - Arm is holding `b4`.
+     - `b4` is no longer on the table.
+
+8. **Stack `b4` on `b3`**
+   - **Preconditions:** 
+     - Arm is holding `b4`.
+     - `b3` is clear (since it's on `b5` and nothing is on top of it).
+   - **After Action:**
+     - `b4` is on top of `b3`.
+     - `b3` is no longer clear.
+     - Arm is empty.
+
+### **Final State Achieved:**
+- **Stacks:**
+  - `b1` on the table (unchanged)
+  - `b5` on the table
+    - `b3` on `b5`
+      - `b4` on `b3`
+- **On the Table:**
+  - `b2` (cleared from its initial position)
+  - `b6` (unchanged)
+- **Arm:**
+  - Empty
+
+### **Summary of Actions:**
+1. `unstack b5 from b2`
+2. `putdown b5`
+3. `unstack b2 from b3`
+4. `putdown b2`
+5. `pickup b3`
+6. `stack b3 on b5`
+7. `pickup b4`
+8. `stack b4 on b3`
+
+This sequence ensures that all necessary blocks are moved in the most efficient way to achieve the goal state without any unnecessary moves. Each action is essential to clear and reposition the blocks appropriately.

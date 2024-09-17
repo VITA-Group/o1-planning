@@ -1,0 +1,10 @@
+Given the current state of the world and where each block is currently placed, the following plan is an optimal sequence to achieve the desired goal:
+
+1. unstack(b4, b1)
+2. putdown(b4)
+3. unstack(b1, b2)
+4. stack(b1, b3)
+5. pickup(b4)
+6. stack(b4, b2)
+
+This solution assumes an optimal plan gets to the goal as quickly as possible. After executing these six steps, b1 is on top of b3, b3 is on top of b5 and the rest of blocks are stacked in the following order: b2 is under b4.

@@ -1,0 +1,14 @@
+To solve this problem, the robot could follow the next series of actions. This list of actions might not be minimal, but it will indeed solve the problem. 
+
+1. Unstack(b5, b3): Now b3 is clear, b5 is held by the arm.
+2. Putdown(b5): Now b5 is on the table and clear, and arm is empty.
+3. Unstack(b3, b4): Now b4 is clear, b3 is held by the arm.
+4. Stack(b3, b5): Now b5 is not clear, b3 is on top of b5, and arm is empty.
+5. Unstack(b4, b2): Now b2 is clear, b4 is held by the arm.
+6. Stack(b4, b1): Now b1 is not clear, b4 is on top of b1, and arm is empty.
+7. Unstack(b2, b1): Now b1 is clear, b2 is held by the arm.
+8. Stack(b2, b4): Now b4 is not clear, b2 is on top of b4, and arm is empty.
+9. Pickup(b1): Now the arm is holding b1, and b1 is neither clear nor on the table.
+10. Stack(b1, b2): Finally, b2 is not clear, b1 is on top of b2, and arm is again empty.
+
+This plan fulfills three objectives: b1 is on top of b2, b3 is on top of b5, and b4 is on top of b1. The robot used each of the four possible actions at least once: Unstack, Putdown, Stack, and Pickup. The arm started and ended empty.

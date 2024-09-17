@@ -1,0 +1,121 @@
+To solve the given planning problem in the block world domain, we need to transform the initial state into the goal state using the minimum number of actions. Here's the optimal plan:
+
+**Initial State:**
+- Blocks: b1, b2, b3, b4, b5
+- Stack configuration:
+  - b4 is on top of b1
+  - b1 is on top of b2
+  - b2 is on top of b3
+  - b3 is on top of b5
+  - b5 is on the table
+- Clear blocks: b4
+- Arm is empty
+
+**Goal State:**
+- b1 is on top of b3
+- b3 is on top of b5
+
+**Optimal Plan (Sequence of Actions):**
+
+1. **Unstack b4 from b1**
+   - **Action:** `unstack(b4, b1)`
+   - **Preconditions:** `on(b4, b1)`, `clear(b4)`, `arm_empty`
+   - **Effects:**
+     - `holding(b4)`
+     - `clear(b1)`
+     - `not on(b4, b1)`
+     - `not clear(b4)`
+     - `not arm_empty`
+
+2. **Put down b4 on the table**
+   - **Action:** `putdown(b4)`
+   - **Preconditions:** `holding(b4)`
+   - **Effects:**
+     - `not holding(b4)`
+     - `arm_empty`
+     - `ontable(b4)`
+     - `clear(b4)`
+
+3. **Unstack b1 from b2**
+   - **Action:** `unstack(b1, b2)`
+   - **Preconditions:** `on(b1, b2)`, `clear(b1)`, `arm_empty`
+   - **Effects:**
+     - `holding(b1)`
+     - `clear(b2)`
+     - `not on(b1, b2)`
+     - `not clear(b1)`
+     - `not arm_empty`
+
+4. **Put down b1 on the table**
+   - **Action:** `putdown(b1)`
+   - **Preconditions:** `holding(b1)`
+   - **Effects:**
+     - `not holding(b1)`
+     - `arm_empty`
+     - `ontable(b1)`
+     - `clear(b1)`
+
+5. **Unstack b2 from b3**
+   - **Action:** `unstack(b2, b3)`
+   - **Preconditions:** `on(b2, b3)`, `clear(b2)`, `arm_empty`
+   - **Effects:**
+     - `holding(b2)`
+     - `clear(b3)`
+     - `not on(b2, b3)`
+     - `not clear(b2)`
+     - `not arm_empty`
+
+6. **Put down b2 on the table**
+   - **Action:** `putdown(b2)`
+   - **Preconditions:** `holding(b2)`
+   - **Effects:**
+     - `not holding(b2)`
+     - `arm_empty`
+     - `ontable(b2)`
+     - `clear(b2)`
+
+7. **Pick up b1 from the table**
+   - **Action:** `pickup(b1)`
+   - **Preconditions:** `ontable(b1)`, `clear(b1)`, `arm_empty`
+   - **Effects:**
+     - `holding(b1)`
+     - `not ontable(b1)`
+     - `not clear(b1)`
+     - `not arm_empty`
+
+8. **Stack b1 onto b3**
+   - **Action:** `stack(b1, b3)`
+   - **Preconditions:** `holding(b1)`, `clear(b3)`
+   - **Effects:**
+     - `not holding(b1)`
+     - `arm_empty`
+     - `on(b1, b3)`
+     - `not clear(b3)`
+     - `clear(b1)`
+
+**Explanation:**
+
+- **Steps 1-2:** We remove b4 from the top of b1 and place it on the table to clear b1.
+- **Steps 3-4:** We remove b1 from b2 and place it on the table to access b2.
+- **Steps 5-6:** We remove b2 from b3 and place it on the table to clear b3.
+- **Steps 7-8:** We pick up b1 from the table and stack it onto b3, achieving the goal configuration.
+
+This plan uses **8 actions**, which is the minimal number of steps required to reach the goal state given the constraints of the domain and the preconditions of the actions. Each action is necessary to move the blocks obstructing b1 and b3 and to reposition b1 onto b3.
+
+**Final State:**
+- b1 is on b3
+- b3 is on b5
+- b2 and b4 are on the table
+- b5 is on the table
+- b1 is clear
+- The arm is empty
+
+Therefore, the optimal sequence of actions to solve the problem is:
+1. Unstack b4 from b1
+2. Put down b4 on the table
+3. Unstack b1 from b2
+4. Put down b1 on the table
+5. Unstack b2 from b3
+6. Put down b2 on the table
+7. Pick up b1 from the table
+8. Stack b1 onto b3

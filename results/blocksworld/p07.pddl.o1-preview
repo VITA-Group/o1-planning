@@ -1,0 +1,50 @@
+To solve the block-stacking problem optimally, we'll aim to reach the goal state in the minimum number of actions. Here's the optimal plan consisting of **eight actions**:
+
+1. **Unstack b5 from b2**
+   - *Preconditions*: Arm is empty; b5 is clear; b5 is on b2.
+   - *Action*: Unstack b5 from b2.
+   - *Effects*: Arm is holding b5; b5 is no longer on b2; b2 becomes clear.
+
+2. **Put down b5 on the table**
+   - *Preconditions*: Arm is holding b5.
+   - *Action*: Put down b5 on the table.
+   - *Effects*: Arm is empty; b5 is on the table and clear.
+
+3. **Unstack b2 from b3**
+   - *Preconditions*: Arm is empty; b2 is clear; b2 is on b3.
+   - *Action*: Unstack b2 from b3.
+   - *Effects*: Arm is holding b2; b2 is no longer on b3; b3 becomes clear.
+
+4. **Stack b2 onto b6**
+   - *Preconditions*: Arm is holding b2; b6 is clear.
+   - *Action*: Stack b2 onto b6.
+   - *Effects*: Arm is empty; b2 is on b6; b6 is no longer clear.
+
+5. **Unstack b3 from b1**
+   - *Preconditions*: Arm is empty; b3 is clear; b3 is on b1.
+   - *Action*: Unstack b3 from b1.
+   - *Effects*: Arm is holding b3; b3 is no longer on b1; b1 becomes clear.
+
+6. **Stack b3 onto b5**
+   - *Preconditions*: Arm is holding b3; b5 is clear.
+   - *Action*: Stack b3 onto b5.
+   - *Effects*: Arm is empty; b3 is on b5; b5 is no longer clear.
+
+7. **Pick up b4 from the table**
+   - *Preconditions*: Arm is empty; b4 is clear; b4 is on the table.
+   - *Action*: Pick up b4.
+   - *Effects*: Arm is holding b4; b4 is no longer on the table.
+
+8. **Stack b4 onto b3**
+   - *Preconditions*: Arm is holding b4; b3 is clear.
+   - *Action*: Stack b4 onto b3.
+   - *Effects*: Arm is empty; b4 is on b3; b3 is no longer clear.
+
+This sequence of actions results in:
+
+- **b5** on the table.
+- **b3** stacked on **b5**.
+- **b4** stacked on **b3**.
+- All other blocks (**b1**, **b2**, **b6**) placed appropriately without interfering with the goal configuration.
+
+By following these steps, we achieve the goal state optimally, moving the blocks to satisfy the required positions with the minimal number of actions.

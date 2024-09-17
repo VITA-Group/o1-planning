@@ -1,0 +1,89 @@
+Yes, I can provide an optimal plan to solve this problem. The goal is to rearrange the blocks such that block **b2** is on top of block **b3**, and block **b3** is on top of block **b1**.
+
+**Initial State:**
+- **On(b1, b3)**: b1 is on b3.
+- **On(b3, b2)**: b3 is on b2.
+- **OnTable(b2)**: b2 is on the table.
+- **Clear(b1)**: b1 is clear (nothing on top of it).
+- **ArmEmpty**: The robot's arm is empty.
+
+**Goal State:**
+- **On(b2, b3)**: b2 is on b3.
+- **On(b3, b1)**: b3 is on b1.
+
+**Optimal Plan:**
+
+1. **Unstack(b1, b3)**
+   - **Preconditions**: ArmEmpty, Clear(b1), On(b1, b3)
+   - **Effect**:
+     - Arm holds **b1**.
+     - **b1** is no longer on **b3**.
+     - **b3** becomes clear.
+     - Arm is not empty.
+   - **Explanation**: Unstack **b1** from **b3** since **b1** is clear and the arm is empty.
+
+2. **Putdown(b1)**
+   - **Preconditions**: Holding(b1)
+   - **Effect**:
+     - Place **b1** on the table.
+     - Arm becomes empty.
+     - **b1** is clear.
+   - **Explanation**: Put **b1** down on the table to free up the arm and position **b1** at the bottom as per the goal.
+
+3. **Unstack(b3, b2)**
+   - **Preconditions**: ArmEmpty, Clear(b3), On(b3, b2)
+   - **Effect**:
+     - Arm holds **b3**.
+     - **b3** is no longer on **b2**.
+     - **b2** becomes clear.
+     - Arm is not empty.
+   - **Explanation**: Unstack **b3** from **b2** since **b3** is clear and the arm is empty.
+
+4. **Stack(b3, b1)**
+   - **Preconditions**: Holding(b3), Clear(b1)
+   - **Effect**:
+     - Place **b3** on top of **b1**.
+     - Arm becomes empty.
+     - **b1** is no longer clear.
+   - **Explanation**: Stack **b3** onto **b1** to build part of the goal configuration.
+
+5. **Pickup(b2)**
+   - **Preconditions**: ArmEmpty, Clear(b2), OnTable(b2)
+   - **Effect**:
+     - Arm holds **b2**.
+     - **b2** is no longer on the table.
+     - Arm is not empty.
+   - **Explanation**: Pick up **b2** from the table since **b2** is clear and the arm is empty.
+
+6. **Stack(b2, b3)**
+   - **Preconditions**: Holding(b2), Clear(b3)
+   - **Effect**:
+     - Place **b2** on top of **b3**.
+     - Arm becomes empty.
+     - **b3** is no longer clear.
+   - **Explanation**: Stack **b2** onto **b3** to complete the goal configuration.
+
+**Final State Achieved:**
+- **On(b3, b1)**: **b3** is on **b1**.
+- **On(b2, b3)**: **b2** is on **b3**.
+- Arm is empty.
+- **Clear(b2)**: **b2** is clear.
+
+**Summary of Actions:**
+1. **Unstack(b1, b3)**
+2. **Putdown(b1)**
+3. **Unstack(b3, b2)**
+4. **Stack(b3, b1)**
+5. **Pickup(b2)**
+6. **Stack(b2, b3)**
+
+This plan efficiently rearranges the blocks in six steps, which is optimal for this problem. Each action directly contributes to achieving the goal while respecting the constraints of the domain.
+
+**Optimal Plan to Solve the Problem:**
+
+1. **Unstack(b1, b3)** ─ Unstack b1 from b3.
+2. **Putdown(b1)** ─ Put b1 down on the table.
+3. **Unstack(b3, b2)** ─ Unstack b3 from b2.
+4. **Stack(b3, b1)** ─ Stack b3 onto b1.
+5. **Pickup(b2)** ─ Pick up b2 from the table.
+6. **Stack(b2, b3)** ─ Stack b2 onto b3.

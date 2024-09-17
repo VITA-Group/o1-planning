@@ -1,0 +1,12 @@
+The described initial state and the goal state are identical. Block b2 is on top of block b3 which is on top of block b1, and this is the final desired arrangement as well. No action is needed in this case. The blocks are already in the desired position. 
+
+However, if this is a mistake and the problem intends to rearrange blocks, another description of the goal state would be required to provide the sequence of behaviors. For instance, if the desired final state is b1 on top of b2 and b2 on top of b3, the following would be an optimal plan:
+
+1. "unstack b2 from b3": thus making b2 in the arm and b3 clear
+2. "putdown b2 on the table": putting b2 on the table making it clear and arm empty 
+3. "unstack b3 from b1": thus making b1 clear and b3 in the arm
+4. "stack b3 on b2": placing b3 on b2 making b3 no longer clear and arm empty
+5. "pickup b1": picking up b1 from table making arm no longer empty
+6. "stack b1 on b3": stacking b1 on b3 discharging the arm and making b1 no longer clear.
+
+This sequence of actions would rearrange the blocks in the desired configuration.

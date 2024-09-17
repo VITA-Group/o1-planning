@@ -1,0 +1,125 @@
+Certainly! Below is an **optimal plan** to replace all **15 flat tyres** with **15 intact tyres** on the **hubs**, ensuring that all goal conditions are met. This plan assumes that each action is performed sequentially for each hub.
+
+### **Initial Setup:**
+
+1. **Open the boot**
+   - **Action:** `open`
+   - **Preconditions:** Boot is unlocked and closed.
+   - **Effects:** Boot is open.
+
+2. **Fetch the wrench**
+   - **Action:** `fetch wrench`
+   - **Preconditions:** Wrench is inside the open boot.
+   - **Effects:** Agent holds the wrench.
+
+3. **Fetch the jack**
+   - **Action:** `fetch jack`
+   - **Preconditions:** Jack is inside the open boot.
+   - **Effects:** Agent holds the jack.
+
+4. **Fetch the pump**
+   - **Action:** `fetch pump`
+   - **Preconditions:** Pump is inside the open boot.
+   - **Effects:** Agent holds the pump.
+
+5. **Fetch all intact tyres**
+   - **Action:** `fetch intact tyre` (repeated 15 times)
+   - **Preconditions:** Each intact tyre is inside the open boot.
+   - **Effects:** Agent holds all 15 intact tyres.
+
+6. **Close the boot**
+   - **Action:** `close`
+   - **Preconditions:** Boot is open.
+   - **Effects:** Boot is closed.
+
+### **Per Hub Replacement Process (Repeated for Each of the 15 Hubs):**
+
+For each **Hub _i_** (where _i_ ranges from 1 to 15), perform the following steps:
+
+7. **Loosen the nut on Hub _i_**
+   - **Action:** `loosen`
+   - **Preconditions:** Agent has the wrench, nut on hub is tight, hub is on the ground.
+   - **Effects:** Nut on hub is loose.
+
+8. **Jack up Hub _i_**
+   - **Action:** `jack-up`
+   - **Preconditions:** Agent has the jack, hub is on the ground.
+   - **Effects:** Hub _i_ is lifted off the ground, agent no longer has the jack.
+
+9. **Remove the flat tyre from Hub _i_**
+   - **Action:** `remove-wheel`
+   - **Preconditions:** Hub _i_ is not on the ground, flat tyre is on the hub, hub is unfastened.
+   - **Effects:** Agent holds the flat tyre, hub _i_ is free.
+
+10. **Open the boot to store the flat tyre**
+    - **Action:** `open`
+    - **Preconditions:** Boot is closed.
+    - **Effects:** Boot is open.
+
+11. **Put away the flat tyre into the boot**
+    - **Action:** `put-away flat tyre`
+    - **Preconditions:** Agent is holding the flat tyre, boot is open.
+    - **Effects:** Flat tyre is inside the boot, agent no longer holds the flat tyre.
+
+12. **Put on the intact tyre onto Hub _i_**
+    - **Action:** `put-on-wheel`
+    - **Preconditions:** Agent has the intact tyre, hub _i_ is free, hub is unfastened, hub is not on the ground.
+    - **Effects:** Intact tyre is on hub _i_, hub _i_ is no longer free, agent no longer holds the intact tyre.
+
+13. **Close the boot after storing the flat tyre**
+    - **Action:** `close`
+    - **Preconditions:** Boot is open.
+    - **Effects:** Boot is closed.
+
+14. **Tighten the nut on Hub _i_**
+    - **Action:** `tighten`
+    - **Preconditions:** Agent has the wrench, nut on hub is loose, hub _i_ is on the ground.
+    - **Effects:** Nut on hub is tight.
+
+15. **Jack down Hub _i_**
+    - **Action:** `jack-down`
+    - **Preconditions:** Hub _i_ is off the ground.
+    - **Effects:** Hub _i_ is back on the ground, agent has the jack.
+
+16. **Inflate the intact tyre on Hub _i_**
+    - **Action:** `inflate`
+    - **Preconditions:** Agent has the pump, intact tyre is not inflated, intact tyre is intact.
+    - **Effects:** Intact tyre is inflated.
+
+### **Summary of Actions per Hub:**
+
+For each hub (1 through 15), perform actions **7** through **16** in sequence. This ensures that:
+
+- The flat tyre is removed and stored back in the boot.
+- An intact tyre is placed and inflated on the hub.
+- The nuts are tightened to secure the tyre.
+- All tools are returned to their appropriate places.
+
+### **Final State:**
+
+- All **15 intact tyres** are **inflated** and installed on their respective hubs.
+- All **15 flat tyres**, along with the **wrench, jack, and pump**, are stored in the **boot**.
+- The **boot** is **closed**.
+- All **nuts** on the hubs are **tight**.
+
+### **Complete Action Sequence Overview:**
+
+1. `open`
+2. `fetch wrench`
+3. `fetch jack`
+4. `fetch pump`
+5. `fetch intact tyre` (15 times)
+6. `close`
+7. `loosen` (Hub 1)
+8. `jack-up` (Hub 1)
+9. `remove-wheel` (Hub 1)
+10. `open` (to store flat tyre)
+11. `put-away flat tyre` (Hub 1)
+12. `put-on-wheel` (Hub 1)
+13. `close`
+14. `tighten` (Hub 1)
+15. `jack-down` (Hub 1)
+16. `inflate` (Hub 1)
+17. Repeat steps 7-16 for Hubs 2 through 15.
+
+**Note:** Ensure that after completing operations for each hub, the agent holds the necessary tools and items to proceed with the next hub without needing to fetch tools again, thereby optimizing the overall plan.

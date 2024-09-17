@@ -1,0 +1,21 @@
+1. "open" action on the boot
+2. "fetch" action to get the jack from the boot
+3. "fetch" action to get the pump from the boot
+4. "fetch" action to get the wrench from the boot
+5. Repeat the following steps for each of the 11 hubs:
+    a. "jack-up" action on the hub
+    b. "loosen" action on the nut
+    c. "fetch" action to get an intact tyre from the boot
+    d. "inflate" action on the tyre
+    e. "remove-wheel" action on the flat tyre
+    f. "put-on-wheel" action to place the inflated intact tyre on the hub
+    g. "do-up" action on the nut 
+    h. "tighten" action on the nut
+    i. "jack-down" action on the hub
+    j. "put-away" action to place the flat tyre into the boot
+6. "put-away" action to place the jack in the boot
+7. "put-away" action to place the wrench in the boot
+8. "put-away" action to place the pump in the boot
+9. "close" action on the boot
+
+This plan completes the goal of replacing and inflating tyres, tightening the nuts and keeping jack, pump, wrench, and flat tyres in the boot. The boot is closed in the final state.

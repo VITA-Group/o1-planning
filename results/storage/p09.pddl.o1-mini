@@ -1,0 +1,153 @@
+Certainly! Below is an **optimal plan** to move all four crates (`crate0`, `crate1`, `crate2`, and `crate3`) from the container store areas to the depot store areas using the three available hoists (`hoist0`, `hoist1`, and `hoist2`). Each hoist is assigned to handle specific crates to ensure efficient utilization and minimize the total number of actions.
+
+### **Hoist Assignments:**
+- **Hoist0:** Handles `crate0` and `crate3`
+- **Hoist1:** Handles `crate1`
+- **Hoist2:** Handles `crate2`
+
+### **Action Sequence:**
+
+#### **1. Moving `crate0` with Hoist0**
+1. **Go-Out:**  
+   `go-out(hoist0, depot48-2-1, loadarea)`  
+   *Hoist0 moves from `depot48-2-1` to `loadarea`.*
+
+2. **Go-In:**  
+   `go-in(hoist0, loadarea, container-0-0)`  
+   *Hoist0 moves from `loadarea` to `container-0-0`.*
+
+3. **Lift:**  
+   `lift(hoist0, container0, container-0-0, crate0)`  
+   *Hoist0 lifts `crate0` from `container-0-0`.*
+
+4. **Go-Out:**  
+   `go-out(hoist0, container-0-0, loadarea)`  
+   *Hoist0 carries `crate0` back to `loadarea`.*
+
+5. **Go-In:**  
+   `go-in(hoist0, loadarea, depot48-2-2)`  
+   *Hoist0 moves from `loadarea` to `depot48-2-2`.*
+
+6. **Drop:**  
+   `drop(hoist0, depot48-2-2, crate0)`  
+   *Hoist0 drops `crate0` at `depot48-2-2`.*
+
+#### **2. Moving `crate1` with Hoist1**
+7. **Go-Out:**  
+   `go-out(hoist1, depot48-1-2, loadarea)`  
+   *Hoist1 moves from `depot48-1-2` to `loadarea`.*
+
+8. **Go-In:**  
+   `go-in(hoist1, loadarea, container-0-1)`  
+   *Hoist1 moves from `loadarea` to `container-0-1`.*
+
+9. **Lift:**  
+   `lift(hoist1, container0, container-0-1, crate1)`  
+   *Hoist1 lifts `crate1` from `container-0-1`.*
+
+10. **Go-Out:**  
+    `go-out(hoist1, container-0-1, loadarea)`  
+    *Hoist1 carries `crate1` back to `loadarea`.*
+
+11. **Go-In:**  
+    `go-in(hoist1, loadarea, depot48-1-1)`  
+    *Hoist1 moves from `loadarea` to `depot48-1-1`.*
+
+12. **Drop:**  
+    `drop(hoist1, depot48-1-1, crate1)`  
+    *Hoist1 drops `crate1` at `depot48-1-1`.*
+
+#### **3. Moving `crate2` with Hoist2**
+13. **Go-Out:**  
+    `go-out(hoist2, depot48-1-3, loadarea)`  
+    *Hoist2 moves from `depot48-1-3` to `loadarea`.*
+
+14. **Go-In:**  
+    `go-in(hoist2, loadarea, container-0-2)`  
+    *Hoist2 moves from `loadarea` to `container-0-2`.*
+
+15. **Lift:**  
+    `lift(hoist2, container0, container-0-2, crate2)`  
+    *Hoist2 lifts `crate2` from `container-0-2`.*
+
+16. **Go-Out:**  
+    `go-out(hoist2, container-0-2, loadarea)`  
+    *Hoist2 carries `crate2` back to `loadarea`.*
+
+17. **Go-In:**  
+    `go-in(hoist2, loadarea, depot48-1-4)`  
+    *Hoist2 moves from `loadarea` to `depot48-1-4`.*
+
+18. **Drop:**  
+    `drop(hoist2, depot48-1-4, crate2)`  
+    *Hoist2 drops `crate2` at `depot48-1-4`.*
+
+#### **4. Moving `crate3` with Hoist0**
+19. **Go-Out:**  
+    `go-out(hoist0, depot48-2-2, loadarea)`  
+    *Hoist0 moves from `depot48-2-2` to `loadarea`.*
+
+20. **Go-In:**  
+    `go-in(hoist0, loadarea, container-0-3)`  
+    *Hoist0 moves from `loadarea` to `container-0-3`.*
+
+21. **Lift:**  
+    `lift(hoist0, container0, container-0-3, crate3)`  
+    *Hoist0 lifts `crate3` from `container-0-3`.*
+
+22. **Go-Out:**  
+    `go-out(hoist0, container-0-3, loadarea)`  
+    *Hoist0 carries `crate3` back to `loadarea`.*
+
+23. **Go-In:**  
+    `go-in(hoist0, loadarea, depot48-2-3)`  
+    *Hoist0 moves from `loadarea` to `depot48-2-3`.*
+
+24. **Drop:**  
+    `drop(hoist0, depot48-2-3, crate3)`  
+    *Hoist0 drops `crate3` at `depot48-2-3`.*
+
+### **Summary of Actions:**
+
+1. `go-out(hoist0, depot48-2-1, loadarea)`
+2. `go-in(hoist0, loadarea, container-0-0)`
+3. `lift(hoist0, container0, container-0-0, crate0)`
+4. `go-out(hoist0, container-0-0, loadarea)`
+5. `go-in(hoist0, loadarea, depot48-2-2)`
+6. `drop(hoist0, depot48-2-2, crate0)`
+7. `go-out(hoist1, depot48-1-2, loadarea)`
+8. `go-in(hoist1, loadarea, container-0-1)`
+9. `lift(hoist1, container0, container-0-1, crate1)`
+10. `go-out(hoist1, container-0-1, loadarea)`
+11. `go-in(hoist1, loadarea, depot48-1-1)`
+12. `drop(hoist1, depot48-1-1, crate1)`
+13. `go-out(hoist2, depot48-1-3, loadarea)`
+14. `go-in(hoist2, loadarea, container-0-2)`
+15. `lift(hoist2, container0, container-0-2, crate2)`
+16. `go-out(hoist2, container-0-2, loadarea)`
+17. `go-in(hoist2, loadarea, depot48-1-4)`
+18. `drop(hoist2, depot48-1-4, crate2)`
+19. `go-out(hoist0, depot48-2-2, loadarea)`
+20. `go-in(hoist0, loadarea, container-0-3)`
+21. `lift(hoist0, container0, container-0-3, crate3)`
+22. `go-out(hoist0, container-0-3, loadarea)`
+23. `go-in(hoist0, loadarea, depot48-2-3)`
+24. `drop(hoist0, depot48-2-3, crate3)`
+
+### **Explanation of the Plan:**
+
+- **Hoist Movements:**
+  - Each hoist starts at its initial depot location.
+  - It performs a `go-out` to move to the `loadarea`.
+  - Then, it performs a `go-in` to enter the respective `container` store area where the crate is located.
+  
+- **Crate Handling:**
+  - The `lift` action is used to pick up the crate from the container store area.
+  - After lifting, the hoist performs another `go-out` to return to the `loadarea`.
+  - It then performs a `go-in` to enter a designated depot store area where the crate will be dropped.
+  - Finally, the `drop` action places the crate in the depot store area.
+
+- **Hoist Reuse:**
+  - Hoist0 is reused to handle both `crate0` and `crate3` to optimize the utilization of available hoists.
+
+This plan ensures that all crates are moved efficiently from the container areas to the depot areas using the available hoists without any conflicts or unnecessary movements.

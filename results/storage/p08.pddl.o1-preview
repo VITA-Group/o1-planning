@@ -1,0 +1,121 @@
+To solve this problem optimally, we'll utilize both hoists to move the three crates from the container storeareas to the depot storeareas in the shortest sequence of actions possible. Here's the plan broken down step by step:
+
+**Hoist0 Actions (for Crate0 and Crate2):**
+
+1. **Move hoist0 from depot48-2-2 to depot48-2-3**
+   - *Action*: `move(hoist0, depot48-2-2, depot48-2-3)`
+   - *Preconditions*:
+     - hoist0 is in depot48-2-2
+     - depot48-2-3 is clear
+     - depot48-2-2 and depot48-2-3 are connected
+   - *Effects*:
+     - hoist0 is now in depot48-2-3
+     - depot48-2-2 becomes clear
+
+2. **Hoist0 goes out to loadarea**
+   - *Action*: `go-out(hoist0, depot48-2-3, loadarea)`
+   - *Preconditions*:
+     - hoist0 is in depot48-2-3
+     - depot48-2-3 and loadarea are connected
+   - *Effects*:
+     - hoist0 is now in loadarea
+     - depot48-2-3 becomes clear
+
+3. **Lift crate0 from container-0-0**
+   - *Action*: `lift(hoist0, crate0, container-0-0, loadarea, container0)`
+   - *Preconditions*:
+     - hoist0 is available
+     - hoist0 is at loadarea
+     - crate0 is on container-0-0
+     - container-0-0 is in container0
+   - *Effects*:
+     - crate0 is removed from container-0-0
+     - container-0-0 becomes clear
+     - hoist0 is now lifting crate0
+     - crate0 is removed from container0
+
+4. **Go into depot48-2-3 with crate0**
+   - *Action*: `go-in(hoist0, loadarea, depot48-2-3)`
+   - *Preconditions*:
+     - hoist0 is in loadarea
+     - loadarea and depot48-2-3 are connected
+     - depot48-2-3 is clear
+   - *Effects*:
+     - hoist0 is now in depot48-2-3
+     - depot48-2-3 becomes occupied
+
+5. **Drop crate0 in depot48-2-3**
+   - *Action*: `drop(hoist0, crate0, depot48-2-3, depot48-2-3, depot48)`
+   - *Preconditions*:
+     - hoist0 is at depot48-2-3
+     - hoist0 is lifting crate0
+     - depot48-2-3 is clear (since only hoist0 is there)
+     - depot48-2-3 is in depot48
+   - *Effects*:
+     - hoist0 releases crate0
+     - crate0 is now in depot48-2-3
+     - hoist0 becomes available
+
+6. **Repeat steps 2-5 for crate2**
+   - **Go out to loadarea**: `go-out(hoist0, depot48-2-3, loadarea)`
+   - **Lift crate2 from container-0-2**: `lift(hoist0, crate2, container-0-2, loadarea, container0)`
+   - **Go into depot48-2-3 with crate2**: `go-in(hoist0, loadarea, depot48-2-3)`
+   - **Drop crate2 in depot48-2-3**: `drop(hoist0, crate2, depot48-2-3, depot48-2-3, depot48)`
+
+**Hoist1 Actions (for Crate1):**
+
+1. **Hoist1 goes out to loadarea**
+   - *Action*: `go-out(hoist1, depot48-1-3, loadarea)`
+   - *Preconditions*:
+     - hoist1 is in depot48-1-3
+     - depot48-1-3 and loadarea are connected
+   - *Effects*:
+     - hoist1 is now in loadarea
+     - depot48-1-3 becomes clear
+
+2. **Lift crate1 from container-0-1**
+   - *Action*: `lift(hoist1, crate1, container-0-1, loadarea, container0)`
+   - *Preconditions*:
+     - hoist1 is available
+     - hoist1 is at loadarea
+     - crate1 is on container-0-1
+     - container-0-1 is in container0
+   - *Effects*:
+     - crate1 is removed from container-0-1
+     - container-0-1 becomes clear
+     - hoist1 is now lifting crate1
+     - crate1 is removed from container0
+
+3. **Go into depot48-1-1 with crate1**
+   - *Action*: `go-in(hoist1, loadarea, depot48-1-1)`
+   - *Preconditions*:
+     - hoist1 is in loadarea
+     - loadarea and depot48-1-1 are connected
+     - depot48-1-1 is clear
+   - *Effects*:
+     - hoist1 is now in depot48-1-1
+     - depot48-1-1 becomes occupied
+
+4. **Drop crate1 in depot48-1-1**
+   - *Action*: `drop(hoist1, crate1, depot48-1-1, depot48-1-1, depot48)`
+   - *Preconditions*:
+     - hoist1 is at depot48-1-1
+     - hoist1 is lifting crate1
+     - depot48-1-1 is clear (since only hoist1 is there)
+     - depot48-1-1 is in depot48
+   - *Effects*:
+     - hoist1 releases crate1
+     - crate1 is now in depot48-1-1
+     - hoist1 becomes available
+
+**Result:**
+
+All crates are moved from the container storeareas to the depot storeareas within depot48. The sequence ensures that both hoists are utilized efficiently, minimizing the total number of actions and time taken. This plan is optimal under the provided action definitions and constraints.
+
+**Optimal Plan Summary:**
+
+- **Total Actions**: 13 steps
+  - Hoist0 performs 9 actions to move crate0 and crate2.
+  - Hoist1 performs 4 actions to move crate1.
+
+This plan effectively moves all crates to depot48 in the shortest sequence of steps, fulfilling the goal optimally.

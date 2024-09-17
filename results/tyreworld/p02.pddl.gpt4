@@ -1,0 +1,24 @@
+1. "open" the boot.
+2. "fetch" the jack.
+3. "fetch" the wrench.
+4. "fetch" the pump.
+5. "fetch" an intact tyre. 
+6. "inflate" the intact tyre.
+7. Repeat steps 5 and 6 with the remaining intact tyres.
+8. For each of the 9 hubs: 
+    1. "jack-up" the hub using the jack.
+    2. "loosen" the nut on the hub using the wrench.
+    3. "undo" the nut using the wrench.
+    4. "remove-wheel" the flat tyre from the hub.
+    5. "put-away" the flat tyre in the boot.
+    6. "fetch" an inflated tyre from the boot.
+    7. "put-on-wheel" the inflated tyre onto the hub.
+    8. "do-up" the nut using the wrench.
+    9. "tighten" the nut on the hub using the wrench.
+   10. "jack-down" the hub using the jack.
+9. "put-away" the jack in the boot.
+10. "put-away" the wrench in the boot.
+11. "put-away" the pump in the boot.
+12. "close" the boot.
+
+This plan is optimal as it ensures all the goals are achieved in the fewest steps. The flat tires are replaced with inflated tyres on the hubs, and the nuts are tightened. Additionally, the flat tires, wrench, jack, and pump are put away in the boot, and the boot is closed.

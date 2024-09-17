@@ -1,0 +1,22 @@
+Here's a sequence of actions that are required to solve the problem:
+
+For each of the 5 hubs, perform the following: 
+
+1. "open" the boot.
+2. "fetch" the wrench from the boot.
+3. "fetch" the jack from the boot.
+4. "jack-up" the hub with the jack.
+5. "loosen" the nut on the hub with the wrench.
+6. "undo" the nut on the hub with the wrench.
+7. "remove-wheel" the flat tyre from the hub.
+8. "fetch" the intact tyre from the boot.
+9. "put-on-wheel" the intact tyre onto the hub.
+10. "do-up" the nut on the hub with the wrench.
+11. "fetch" the pump from the boot.
+12. "inflate" the intact tyre using the pump.
+13. "jack-down" the hub with the jack.
+14. "tighten" the nut on the hub with the wrench.
+15. "put-away" the flat tyre, wrench, jack, and pump in the boot.
+16. "close" the boot.
+
+By repeating this sequence of actions for each of the 5 hubs, all the flat tyres will be replaced with intact tyres that are now inflated and on the hubs. All the tools and flat tyres are in the boot which is closed, meeting all the goal conditions.

@@ -1,0 +1,135 @@
+To solve this problem optimally, we need to move both crates from the container store areas to the depot store areas using the single hoist available. Here's a step-by-step plan:
+
+1. **Move hoist0 from `depot48-1-1` to `depot48-2-1`**  
+   - **Action**: `move`  
+   - **Preconditions**:  
+     - Hoist `hoist0` is in `depot48-1-1`.  
+     - `depot48-2-1` is clear.  
+     - `depot48-1-1` and `depot48-2-1` are connected.  
+   - **Effects**:  
+     - Hoist `hoist0` moves to `depot48-2-1`.  
+     - `depot48-1-1` becomes clear.  
+
+2. **Go out from `depot48-2-1` to `loadarea`**  
+   - **Action**: `go-out`  
+   - **Preconditions**:  
+     - Hoist `hoist0` is in `depot48-2-1`.  
+     - `depot48-2-1` and `loadarea` are connected.  
+   - **Effects**:  
+     - Hoist `hoist0` moves to `loadarea`.  
+     - `depot48-2-1` becomes clear.  
+
+3. **Go into `container-0-0` from `loadarea`**  
+   - **Action**: `go-in`  
+   - **Preconditions**:  
+     - Hoist `hoist0` is in `loadarea`.  
+     - `loadarea` and `container-0-0` are connected.  
+     - `container-0-0` is not occupied by another hoist (assuming it can be entered even if a crate is present).  
+   - **Effects**:  
+     - Hoist `hoist0` moves into `container-0-0`.  
+
+4. **Lift `crate0` in `container-0-0`**  
+   - **Action**: `lift`  
+   - **Preconditions**:  
+     - Hoist `hoist0` is available.  
+     - Hoist `hoist0` is at `container-0-0`.  
+     - `crate0` is on the surface in `container-0-0`.  
+     - `container-0-0` is in `container0`.  
+   - **Effects**:  
+     - `crate0` is removed from `container-0-0`.  
+     - `container-0-0` becomes clear.  
+     - Hoist `hoist0` becomes unavailable (it's lifting `crate0`).  
+
+5. **Go out from `container-0-0` to `loadarea` with `crate0`**  
+   - **Action**: `go-out`  
+   - **Preconditions**:  
+     - Hoist `hoist0` (lifting `crate0`) is in `container-0-0`.  
+     - `container-0-0` and `loadarea` are connected.  
+   - **Effects**:  
+     - Hoist `hoist0` moves to `loadarea` with `crate0`.  
+     - `container-0-0` becomes clear.  
+
+6. **Go into `depot48-2-1` from `loadarea` with `crate0`**  
+   - **Action**: `go-in`  
+   - **Preconditions**:  
+     - Hoist `hoist0` (lifting `crate0`) is in `loadarea`.  
+     - `loadarea` and `depot48-2-1` are connected.  
+     - `depot48-2-1` is clear (no other crate present).  
+   - **Effects**:  
+     - Hoist `hoist0` moves into `depot48-2-1` with `crate0`.  
+
+7. **Drop `crate0` in `depot48-2-1`**  
+   - **Action**: `drop`  
+   - **Preconditions**:  
+     - Hoist `hoist0` is at `depot48-2-1`.  
+     - Hoist `hoist0` is lifting `crate0`.  
+     - `depot48-2-1` is clear of other crates.  
+   - **Effects**:  
+     - `crate0` is placed in `depot48-2-1`.  
+     - Hoist `hoist0` becomes available.  
+
+8. **Go out from `depot48-2-1` to `loadarea`**  
+   - **Action**: `go-out`  
+   - **Preconditions**:  
+     - Hoist `hoist0` is in `depot48-2-1`.  
+     - `depot48-2-1` and `loadarea` are connected.  
+   - **Effects**:  
+     - Hoist `hoist0` moves to `loadarea`.  
+     - `depot48-2-1` remains with `crate0`.  
+
+9. **Go into `container-0-1` from `loadarea`**  
+   - **Action**: `go-in`  
+   - **Preconditions**:  
+     - Hoist `hoist0` is in `loadarea`.  
+     - `loadarea` and `container-0-1` are connected.  
+     - `container-0-1` is not occupied by another hoist.  
+   - **Effects**:  
+     - Hoist `hoist0` moves into `container-0-1`.  
+
+10. **Lift `crate1` in `container-0-1`**  
+    - **Action**: `lift`  
+    - **Preconditions**:  
+      - Hoist `hoist0` is available.  
+      - Hoist `hoist0` is at `container-0-1`.  
+      - `crate1` is on the surface in `container-0-1`.  
+      - `container-0-1` is in `container0`.  
+    - **Effects**:  
+      - `crate1` is removed from `container-0-1`.  
+      - `container-0-1` becomes clear.  
+      - Hoist `hoist0` becomes unavailable (it's lifting `crate1`).  
+
+11. **Go out from `container-0-1` to `loadarea` with `crate1`**  
+    - **Action**: `go-out`  
+    - **Preconditions**:  
+      - Hoist `hoist0` (lifting `crate1`) is in `container-0-1`.  
+      - `container-0-1` and `loadarea` are connected.  
+    - **Effects**:  
+      - Hoist `hoist0` moves to `loadarea` with `crate1`.  
+      - `container-0-1` becomes clear.  
+
+12. **Go into `depot48-1-2` from `loadarea` with `crate1`**  
+    - **Action**: `go-in`  
+    - **Preconditions**:  
+      - Hoist `hoist0` (lifting `crate1`) is in `loadarea`.  
+      - `loadarea` and `depot48-1-2` are connected.  
+      - `depot48-1-2` is clear.  
+    - **Effects**:  
+      - Hoist `hoist0` moves into `depot48-1-2` with `crate1`.  
+
+13. **Drop `crate1` in `depot48-1-2`**  
+    - **Action**: `drop`  
+    - **Preconditions**:  
+      - Hoist `hoist0` is at `depot48-1-2`.  
+      - Hoist `hoist0` is lifting `crate1`.  
+      - `depot48-1-2` is clear of other crates.  
+    - **Effects**:  
+      - `crate1` is placed in `depot48-1-2`.  
+      - Hoist `hoist0` becomes available.  
+
+**Summary of the Plan:**
+
+- **Total Actions**: 13 steps.
+- **Crates Moved**: Both `crate0` and `crate1` are moved from the container store areas to the depot store areas within `depot48`.
+- **Hoist Movements**: The hoist moves efficiently between areas, minimizing unnecessary steps and ensuring that it is available when needed.
+  
+This plan ensures that all crates are moved to `depot48` optimally, satisfying the goal conditions with the minimal necessary actions.

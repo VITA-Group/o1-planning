@@ -1,0 +1,19 @@
+Here is an example of an optimal plan:
+1. "go-out" with hoist0 and go to loadarea
+2. "lift" with hoist0, lift crate0 in container-0-0
+3. "go-in" with hoist0 to depot48-2-1
+4. "drop" with hoist0, drop crate0 in depot48-2-1
+5. "go-out" with hoist0 and go to loadarea
+6. "lift" with hoist0, lift crate1 in container-0-1
+7. "go-in" with hoist0 to depot48-2-2
+8. "drop" with hoist0, drop crate1 in depot48-2-2
+9. "go-out" with hoist0 and go to loadarea
+10. "lift" with hoist0, lift crate2 in container-0-2
+11. "go-in" with hoist0 to depot48-2-3
+12. "drop" with hoist0, drop crate2 in depot48-2-3
+13. "go-out" with hoist0 and go to loadarea
+14. "lift" with hoist0, lift crate3 in container-0-3
+15. "go-in" with hoist0 to depot48-2-4
+16. "drop" with hoist0, drop crate3 in depot48-2-4
+
+Note: The sequence assumes that only one hoist is being used to accomplish the tasks. This eliminates possible conflicts between the two hoists. If the hoists can operate simultaneously without affecting each other, then some of the tasks can be performed in parallel, reducing the total time.

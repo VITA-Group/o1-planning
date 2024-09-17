@@ -1,0 +1,233 @@
+To solve this depot planning problem optimally, we need to move both crates from their initial locations in the container store areas (`container-0-0` and `container-0-1`) to the depot store areas within `depot48`. Here's a step-by-step plan that achieves this goal efficiently, utilizing both hoists (`hoist0` and `hoist1`) and adhering to the actions, preconditions, and effects described.
+
+**Key Locations:**
+
+- **Depot Store Areas (in `depot48`):**
+  - `depot48-1-1` (d11)
+  - `depot48-1-2` (d12)
+  - `depot48-2-1` (d21)
+  - `depot48-2-2` (d22)
+  
+- **Container Store Areas (in `container0`):**
+  - `container-0-0` (c00)
+  - `container-0-1` (c01)
+  
+- **Other Areas:**
+  - `loadarea` (transit area connected to both container store areas and `depot48-2-1`)
+
+**Initial State:**
+
+- `hoist0` is in `depot48-1-1` (d11), available.
+- `hoist1` is in `depot48-1-2` (d12), available.
+- `crate0` is on `container-0-0` (c00).
+- `crate1` is on `container-0-1` (c01).
+- `depot48-2-1` (d21) and `depot48-2-2` (d22) are clear.
+- `depot` store areas are connected as per the map, and `depot48-2-1` is connected to `loadarea`.
+- All container store areas are connected to `loadarea`.
+
+**Goal:**
+
+- Move both crates (`crate0` and `crate1`) to depot store areas in `depot48`.
+
+---
+
+**Optimal Plan:**
+
+**For `hoist0` and `crate0`:**
+
+1. **Move `hoist0` from `depot48-1-1` (d11) to `depot48-2-1` (d21):**
+   - **Action:** `move(hoist0, d11, d21)`
+   - **Preconditions:**
+     - `hoist0` is at `d11`.
+     - `d21` is clear.
+     - `d11` and `d21` are connected.
+   - **Effects:**
+     - `hoist0` is at `d21`.
+     - `d11` becomes clear.
+     - `d21` becomes occupied by `hoist0`.
+
+2. **Go-out `hoist0` from `depot48-2-1` (d21) to `loadarea`:**
+   - **Action:** `go-out(hoist0, d21, loadarea)`
+   - **Preconditions:**
+     - `hoist0` is at `d21`.
+     - `d21` and `loadarea` are connected.
+   - **Effects:**
+     - `hoist0` is at `loadarea`.
+     - `d21` becomes clear.
+
+3. **Go-in `hoist0` from `loadarea` to `container-0-0` (c00):**
+   - **Action:** `go-in(hoist0, loadarea, c00)`
+   - **Preconditions:**
+     - `hoist0` is at `loadarea`.
+     - `loadarea` and `c00` are connected.
+     - `c00` is clear (assumed that the presence of `crate0` doesn't prevent hoist entry).
+   - **Effects:**
+     - `hoist0` is at `c00`.
+
+4. **Lift `crate0` using `hoist0` at `container-0-0` (c00):**
+   - **Action:** `lift(hoist0, crate0, c00, c00, container0)`
+   - **Preconditions:**
+     - `hoist0` is available and at `c00`.
+     - `crate0` is on `c00`.
+     - `c00` is in `container0`.
+   - **Effects:**
+     - `hoist0` is now lifting `crate0`.
+     - `hoist0` becomes unavailable.
+     - `crate0` is removed from `c00`.
+
+5. **Go-out `hoist0` from `container-0-0` (c00) to `loadarea` while carrying `crate0`:**
+   - **Action:** `go-out(hoist0, c00, loadarea)`
+   - **Preconditions:**
+     - `hoist0` is at `c00`, lifting `crate0`.
+     - `c00` and `loadarea` are connected.
+   - **Effects:**
+     - `hoist0` is at `loadarea`, still lifting `crate0`.
+
+6. **Go-in `hoist0` from `loadarea` to `depot48-2-1` (d21) with `crate0`:**
+   - **Action:** `go-in(hoist0, loadarea, d21)`
+   - **Preconditions:**
+     - `hoist0` is at `loadarea`, lifting `crate0`.
+     - `loadarea` and `d21` are connected.
+     - `d21` is clear.
+   - **Effects:**
+     - `hoist0` is at `d21`, lifting `crate0`.
+     - `d21` becomes occupied by `hoist0`.
+
+7. **Move `hoist0` with `crate0` from `depot48-2-1` (d21) to `depot48-1-1` (d11):**
+   - **Action:** `move(hoist0, d21, d11)`
+   - **Preconditions:**
+     - `hoist0` is at `d21`, lifting `crate0`.
+     - `d11` is clear.
+     - `d21` and `d11` are connected.
+   - **Effects:**
+     - `hoist0` is at `d11`, lifting `crate0`.
+     - `d21` becomes clear.
+     - `d11` becomes occupied by `hoist0`.
+
+8. **Drop `crate0` at `depot48-1-1` (d11):**
+   - **Action:** `drop(hoist0, crate0, d11, d11)`
+   - **Preconditions:**
+     - `hoist0` is at `d11`, lifting `crate0`.
+     - `d11` is in `depot48`.
+   - **Effects:**
+     - `hoist0` releases `crate0`.
+     - `hoist0` becomes available.
+     - `crate0` is placed on `d11`.
+
+---
+
+**For `hoist1` and `crate1`:**
+
+1. **Move `hoist1` from `depot48-1-2` (d12) to `depot48-2-2` (d22):**
+   - **Action:** `move(hoist1, d12, d22)`
+   - **Preconditions:**
+     - `hoist1` is at `d12`.
+     - `d22` is clear.
+     - `d12` and `d22` are connected.
+   - **Effects:**
+     - `hoist1` is at `d22`.
+     - `d12` becomes clear.
+     - `d22` becomes occupied by `hoist1`.
+
+2. **Move `hoist1` from `depot48-2-2` (d22) to `depot48-2-1` (d21):**
+   - **Action:** `move(hoist1, d22, d21)`
+   - **Preconditions:**
+     - `hoist1` is at `d22`.
+     - `d21` is clear (after `hoist0` has moved out).
+     - `d22` and `d21` are connected.
+   - **Effects:**
+     - `hoist1` is at `d21`.
+     - `d22` becomes clear.
+     - `d21` becomes occupied by `hoist1`.
+
+3. **Go-out `hoist1` from `depot48-2-1` (d21) to `loadarea`:**
+   - **Action:** `go-out(hoist1, d21, loadarea)`
+   - **Preconditions:**
+     - `hoist1` is at `d21`.
+     - `d21` and `loadarea` are connected.
+   - **Effects:**
+     - `hoist1` is at `loadarea`.
+     - `d21` becomes clear.
+
+4. **Go-in `hoist1` from `loadarea` to `container-0-1` (c01):**
+   - **Action:** `go-in(hoist1, loadarea, c01)`
+   - **Preconditions:**
+     - `hoist1` is at `loadarea`.
+     - `loadarea` and `c01` are connected.
+     - `c01` is clear (assuming the presence of `crate1` doesn't prevent entry).
+   - **Effects:**
+     - `hoist1` is at `c01`.
+
+5. **Lift `crate1` using `hoist1` at `container-0-1` (c01):**
+   - **Action:** `lift(hoist1, crate1, c01, c01, container0)`
+   - **Preconditions:**
+     - `hoist1` is available and at `c01`.
+     - `crate1` is on `c01`.
+     - `c01` is in `container0`.
+   - **Effects:**
+     - `hoist1` is now lifting `crate1`.
+     - `hoist1` becomes unavailable.
+     - `crate1` is removed from `c01`.
+
+6. **Go-out `hoist1` from `container-0-1` (c01) to `loadarea` with `crate1`:**
+   - **Action:** `go-out(hoist1, c01, loadarea)`
+   - **Preconditions:**
+     - `hoist1` is at `c01`, lifting `crate1`.
+     - `c01` and `loadarea` are connected.
+   - **Effects:**
+     - `hoist1` is at `loadarea`, still lifting `crate1`.
+
+7. **Go-in `hoist1` from `loadarea` to `depot48-2-1` (d21) with `crate1`:**
+   - **Action:** `go-in(hoist1, loadarea, d21)`
+   - **Preconditions:**
+     - `hoist1` is at `loadarea`, lifting `crate1`.
+     - `loadarea` and `d21` are connected.
+     - `d21` is clear.
+   - **Effects:**
+     - `hoist1` is at `d21`, lifting `crate1`.
+     - `d21` becomes occupied by `hoist1`.
+
+8. **Move `hoist1` with `crate1` from `depot48-2-1` (d21) to `depot48-1-2` (d12):**
+   - **Action:** `move(hoist1, d21, d12)`
+   - **Preconditions:**
+     - `hoist1` is at `d21`, lifting `crate1`.
+     - `d12` is clear.
+     - `d21` and `d12` are connected.
+   - **Effects:**
+     - `hoist1` is at `d12`, lifting `crate1`.
+     - `d21` becomes clear.
+     - `d12` becomes occupied by `hoist1`.
+
+9. **Drop `crate1` at `depot48-1-2` (d12):**
+   - **Action:** `drop(hoist1, crate1, d12, d12)`
+   - **Preconditions:**
+     - `hoist1` is at `d12`, lifting `crate1`.
+     - `d12` is in `depot48`.
+   - **Effects:**
+     - `hoist1` releases `crate1`.
+     - `hoist1` becomes available.
+     - `crate1` is placed on `d12`.
+
+---
+
+**Summary:**
+
+- Both crates are now in depot store areas within `depot48`.
+- Each hoist has efficiently transported one crate from the container to the depot.
+- The plan utilizes both hoists simultaneously where possible, optimizing the total number of actions.
+
+**Notes:**
+
+- The assumption is that hoists can enter container store areas occupied by crates, as the crates are on the surfaces, and hoists need to be in the same area to perform the lifting action.
+- The preconditions and effects have been carefully considered to ensure all actions are valid and that areas are clear or occupied as required.
+- Synchronization between hoists is maintained to avoid conflicts, especially when using shared areas like `depot48-2-1` (d21) and `loadarea`.
+
+**Final State:**
+
+- `crate0` is on `depot48-1-1` (d11) in `depot48`.
+- `crate1` is on `depot48-1-2` (d12) in `depot48`.
+- Both hoists are available and located in their respective starting positions, ready for future tasks.
+
+---
+
+This plan is optimal as it minimizes the number of actions required to move both crates to the depot using the available hoists and paths, ensuring no unnecessary movements.

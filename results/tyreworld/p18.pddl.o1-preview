@@ -1,0 +1,101 @@
+To solve the problem optimally, we need to carefully plan the sequence of actions required to replace the flat tyres with inflated intact tyres on all 18 hubs, while ensuring all tools and flat tyres are returned to the boot and the boot is closed at the end.
+
+Here's the optimal plan:
+
+**Initial Actions:**
+
+1. **Open the boot**
+   - *Precondition:* Boot is unlocked and closed.
+   - *Effect:* Boot is open.
+
+2. **Fetch the wrench**
+   - *Precondition:* Wrench is inside the boot and the boot is open.
+   - *Effect:* Agent has the wrench; wrench is not inside the boot.
+
+3. **Fetch the jack**
+   - *Precondition:* Jack is inside the boot and the boot is open.
+   - *Effect:* Agent has the jack; jack is not inside the boot.
+
+4. **Fetch the pump**
+   - *Precondition:* Pump is inside the boot and the boot is open.
+   - *Effect:* Agent has the pump; pump is not inside the boot.
+
+**For each of the 18 hubs (Repeat steps 5 to 15 for each hub):**
+
+5. **Fetch an intact tyre**
+   - *Precondition:* Intact tyre is inside the boot and the boot is open.
+   - *Effect:* Agent has the intact tyre; tyre is not inside the boot.
+
+6. **Inflate the intact tyre**
+   - *Precondition:* Agent has the pump; tyre is intact and not inflated.
+   - *Effect:* Tyre is inflated.
+
+7. **Loosen the nut on the hub**
+   - *Precondition:* Agent has the wrench; nut on hub is tight; hub is on the ground.
+   - *Effect:* Nut on hub is loose; nut is not tight.
+
+8. **Jack up the hub**
+   - *Precondition:* Agent has the jack; hub is on the ground.
+   - *Effect:* Hub is off the ground; agent no longer has the jack.
+
+9. **Undo the nut from the hub**
+   - *Precondition:* Hub is off the ground; hub is fastened; agent has the wrench; nut is loose.
+   - *Effect:* Agent has the nut; hub is unfastened; nut is not loose; hub is not fastened.
+
+10. **Remove the flat tyre from the hub**
+    - *Precondition:* Hub is off the ground; flat tyre is on the hub; hub is unfastened.
+    - *Effect:* Agent has the flat tyre; hub is free; flat tyre is not on the hub.
+
+11. **Put the inflated intact tyre on the hub**
+    - *Precondition:* Agent has the inflated intact tyre; hub is free; hub is unfastened; hub is off the ground.
+    - *Effect:* Intact tyre is on the hub; hub is not free; agent no longer has the intact tyre.
+
+12. **Do-up the nut on the hub**
+    - *Precondition:* Agent has the wrench; hub is unfastened; hub is off the ground; agent has the nut.
+    - *Effect:* Nut is loose on the hub; hub is fastened; hub is not unfastened; agent no longer has the nut.
+
+13. **Jack down the hub**
+    - *Precondition:* Hub is off the ground.
+    - *Effect:* Hub is on the ground; agent has the jack.
+
+14. **Tighten the nut on the hub**
+    - *Precondition:* Agent has the wrench; nut on hub is loose; hub is on the ground.
+    - *Effect:* Nut on hub is tight; nut is not loose.
+
+15. **Put away the flat tyre into the boot**
+    - *Precondition:* Agent has the flat tyre; boot is open.
+    - *Effect:* Flat tyre is inside the boot; agent no longer has the flat tyre.
+
+**Final Actions:**
+
+16. **Put away the wrench**
+    - *Precondition:* Agent has the wrench; boot is open.
+    - *Effect:* Wrench is inside the boot; agent no longer has the wrench.
+
+17. **Put away the jack**
+    - *Precondition:* Agent has the jack; boot is open.
+    - *Effect:* Jack is inside the boot; agent no longer has the jack.
+
+18. **Put away the pump**
+    - *Precondition:* Agent has the pump; boot is open.
+    - *Effect:* Pump is inside the boot; agent no longer has the pump.
+
+19. **Close the boot**
+    - *Precondition:* Boot is open.
+    - *Effect:* Boot is closed.
+
+**Summary:**
+
+- **Total actions for initial setup:** 4
+- **Total actions per hub:** 11 (steps 5-15)
+- **Total actions for 18 hubs:** 18 hubs * 11 actions = 198
+- **Total actions for finalizing:** 4
+- **Total actions:** 4 (initial) + 198 (hubs) + 4 (finalizing) = **206 actions**
+
+**Optimality:**
+
+Given the action definitions and constraints, this plan minimizes the total number of actions required to achieve the goal state. By carrying the tools (wrench, jack, and pump) throughout the process and only fetching and putting away the intact and flat tyres as needed, we reduce unnecessary actions. All objects end up in their required goal states, fulfilling the problem's conditions.
+
+---
+
+**Note:** The agent operates under the assumption that they can carry multiple items (tools and tyres) simultaneously, as allowed by the action definitions. This plan is optimal within the provided action framework and constraints.

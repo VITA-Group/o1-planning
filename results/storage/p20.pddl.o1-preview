@@ -1,0 +1,114 @@
+**Optimal Plan to Move All Crates to Depot48:**
+
+**Initial State:**
+
+- **Depots and Storeareas:**
+  - Depot storeareas: depot48-1-1, depot48-1-2, depot48-1-3, depot48-2-1, depot48-2-2, depot48-2-3
+  - Container storeareas: container-0-0, container-0-1, container-0-2
+  - Crates:
+    - crate0 on container-0-0
+    - crate1 on container-0-1
+    - crate2 on container-0-2
+  - Loadarea connected to all container storeareas and depot48-2-2
+  - Clear depot storeareas: depot48-1-1, depot48-1-2, depot48-1-3
+  - Hoists:
+    - hoist0 at depot48-2-3
+    - hoist1 at depot48-2-1
+    - hoist2 at depot48-2-2
+    - All hoists are available
+
+**Goal:**
+Move all crates (crate0, crate1, crate2) to depot48.
+
+---
+
+**Plan Steps:**
+
+1. **Move Hoist2 to Loadarea:**
+   - **Action:** `go-out`
+   - **Description:** hoist2 moves from depot48-2-2 to loadarea.
+   - **Result:** depot48-2-2 becomes clear.
+
+2. **Hoist2 Lifts Crate2:**
+   - **Action:** `lift`
+   - **Description:** hoist2 lifts crate2 from container-0-2 while at loadarea.
+   - **Result:** hoist2 is lifting crate2; container-0-2 becomes clear.
+
+3. **Hoist2 Moves to Depot48-2-2:**
+   - **Action:** `go-in`
+   - **Description:** hoist2 moves from loadarea to depot48-2-2.
+   - **Result:** depot48-2-2 becomes occupied by hoist2.
+
+4. **Hoist2 Drops Crate2 at Depot48-1-2:**
+   - **Action:** `drop`
+   - **Description:** hoist2 drops crate2 onto depot48-1-2 (assumed connected and clear).
+   - **Result:** depot48-1-2 now contains crate2; hoist2 becomes available.
+
+5. **Hoist2 Returns to Loadarea:**
+   - **Action:** `go-out`
+   - **Description:** hoist2 moves back to loadarea from depot48-2-2.
+   - **Result:** depot48-2-2 becomes clear.
+
+6. **Hoist0 Moves to Depot48-2-2:**
+   - **Action:** `go-out` from depot48-2-3 to depot48-2-2 (via `move` to depot48-2-2, then `go-out`).
+   - **Description:** hoist0 moves from depot48-2-3 to depot48-2-2, then to loadarea.
+   - **Result:** depot48-2-2 is clear after hoist0 leaves for loadarea.
+
+7. **Hoist0 Lifts Crate0:**
+   - **Action:** `lift`
+   - **Description:** hoist0 lifts crate0 from container-0-0 while at loadarea.
+   - **Result:** hoist0 is lifting crate0; container-0-0 becomes clear.
+
+8. **Hoist0 Moves to Depot48-2-2:**
+   - **Action:** `go-in`
+   - **Description:** hoist0 moves from loadarea to depot48-2-2.
+   - **Result:** depot48-2-2 becomes occupied by hoist0.
+
+9. **Hoist0 Drops Crate0 at Depot48-1-1:**
+   - **Action:** `drop`
+   - **Description:** hoist0 drops crate0 onto depot48-1-1 (assumed connected and clear).
+   - **Result:** depot48-1-1 now contains crate0; hoist0 becomes available.
+
+10. **Hoist0 Returns to Loadarea:**
+    - **Action:** `go-out`
+    - **Description:** hoist0 moves back to loadarea from depot48-2-2.
+    - **Result:** depot48-2-2 becomes clear.
+
+11. **Hoist1 Moves to Loadarea:**
+    - **Action:** `go-out` from depot48-2-1 to depot48-2-2 (via `move` to depot48-2-2, then `go-out`).
+    - **Description:** hoist1 moves from depot48-2-1 to depot48-2-2, then to loadarea.
+    - **Result:** depot48-2-2 is clear after hoist1 leaves for loadarea.
+
+12. **Hoist1 Lifts Crate1:**
+    - **Action:** `lift`
+    - **Description:** hoist1 lifts crate1 from container-0-1 while at loadarea.
+    - **Result:** hoist1 is lifting crate1; container-0-1 becomes clear.
+
+13. **Hoist1 Moves to Depot48-2-2:**
+    - **Action:** `go-in`
+    - **Description:** hoist1 moves from loadarea to depot48-2-2.
+    - **Result:** depot48-2-2 becomes occupied by hoist1.
+
+14. **Hoist1 Drops Crate1 at Depot48-1-3:**
+    - **Action:** `drop`
+    - **Description:** hoist1 drops crate1 onto depot48-1-3 (assumed connected and clear).
+    - **Result:** depot48-1-3 now contains crate1; hoist1 becomes available.
+
+15. **Hoist1 Returns to Loadarea or Original Position:**
+    - **Action:** `go-out`
+    - **Description:** hoist1 moves back to loadarea or to an original depot.
+    - **Result:** depot48-2-2 becomes clear.
+
+---
+
+**Final State:**
+
+- All crates (crate0, crate1, crate2) are now in depot48 storeareas:
+  - crate0 at depot48-1-1
+  - crate1 at depot48-1-3
+  - crate2 at depot48-1-2
+- All hoists are available and can be returned to their original positions if needed.
+- All container storeareas are clear.
+- Goal achieved: All crates moved to depot48.
+
+**Note:** This plan assumes that depot48-1-1, depot48-1-2, and depot48-1-3 are connected to depot48-2-2, allowing the hoists to drop the crates onto them during the drop action. The plan optimally utilizes the hoists and minimizes unnecessary movements.

@@ -1,0 +1,45 @@
+The following is an optimal plan that solves this problem:
+
+1. "open" action: Open the boot that is unlocked and closed, then the boot is open and not closed.
+
+2. "fetch" action: Fetch the pump from the boot, the agent is now holding the pump.
+
+3. "fetch" action: Fetch each intact tyre from the boot one by one, and after fetching each tire, perform an "inflate" action to inflate it.
+
+4. "put-away" action: Put the pump back into the boot, it's now inside the boot and no longer held by the agent.
+
+5. "fetch" action: Fetch the jack from the boot, the agent is now holding the jack.
+
+6. "fetch" action: Fetch the wrench from the boot, the agent is now also holding the wrench.
+
+Now repeat the following action sequence for each of the 8 hubs:
+
+7. "jack-up" action: Jack up the hub that is on the ground, the hub is now off the ground.
+
+8. "loosen" action: Loosen the nut that is tight on the hub, the nut on the hub is now loose.
+
+9. "undo" action: Undo the fastening of the nut, the hub is now unfastened.
+
+10. "remove-wheel" action: Remove the flat tire that is on the hub, the agent is now holding the flat tire and the hub is now free.
+
+11. "put-away" action: Put the flat tire into the boot, it is now inside the boot and not held by the agent.
+
+12. "fetch" action: Fetch an inflated intact tyre from the boot, the agent is now holding the tyre.
+
+13. "put-on-wheel" action: Put the intact tyre onto the hub that is unfastened, the tyre is now on the hub and the hub is no longer free.
+
+14. "do-up" action: Fasten the nut on the hub that just had the intact tire placed on it, the hub is now fastened.
+
+15. "tighten" action: Using the wrench, tighten the nut on the hub, the nut on the hub is now tight.
+
+16. "jack-down" action: Lower the hub back to the ground, the hub is now on the ground and the agent has the jack.
+
+Finally:
+
+17. "put-away" action: Put the jack back into the boot, it's now inside the boot and no longer held by the agent.
+
+18. "put-away" action: Put the wrench back into the boot, it's also inside the boot and not held by the agent.
+
+19. "close" action: Close the boot that was open, the boot is now closed and not open.
+
+This plan leads to all the flat tires being replaced by inflated intact tyres.  In the end, all the hubs have intact tyres, all the nuts are tight on the hubs, and the boots contain the flat tyres, wrench, jack, and pump.

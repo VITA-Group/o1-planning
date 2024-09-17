@@ -1,0 +1,86 @@
+Certainly! Below is an **optimal plan** to move all crates from the container store areas to the depot (`depot48`) using the available hoists. The plan leverages two hoists (`hoist0` and `hoist1`) to operate concurrently, ensuring efficiency.
+
+### **Initial State:**
+- **Hoist Locations:**
+  - `hoist0` is in `depot48-2-2`
+  - `hoist1` is in `depot48-2-1`
+  - `hoist2` is in `depot48-1-2` (available but not needed for this optimal plan)
+- **Crates:**
+  - `crate0` is in `container-0-0`
+  - `crate1` is in `container-0-1`
+- **Load Area:**
+  - Connected to all container store areas and `depot48-2-1`
+
+### **Plan Overview:**
+1. **Hoist1 handles `crate0`**
+2. **Hoist0 handles `crate1`**
+
+### **Detailed Step-by-Step Actions:**
+
+#### **Hoist1: Moving `crate0`**
+1. **Go-Out to Load Area**
+   - **Action:** `hoist1` performs `go-out` from `depot48-2-1` to `loadarea`.
+   - **Precondition:** `hoist1` is in `depot48-2-1` and connected to `loadarea`.
+   - **Effect:** `hoist1` is now in `loadarea`.
+
+2. **Lift `crate0`**
+   - **Action:** `hoist1` performs `lift` to pick up `crate0` from `container-0-0` to `loadarea`.
+   - **Precondition:** `hoist1` is in `loadarea`, `crate0` is in `container-0-0`, and all other lift preconditions are met.
+   - **Effect:** `crate0` is now held by `hoist1` in `loadarea`.
+
+3. **Go-In to Depot**
+   - **Action:** `hoist1` performs `go-in` from `loadarea` to `depot48-2-1`.
+   - **Precondition:** `hoist1` is in `loadarea` and connected to `depot48-2-1`, which is clear.
+   - **Effect:** `hoist1` is back in `depot48-2-1` holding `crate0`.
+
+4. **Drop `crate0`**
+   - **Action:** `hoist1` performs `drop` to place `crate0` in `depot48-2-1`.
+   - **Precondition:** `hoist1` is in `depot48-2-1` holding `crate0`, and `depot48-2-1` is clear.
+   - **Effect:** `crate0` is now in `depot48-2-1`, and `hoist1` becomes available.
+
+#### **Hoist0: Moving `crate1`**
+5. **Move to Depot Connection**
+   - **Action:** `hoist0` performs `move` from `depot48-2-2` to `depot48-2-1`.
+   - **Precondition:** `depot48-2-1` is clear.
+   - **Effect:** `hoist0` is now in `depot48-2-1`.
+
+6. **Go-Out to Load Area**
+   - **Action:** `hoist0` performs `go-out` from `depot48-2-1` to `loadarea`.
+   - **Precondition:** `hoist0` is in `depot48-2-1` and connected to `loadarea`.
+   - **Effect:** `hoist0` is now in `loadarea`.
+
+7. **Lift `crate1`**
+   - **Action:** `hoist0` performs `lift` to pick up `crate1` from `container-0-1` to `loadarea`.
+   - **Precondition:** `hoist0` is in `loadarea`, `crate1` is in `container-0-1`, and all other lift preconditions are met.
+   - **Effect:** `crate1` is now held by `hoist0` in `loadarea`.
+
+8. **Go-In to Depot**
+   - **Action:** `hoist0` performs `go-in` from `loadarea` to `depot48-2-1`.
+   - **Precondition:** `hoist0` is in `loadarea` and connected to `depot48-2-1`, which is now clear after `crate0` has been placed.
+   - **Effect:** `hoist0` is back in `depot48-2-1` holding `crate1`.
+
+9. **Drop `crate1`**
+   - **Action:** `hoist0` performs `drop` to place `crate1` in `depot48-2-1`.
+   - **Precondition:** `hoist0` is in `depot48-2-1` holding `crate1`, and `depot48-2-1` is clear.
+   - **Effect:** `crate1` is now in `depot48-2-1`, and `hoist0` becomes available.
+
+### **Summary of Actions:**
+
+1. `hoist1` **go-out** from `depot48-2-1` to `loadarea`
+2. `hoist1` **lift** `crate0` from `container-0-0` to `loadarea`
+3. `hoist1` **go-in** from `loadarea` to `depot48-2-1`
+4. `hoist1` **drop** `crate0` in `depot48-2-1`
+5. `hoist0` **move** from `depot48-2-2` to `depot48-2-1`
+6. `hoist0` **go-out** from `depot48-2-1` to `loadarea`
+7. `hoist0` **lift** `crate1` from `container-0-1` to `loadarea`
+8. `hoist0` **go-in** from `loadarea` to `depot48-2-1`
+9. `hoist0` **drop** `crate1` in `depot48-2-1`
+
+### **Final State:**
+- Both `crate0` and `crate1` are successfully moved to `depot48-2-1`.
+- All hoists are available and positioned as follows:
+  - `hoist0` in `depot48-2-1`
+  - `hoist1` in `depot48-2-1`
+  - `hoist2` remains in `depot48-1-2`
+
+This plan ensures that both crates are moved efficiently using two hoists operating in parallel, minimizing the total number of actions required.

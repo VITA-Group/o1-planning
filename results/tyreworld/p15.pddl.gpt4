@@ -1,0 +1,26 @@
+Yes, here is a sequence of actions that will result in the goal state:
+
+1. "open" the boot
+2. "fetch" the wrench from the boot
+3. "fetch" the jack from the boot
+4. "fetch" the pump from the boot
+5. For each of the 15 hubs, do steps 6 to 20.
+6. "loosen" the nut on the hub with the wrench
+7. "jack-up" the hub
+8. "undo" the nut on the hub
+9. "remove-wheel" from the hub
+10. "put-away" the flat tyre into the boot
+11. "fetch" an intact tyre from the boot
+12. "inflate" the uninflected tyre using the pump
+13. "put-on-wheel" onto the hub with the inflated tyre
+14. "do-up" the nut on the hub
+15. "jack-down" the hub
+16. "tighten" the nut on the hub with the wrench
+17. "put-away" the wrench into the boot
+18. "put-away" the pump into the boot
+19. "put-away" the jack into the boot
+20. "close" the boot
+
+Note that each cycle of steps 6 to 20 corresponds to replacing a flat tyre on a single hub, inflating the new tyre, and putting the flat tyre and tools back into the boot. You do this for each of the 15 hubs. The plan includes 15 cycles of steps 6 to 20, which is 225 steps.
+
+The end result will be a situation where all the flat tyres have been replaced with inflated ones, all the tyres are secure on the hubs, and all the tools and flat tyres are back in the closed boot, as required.

@@ -1,0 +1,18 @@
+An optimal plan of sequence of behaviors can be as follows:
+
+1. Create a block at the depot (pos-2-0)
+2. Move to pos-2-1 with block
+3. Move to pos-2-2 with block
+4. Move to pos-1-2 with block
+5. Move to pos-0-2 with block
+6. Place block at pos-0-2 (Height at pos-0-2: 1)
+7. Move to pos-1-2 (empty)
+8. Move to pos-2-2 (empty)
+9. Move to pos-2-1 (empty)
+10. Move to pos-2-0, which is the depot (empty)
+11. Repeat steps 1-10 two more times to build height at pos-0-2 to 3 
+12. After achieving height 3 at pos-0-2, move to pos-1-2
+13. Move to pos-1-1
+14. Repeat steps 1-13 three times but in step 6, place block at pos-1-1 and in the steps 12-13, move back to pos-1-1 to build height at pos-1-1 to 3
+
+This is an optimal plan by which the goal is achieved by moving the minimum number of blocks and switching the minimum number of times between block pick-ups and block placements.

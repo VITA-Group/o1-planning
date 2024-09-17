@@ -1,0 +1,15 @@
+An optimal sequence is given as follows.
+
+1. Create a block at the depot. (The robot is now at pos-2-0 with a block)
+2. Move right to position pos-2-1. (new position with block)
+3. Place a block at the current position. (pos-2-1 now has a block and robot has no block)
+4. Move left to position pos-2-0. (new position with no block at depot)
+5. Create a block at the depot. (The robot is now at pos-2-0 with a block)
+6. Move right to position pos-2-1. (new position with block)
+7. Move up from the current position. (pos-2-1 is now of height 2 and robot has a block)
+8. Place a block at the current position. (pos-2-1 now has 2 blocks and robot has no block)
+9. Move down from the current position. (Robot goes to the lower level)
+10. Move left to position pos-2-0.(new position with no block at depot)
+11. Repeat steps 5 through 10 for 3 more times until the block at pos-2-1 reaches the height of 5.
+
+This sequence is optimal as it involves the least amount of moves. It is important to note that you also have to move up one position after moving to the larger structure before placing a block, and then move down before returning to the depot, to ensure that the robot is always at the same height as the block it is placing or removing.

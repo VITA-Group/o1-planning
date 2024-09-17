@@ -1,0 +1,120 @@
+Certainly! Below is an **optimal plan** to replace the flat tyres with intact tyres on the hubs, ensuring all goals are met. The plan is structured as a sequential list of actions based on the defined action set.
+
+### **Optimal Plan:**
+
+1. **open**
+   - *Effect:* Boot is now open.
+  
+2. **fetch jack**
+   - *Effect:* Agent holds the jack; jack is no longer in the boot.
+
+3. **fetch pump**
+   - *Effect:* Agent holds the pump; pump is no longer in the boot.
+
+4. **fetch wrench**
+   - *Effect:* Agent holds the wrench; wrench is no longer in the boot.
+
+5. **fetch intact_tyre1**
+   - *Effect:* Agent holds intact tyre 1; intact tyre 1 is no longer in the boot.
+
+6. **fetch intact_tyre2**
+   - *Effect:* Agent holds intact tyre 2; intact tyre 2 is no longer in the boot.
+
+7. **fetch intact_tyre3**
+   - *Effect:* Agent holds intact tyre 3; intact tyre 3 is no longer in the boot.
+
+8. **fetch intact_tyre4**
+   - *Effect:* Agent holds intact tyre 4; intact tyre 4 is no longer in the boot.
+
+9. **close**
+   - *Effect:* Boot is now closed and not open.
+
+---
+
+#### **Repeat the following sequence for each of the 4 Hubs (Hub 1 to Hub 4):**
+
+##### **For Hub _n_:**
+
+10. **loosen**
+    - *Preconditions:* Agent has the wrench, nut on Hub _n_ is tight, Hub _n_ is on the ground.
+    - *Effect:* Nut on Hub _n_ is now loose and not tight.
+
+11. **jack-up**
+    - *Preconditions:* Agent has the jack, Hub _n_ is on the ground.
+    - *Effect:* Hub _n_ is now lifted off the ground; agent no longer holds the jack.
+
+12. **remove-wheel**
+    - *Preconditions:* Hub _n_ is not on the ground, flat tyre is on Hub _n_, nut on Hub _n_ is loose, Hub _n_ is unfastened.
+    - *Effect:* Agent holds the removed flat tyre; Hub _n_ is now free (flat tyre is no longer on it).
+
+13. **open**
+    - *Effect:* Boot is now open.
+
+14. **put-away flat_tyre_n**
+    - *Preconditions:* Agent holds flat tyre _n_, boot is open.
+    - *Effect:* Flat tyre _n_ is now inside the boot; agent no longer holds it.
+
+15. **close**
+    - *Effect:* Boot is now closed and not open.
+
+16. **put-on-wheel intact_tyre_n**
+    - *Preconditions:* Agent holds intact tyre _n_, Hub _n_ is free, Hub _n_ is unfastened, Hub _n_ is not on the ground.
+    - *Effect:* Intact tyre _n_ is now on Hub _n_; Hub _n_ is no longer free; agent no longer holds intact tyre _n_.
+
+17. **inflate**
+    - *Preconditions:* Agent has the pump, intact tyre _n_ is not inflated, intact tyre _n_ is intact.
+    - *Effect:* Intact tyre _n_ is now inflated.
+
+18. **tighten**
+    - *Preconditions:* Agent has the wrench, nut on Hub _n_ is loose, Hub _n_ is on the ground.
+    - *Effect:* Nut on Hub _n_ is now tight and not loose.
+
+19. **jack-down**
+    - *Preconditions:* Agent previously jacked up Hub _n_.
+    - *Effect:* Hub _n_ is now back on the ground; agent holds the jack again.
+
+---
+
+#### **After Replacing All 4 Hubs:**
+
+20. **open**
+    - *Effect:* Boot is now open.
+
+21. **put-away wrench**
+    - *Preconditions:* Agent holds the wrench, boot is open.
+    - *Effect:* Wrench is now inside the boot; agent no longer holds the wrench.
+
+22. **put-away pump**
+    - *Preconditions:* Agent holds the pump, boot is open.
+    - *Effect:* Pump is now inside the boot; agent no longer holds the pump.
+
+23. **put-away jack**
+    - *Preconditions:* Agent holds the jack, boot is open.
+    - *Effect:* Jack is now inside the boot; agent no longer holds the jack.
+
+24. **close**
+    - *Effect:* Boot is now closed and not open.
+
+---
+
+### **Summary of the Plan:**
+
+- **Initial Setup:**
+  - Open the boot and fetch all necessary tools (jack, pump, wrench) and intact tyres.
+  - Close the boot once tools and tyres are retrieved.
+
+- **Per Hub Replacement (Repeated 4 Times):**
+  - Loosen the nut on the hub.
+  - Jack up the hub.
+  - Remove the flat tyre and store it in the boot.
+  - Install the intact tyre.
+  - Inflate the intact tyre.
+  - Tighten the nut on the hub.
+  - Lower the hub back to the ground.
+
+- **Finalization:**
+  - Open the boot to store tools back.
+  - Put away all tools (wrench, pump, jack).
+  - Ensure the boot is closed.
+
+This plan ensures that all flat tyres are replaced with intact, inflated tyres, nuts are securely tightened, and all tools along with the flat tyres are neatly stored back in the boot with it being closed at the end.

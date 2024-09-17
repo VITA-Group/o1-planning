@@ -1,0 +1,51 @@
+Certainly! Below is an **optimal plan** to move all crates (`crate0` and `crate1`) from their respective container store areas to `depot48` using the available hoists (`hoist0` and `hoist1`). The plan leverages both hoists concurrently to minimize the total number of actions.
+
+### **Action Sequence:**
+
+1. **Move Hoist0 to Load Area:**
+   - **Action:** `move hoist0 from depot48-1-1 to depot48-1-2`
+   - **Action:** `move hoist0 from depot48-1-2 to depot48-2-2`
+   - **Action:** `move hoist0 from depot48-2-2 to depot48-2-1`
+   - **Action:** `go-out hoist0 from depot48-2-1 to loadarea`
+   
+2. **Move Hoist1 to Load Area:**
+   - **Action:** `move hoist1 from depot48-1-2 to depot48-2-2`
+   - **Action:** `move hoist1 from depot48-2-2 to depot48-2-1`
+   - **Action:** `go-out hoist1 from depot48-2-1 to loadarea`
+   
+3. **Lift and Drop Crates:**
+   - **Action:** `lift hoist0 crate0 from container-0-0 to loadarea`
+   - **Action:** `drop hoist0 crate0 to depot48-2-1`
+   - **Action:** `lift hoist1 crate1 from container-0-1 to loadarea`
+   - **Action:** `drop hoist1 crate1 to depot48-2-1`
+
+### **Detailed Steps Breakdown:**
+
+1. **Hoist0 Movement to Load Area:**
+   - **Step 1:** `move hoist0 from depot48-1-1 to depot48-1-2`
+   - **Step 2:** `move hoist0 from depot48-1-2 to depot48-2-2`
+   - **Step 3:** `move hoist0 from depot48-2-2 to depot48-2-1`
+   - **Step 4:** `go-out hoist0 from depot48-2-1 to loadarea`
+   
+2. **Hoist1 Movement to Load Area:**
+   - **Step 5:** `move hoist1 from depot48-1-2 to depot48-2-2`
+   - **Step 6:** `move hoist1 from depot48-2-2 to depot48-2-1`
+   - **Step 7:** `go-out hoist1 from depot48-2-1 to loadarea`
+   
+3. **Handling Crate0 with Hoist0:**
+   - **Step 8:** `lift hoist0 crate0 from container-0-0 to loadarea`
+   - **Step 9:** `drop hoist0 crate0 to depot48-2-1`
+   
+4. **Handling Crate1 with Hoist1:**
+   - **Step 10:** `lift hoist1 crate1 from container-0-1 to loadarea`
+   - **Step 11:** `drop hoist1 crate1 to depot48-2-1`
+
+### **Explanation:**
+
+- **Hoist Movement:** Both hoists (`hoist0` and `hoist1`) are first moved from their initial positions within `depot48` to the `loadarea`. This involves a series of `move` actions through connected depot store areas, followed by a `go-out` action to enter the `loadarea`.
+  
+- **Lifting Crates:** Once both hoists are in the `loadarea`, each hoist lifts a crate from its respective container store area (`container-0-0` for `crate0` and `container-0-1` for `crate1`) using the `lift` action.
+  
+- **Dropping Crates:** After lifting, each hoist drops the crate into the designated depot store area (`depot48-2-1`) using the `drop` action.
+
+This plan ensures that both crates are moved efficiently to `depot48` utilizing both hoists without unnecessary delays or redundant actions.

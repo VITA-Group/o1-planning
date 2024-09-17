@@ -1,0 +1,86 @@
+Certainly! Below is an **optimal plan** to move all crates (`crate0` and `crate1`) from their container store areas to `depot48` using the available hoists (`hoist0`, `hoist1`, and `hoist2`). This plan efficiently utilizes two hoists (`hoist0` and `hoist1`) in parallel to minimize the total number of actions.
+
+### **Action Sequence:**
+
+#### **For `crate0` using `hoist0`:**
+
+1. **Move Hoist0 to Load Area:**
+   - **Action:** `move`
+   - **Parameters:** `hoist0`, from `depot48-1-1` to `depot48-1-2`
+
+2. **Go-Out Hoist0 to Transit Area (Load Area):**
+   - **Action:** `go-out`
+   - **Parameters:** `hoist0`, from `depot48-1-2` to `loadarea`
+
+3. **Go-In Hoist0 to Container Store Area:**
+   - **Action:** `go-in`
+   - **Parameters:** `hoist0`, from `loadarea` to `container-0-0`
+
+4. **Lift `crate0` from `container-0-0`:**
+   - **Action:** `lift`
+   - **Parameters:** `hoist0`, `crate0`, from `container-0-0` to `loadarea`
+
+5. **Go-Out Hoist0 to Transit Area (Load Area):**
+   - **Action:** `go-out`
+   - **Parameters:** `hoist0`, from `container-0-0` to `loadarea`
+
+6. **Go-In Hoist0 to Depot Store Area:**
+   - **Action:** `go-in`
+   - **Parameters:** `hoist0`, from `loadarea` to `depot48-2-1`
+
+7. **Drop `crate0` in `depot48-2-1`:**
+   - **Action:** `drop`
+   - **Parameters:** `hoist0`, `crate0`, in `depot48-2-1`
+
+#### **For `crate1` using `hoist1`:**
+
+8. **Go-Out Hoist1 to Transit Area (Load Area):**
+   - **Action:** `go-out`
+   - **Parameters:** `hoist1`, from `depot48-1-2` to `loadarea`
+
+9. **Go-In Hoist1 to Container Store Area:**
+   - **Action:** `go-in`
+   - **Parameters:** `hoist1`, from `loadarea` to `container-0-1`
+
+10. **Lift `crate1` from `container-0-1`:**
+    - **Action:** `lift`
+    - **Parameters:** `hoist1`, `crate1`, from `container-0-1` to `loadarea`
+
+11. **Go-Out Hoist1 to Transit Area (Load Area):**
+    - **Action:** `go-out`
+    - **Parameters:** `hoist1`, from `container-0-1` to `loadarea`
+
+12. **Go-In Hoist1 to Depot Store Area:**
+    - **Action:** `go-in`
+    - **Parameters:** `hoist1`, from `loadarea` to `depot48-2-1`
+
+13. **Drop `crate1` in `depot48-2-1`:**
+    - **Action:** `drop`
+    - **Parameters:** `hoist1`, `crate1`, in `depot48-2-1`
+
+### **Summary of Actions:**
+
+| Step | Hoist | Action  | From                 | To            | Crate  |
+|------|-------|---------|----------------------|---------------|--------|
+| 1    | hoist0| move    | depot48-1-1          | depot48-1-2   |        |
+| 2    | hoist0| go-out  | depot48-1-2          | loadarea      |        |
+| 3    | hoist0| go-in   | loadarea             | container-0-0 |        |
+| 4    | hoist0| lift    | container-0-0        | loadarea      | crate0 |
+| 5    | hoist0| go-out  | container-0-0        | loadarea      |        |
+| 6    | hoist0| go-in   | loadarea             | depot48-2-1   |        |
+| 7    | hoist0| drop    | depot48-2-1          | depot48-2-1   | crate0 |
+| 8    | hoist1| go-out  | depot48-1-2          | loadarea      |        |
+| 9    | hoist1| go-in   | loadarea             | container-0-1 |        |
+| 10   | hoist1| lift    | container-0-1        | loadarea      | crate1 |
+| 11   | hoist1| go-out  | container-0-1        | loadarea      |        |
+| 12   | hoist1| go-in   | loadarea             | depot48-2-1   |        |
+| 13   | hoist1| drop    | depot48-2-1          | depot48-2-1   | crate1 |
+
+### **Notes:**
+
+- **Hoist2** remains available and can be utilized for additional tasks or as backup if needed.
+- This plan ensures that both crates are moved efficiently without unnecessary movements or actions.
+- Actions `go-out` and `go-in` are used to transition hoists between store areas and the transit area (`loadarea`).
+- The `lift` and `drop` actions handle the actual movement of crates between store areas.
+
+By following this sequence, both `crate0` and `crate1` will be successfully moved to `depot48` with the minimal number of actions required.

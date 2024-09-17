@@ -1,0 +1,14 @@
+Sure, here is a sequence of actions that can achieve the goal:
+
+1. Hoist0 move from depot48-1-1 to depot48-2-1.
+2. Hoist1 lift the crate0 from container-0-0.
+3. Hoist1 go-out from container-0-0 to loadarea.
+4. Hoist1 go-in from loadarea to depot48-2-1.
+5. Hoist1 drop the crate0 at depot48-2-1.
+6. Hoist1 move from depot48-2-1 to depot48-2-2.
+7. Hoist0 lift the crate1 from container-0-1.
+8. Hoist0 go-out from container-0-1 to loadarea.
+9. Hoist0 go-in from loadarea to depot48-2-2.
+10. Hoist0 drop the crate1 at depot48-2-2.
+
+This plan assumes that the hoists can transport the crates across different areas and the heights of the areas are not restricted. The hoists first move to the destination depot areas to make sure they are ready to receive the crates, then pick up the crates from the container areas, go out to the loadarea, go into the depot areas and finally drop the crates at the depot areas. The plan achieves the goal with the fewest actions possible, hence it is optimal.

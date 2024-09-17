@@ -1,0 +1,69 @@
+Certainly! Below is an **optimal plan** to move all crates to `depot48` using the two available hoists (`hoist0` and `hoist1`). The plan leverages both hoists in parallel to minimize the total number of steps.
+
+### **Action Sequence:**
+
+1. **Move Hoist0 to Depot48-2-2**
+   - **Action:** `move`
+   - **Parameters:** `hoist0`, `depot48-2-1`, `depot48-2-2`
+
+2. **Hoist0 Goes Out to Loadarea**
+   - **Action:** `go-out`
+   - **Parameters:** `hoist0`, `depot48-2-2`, `loadarea`
+
+3. **Move Hoist1 to Depot48-2-2**
+   - **Action:** `move`
+   - **Parameters:** `hoist1`, `depot48-1-1`, `depot48-2-1`
+   
+4. **Move Hoist1 to Depot48-2-2**
+   - **Action:** `move`
+   - **Parameters:** `hoist1`, `depot48-2-1`, `depot48-2-2`
+
+5. **Hoist1 Goes Out to Loadarea**
+   - **Action:** `go-out`
+   - **Parameters:** `hoist1`, `depot48-2-2`, `loadarea`
+
+6. **Hoist0 Lifts Crate0 from Container-0-0**
+   - **Action:** `lift`
+   - **Parameters:** `hoist0`, `crate0`, `container-0-0`, `loadarea`
+
+7. **Hoist0 Drops Crate0 to Depot48-1-3**
+   - **Action:** `drop`
+   - **Parameters:** `hoist0`, `crate0`, `depot48-1-3`
+
+8. **Hoist1 Lifts Crate1 from Container-0-1**
+   - **Action:** `lift`
+   - **Parameters:** `hoist1`, `crate1`, `container-0-1`, `loadarea`
+
+9. **Hoist1 Drops Crate1 to Depot48-2-3**
+   - **Action:** `drop`
+   - **Parameters:** `hoist1`, `crate1`, `depot48-2-3`
+
+10. **Hoist0 Lifts Crate2 from Container-0-2**
+    - **Action:** `lift`
+    - **Parameters:** `hoist0`, `crate2`, `container-0-2`, `loadarea`
+
+11. **Hoist0 Drops Crate2 to Depot48-1-2**
+    - **Action:** `drop`
+    - **Parameters:** `hoist0`, `crate2`, `depot48-1-2`
+
+### **Summary of Steps:**
+
+- **Hoist0**:
+  - Moves from `depot48-2-1` → `depot48-2-2`
+  - Goes out to `loadarea`
+  - Lifts `crate0` and drops it to `depot48-1-3`
+  - Later lifts `crate2` and drops it to `depot48-1-2`
+
+- **Hoist1**:
+  - Moves from `depot48-1-1` → `depot48-2-1` → `depot48-2-2`
+  - Goes out to `loadarea`
+  - Lifts `crate1` and drops it to `depot48-2-3`
+
+### **Notes:**
+
+- **Parallel Processing:** Both hoists operate concurrently where possible to enhance efficiency.
+- **Clear Store Areas:** The selected depot store areas (`depot48-1-3`, `depot48-2-3`, `depot48-1-2`) are initially clear, ensuring smooth placement of crates.
+- **Hoist Availability:** After each `drop` action, hoists become available for subsequent tasks if needed.
+- **Connectivity:** All movements assume that the store areas are connected as per the provided map, allowing seamless transitions between areas.
+
+This plan ensures that all crates (`crate0`, `crate1`, and `crate2`) are efficiently moved to `depot48` using the available resources optimally.

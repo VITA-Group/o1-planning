@@ -1,0 +1,27 @@
+An optimal plan for this problem might look like this: 
+
+1. Open the boot.
+2. Fetch the jack from the boot.
+3. Fetch the wrench from the boot.
+4. Fetch the pump from the boot.
+5. Fetch the intact tyre from the boot.
+6. Inflate the intact tyre using the pump.
+7. Put the pump back in the boot.
+8. Now do the following 13 times, once for each hub:
+   1. Jack up the hub.
+   2. Loosen the nut on the hub using the wrench.
+   3. Undo the nut from the hub using the wrench.
+   4. Remove the wheel (flat tyre) from the hub.
+   5. Put the wheel (flat tyre) in the boot.
+   6. Put the intact, inflated tyre on the hub.
+   7. Do up the new nut on the hub using the wrench.
+   8. Tighten the nuts on the hub using the wrench.
+   9. Jack down the hub.
+9. After you done repeating the above steps for all 13 times, fetch the new intact tyre from the boot.
+10. Inflate the intact tyre using the pump.
+11. Put the pump back in the boot.
+12. Put the wrench back in the boot.
+13. Put the jack back in the boot.
+14. Close the boot.
+
+The plan above assumes that the agent can only carry one tyre at a time and carries out each step in the most efficient manner. It also assumes that each tyre must be inflated immediately before it is put on a hub, and that the wrench, jack, and pump cannot be left on the ground or held by the agent while the agent opens and closes the boot or fetches and puts away objects.

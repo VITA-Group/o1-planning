@@ -1,0 +1,20 @@
+Sure, from the start position 'pos-2-0', the optimal plan would look something like this (considering the number of movements should be minimal):
+
+1. Create a block at the depot ('pos-2-0').
+2. Move to 'pos-2-1'.
+3. Move to 'pos-2-2'.
+4. Move up to 'pos-1-2' and place the block there.
+5. Move down to 'pos-2-2'.
+6. Move to 'pos-2-1'.
+7. Move to 'pos-2-0'.
+8. Repeat steps 1-7, four more times. After this, the height at 'pos-1-2' will reach 5.
+9. Once again, create a block at the depot ('pos-2-0').
+10. Move to 'pos-2-1'.
+11. Move to 'pos-2-2'.
+12. Move to 'pos-3-2' and place the block.
+13. Move to 'pos-2-2'.
+14. Move to 'pos-2-1'.
+15. Move to 'pos-2-0'.
+16. Repeat steps 9-15, four more times. After this, the height at 'pos-3-2' will also reach 5.
+
+In the end, following these steps, there is no unplaced block at the end and the desired heights '5' at positions 'pos-1-2' and 'pos-3-2' are achieved too.

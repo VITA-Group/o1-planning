@@ -1,0 +1,37 @@
+Step 1: "open" action - Open the boot.
+
+Step 2: "fetch" action - Fetch the jack from the boot.
+
+Step 3: "jack-up" action - Jack up the first hub.
+
+Step 4: "fetch" action - Fetch the wrench from the boot.
+
+Step 5: "loosen" action - Loosen the nut on the first hub.
+
+Step 6: "undo" action - Undo the fastening of the nut on the first hub.
+
+Step 7: "remove-wheel" action - Remove the flat tyre from the first hub.
+
+Step 8: "put-away" action - Put the flat tyre in the boot.
+
+Step 9: "fetch" action - Fetch an intact tyre from the boot.
+
+Step 10: "inflate" action - Inflate the intact tyre with the pump.
+
+Step 11: "put-on-wheel" action - Put the inflated tyre on the first hub.
+
+Step 12: "do-up" action - Fasten the nut on the first hub (with the new tyre).
+
+Step 13: "tighten" action - Tighten the nut on the first hub.
+
+Step 14: "jack-down" action - Lower the first hub to the ground. 
+
+Repeat steps 3-14 for the remaining three hubs.
+
+Step 15: "put-away" action - Put jack in the boot.
+
+Step 16: "put-away" action - Put wrench in the boot.
+
+Step 17: "put-away" action - Put pump in the boot.
+
+Step 18: "close" action - Close the boot.

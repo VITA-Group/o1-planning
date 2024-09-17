@@ -1,0 +1,16 @@
+Here is an optimal sequence of actions to solve the problem:
+
+1. "go-out" hoist0 from depot48-1-2 to loadarea.
+2. "move" hoist0 from loadarea to container-0-0.
+3. "lift" hoist0 from container-0-0 to crate0.
+4. "go-out" hoist0 from container-0-0 to loadarea.
+5. "move" hoist0 from loadarea to depot48-2-1.
+6. "drop" hoist0 with crate0 at depot48-2-1.
+7. "go-out" hoist0 from depot48-2-1 to loadarea.
+8. "move" hoist0 from loadarea to container-0-1.
+9. "lift" hoist0 from container-0-1 to crate1.
+10. "go-out" hoist0 from container-0-1 to loadarea.
+11. "move" hoist0 from loadarea to depot48-2-2.
+12. "drop" hoist0 with crate1 at depot48-2-2.
+
+Now all crates have been moved to depot48, thus accomplishing the goal.

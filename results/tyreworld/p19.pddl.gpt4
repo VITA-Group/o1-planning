@@ -1,0 +1,20 @@
+Given your constraints, here is a sequence of behaviors that should provide a solution:
+
+1. "Open" the boot.
+2. "Fetch" the wrench, jack, and pump from the boot.
+3. For each of the 19 hubs, repeat the following steps:
+    1. Use the "fetch" action to get an intact, un-inflated tyre from the boot.
+    2. Use the "inflate" action to inflate the intact tyre.
+    3. Use the "put-away" action to place the pump back in the boot.
+    4. Use the "jack-up" action to lift the hub.
+    5. Use the "loosen" action to loosen the nut.
+    6. Use the "undo" action to remove the nut from the hub.
+    7. Use the "remove-wheel" action to remove the flat tyre.
+    8. Use the "put-away" action to put the flat tyre in the boot.
+    9. Use the "put-on-wheel" action to place the inflated tyre onto the hub.
+    10. Use the "do-up" action to re-tighten the nut on the hub.
+    11. Use the "jack-down" action to lower the hub back to the ground.
+4. Once all the flat tyres have been replaced and put in the boot, use the "put-away" action to put the wrench and jack back in the boot.
+5. "Close" the boot.
+
+This sequence should satisfy all the conditions in your problem description, and actually leaves you with an extra inflated tyre that could be used as a spare. It also minimizes the number of times you need to open and close the boot, which may be beneficial if these actions take a significant amount of time.

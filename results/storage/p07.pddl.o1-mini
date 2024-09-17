@@ -1,0 +1,115 @@
+Sure! Below is an **optimal plan** consisting of a sequence of actions to move all three crates (`crate0`, `crate1`, and `crate2`) from the container store areas to the depot (`depot48`). The plan ensures that the hoist (`hoist0`) efficiently transports each crate while adhering to all preconditions and effects of the available actions.
+
+### **Action Sequence:**
+
+1. **Move Hoist to Load Area:**
+   - **Action:** `move`
+   - **Parameters:** `hoist0`, `depot48-1-3`, `depot48-2-3`
+   
+2. **Move Hoist to Depot48-2-2:**
+   - **Action:** `move`
+   - **Parameters:** `hoist0`, `depot48-2-3`, `depot48-2-2`
+   
+3. **Move Hoist to Depot48-2-1:**
+   - **Action:** `move`
+   - **Parameters:** `hoist0`, `depot48-2-2`, `depot48-2-1`
+   
+4. **Go-Out to Transit Area:**
+   - **Action:** `go-out`
+   - **Parameters:** `hoist0`, `depot48-2-1`, `transit-area`
+   
+5. **Go-In to Load Area:**
+   - **Action:** `go-in`
+   - **Parameters:** `hoist0`, `transit-area`, `loadarea`
+   
+6. **Lift Crate0 from Container-0-0:**
+   - **Action:** `lift`
+   - **Parameters:** `hoist0`, `container0`, `container-0-0`, `place0`
+   
+7. **Go-Out to Transit Area with Crate0:**
+   - **Action:** `go-out`
+   - **Parameters:** `hoist0`, `loadarea`, `transit-area`
+   
+8. **Go-In to Depot48-2-1:**
+   - **Action:** `go-in`
+   - **Parameters:** `hoist0`, `transit-area`, `depot48-2-1`
+   
+9. **Drop Crate0 at Depot48-2-1:**
+   - **Action:** `drop`
+   - **Parameters:** `hoist0`, `depot48-2-1`, `place0`
+   
+10. **Prepare Hoist for Next Crate (Go-Out from Depot48-2-1):**
+    - **Action:** `go-out`
+    - **Parameters:** `hoist0`, `depot48-2-1`, `transit-area`
+    
+11. **Go-In to Load Area:**
+    - **Action:** `go-in`
+    - **Parameters:** `hoist0`, `transit-area`, `loadarea`
+    
+12. **Lift Crate1 from Container-0-1:**
+    - **Action:** `lift`
+    - **Parameters:** `hoist0`, `container0`, `container-0-1`, `place1`
+    
+13. **Go-Out to Transit Area with Crate1:**
+    - **Action:** `go-out`
+    - **Parameters:** `hoist0`, `loadarea`, `transit-area`
+    
+14. **Go-In to Depot48-2-2:**
+    - **Action:** `go-in`
+    - **Parameters:** `hoist0`, `transit-area`, `depot48-2-2`
+    
+15. **Drop Crate1 at Depot48-2-2:**
+    - **Action:** `drop`
+    - **Parameters:** `hoist0`, `depot48-2-2`, `place1`
+    
+16. **Prepare Hoist for Last Crate (Go-Out from Depot48-2-2):**
+    - **Action:** `go-out`
+    - **Parameters:** `hoist0`, `depot48-2-2`, `transit-area`
+    
+17. **Go-In to Load Area:**
+    - **Action:** `go-in`
+    - **Parameters:** `hoist0`, `transit-area`, `loadarea`
+    
+18. **Lift Crate2 from Container-0-2:**
+    - **Action:** `lift`
+    - **Parameters:** `hoist0`, `container0`, `container-0-2`, `place2`
+    
+19. **Go-Out to Transit Area with Crate2:**
+    - **Action:** `go-out`
+    - **Parameters:** `hoist0`, `loadarea`, `transit-area`
+    
+20. **Go-In to Depot48-2-3:**
+    - **Action:** `go-in`
+    - **Parameters:** `hoist0`, `transit-area`, `depot48-2-3`
+    
+21. **Drop Crate2 at Depot48-2-3:**
+    - **Action:** `drop`
+    - **Parameters:** `hoist0`, `depot48-2-3`, `place2`
+
+### **Explanation of the Plan:**
+
+1. **Navigating to Load Area:**
+   - The hoist (`hoist0`) starts at `depot48-1-3`. It moves sequentially through connected depot store areas (`depot48-2-3` → `depot48-2-2` → `depot48-2-1`) to reach the vicinity of the `loadarea`.
+   
+2. **Transiting to Load Area:**
+   - Using the `go-out` and `go-in` actions, the hoist transitions from `depot48-2-1` to the `loadarea`, where the container store areas are accessible.
+   
+3. **Lifting and Dropping Crates:**
+   - For each crate (`crate0`, `crate1`, `crate2`), the hoist performs the following steps:
+     - **Lift:** Uses the `lift` action to pick up the crate from its respective container store area.
+     - **Transit:** Moves back to the `transit-area` to navigate towards the designated depot store area.
+     - **Drop:** Uses the `drop` action to place the crate in a clear depot store area (`depot48-2-1`, `depot48-2-2`, `depot48-2-3` respectively).
+   
+4. **Ensuring Hoist Availability:**
+   - After each `drop`, the hoist becomes available in the new depot store area, ready to transport the next crate.
+
+### **Final State:**
+
+- **Hoist (`hoist0`):** Located at `depot48-2-3` and available.
+- **Crates:**
+  - `crate0` at `depot48-2-1`
+  - `crate1` at `depot48-2-2`
+  - `crate2` at `depot48-2-3`
+- **All crates** are successfully moved to `depot48`, achieving the goal.
+
+This plan ensures that the hoist efficiently moves each crate with the minimal number of actions, adhering to all preconditions and effects specified for each action in the domain.

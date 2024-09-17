@@ -1,0 +1,154 @@
+Sure, here is an optimal plan to solve the problem:
+
+**Initial Actions:**
+
+1. **Open the boot:**
+   - `open(boot)`
+
+2. **Fetch the necessary tools:**
+   - `fetch(wrench)`
+   - `fetch(jack)`
+   - `fetch(pump)`
+
+**For each of the 13 hubs (from 1 to 13), perform the following actions:**
+
+**(We will denote each hub, nut, flat tyre, and intact tyre with an index `i` where `i` ranges from 1 to 13.)**
+
+3. **Fetch the intact tyre for the hub:**
+   - `fetch(intact_tyre_i)`
+
+4. **Inflate the intact tyre:**
+   - `inflate(intact_tyre_i)`
+     - *Preconditions:*
+       - Agent has `pump`.
+       - Agent has `intact_tyre_i` (which is not inflated and intact).
+     - *Effect:*
+       - `intact_tyre_i` is now inflated.
+
+5. **Loosen the nut on the hub:**
+   - `loosen(nut_i, hub_i)`
+     - *Preconditions:*
+       - Agent has `wrench`.
+       - `nut_i` on `hub_i` is tight.
+       - `hub_i` is on the ground.
+     - *Effect:*
+       - `nut_i` on `hub_i` is now loose.
+
+6. **Jack up the hub:**
+   - `jack-up(hub_i)`
+     - *Preconditions:*
+       - Agent has `jack`.
+       - `hub_i` is on the ground.
+     - *Effect:*
+       - `hub_i` is not on the ground.
+       - Agent no longer has the `jack`.
+
+7. **Undo the fastening of the nut:**
+   - `undo(nut_i, hub_i)`
+     - *Preconditions:*
+       - `hub_i` is not on the ground.
+       - `hub_i` is fastened.
+       - Agent has `wrench`.
+       - `nut_i` is loose.
+     - *Effect:*
+       - Agent has `nut_i`.
+       - `hub_i` is unfastened.
+       - `nut_i` is no longer loose.
+       - `hub_i` is not fastened.
+
+8. **Remove the flat tyre from the hub:**
+   - `remove-wheel(flat_tyre_i, hub_i)`
+     - *Preconditions:*
+       - `hub_i` is unfastened.
+       - `flat_tyre_i` is on `hub_i`.
+       - `hub_i` is not on the ground.
+     - *Effect:*
+       - Agent has `flat_tyre_i`.
+       - `flat_tyre_i` is no longer on `hub_i`.
+
+9. **Put the inflated, intact tyre on the hub:**
+   - `put-on-wheel(intact_tyre_i, hub_i)`
+     - *Preconditions:*
+       - Agent has `intact_tyre_i`.
+       - `hub_i` is free.
+       - `hub_i` is unfastened.
+       - `hub_i` is not on the ground.
+     - *Effect:*
+       - `intact_tyre_i` is on `hub_i`.
+       - `hub_i` is no longer free.
+       - Agent no longer has `intact_tyre_i`.
+
+10. **Fasten the nut on the hub:**
+    - `do-up(nut_i, hub_i)`
+      - *Preconditions:*
+        - Agent has `wrench`.
+        - `hub_i` is unfastened.
+        - `hub_i` is not on the ground.
+        - Agent has `nut_i`.
+      - *Effect:*
+        - `nut_i` is now loose on `hub_i`.
+        - `hub_i` is fastened.
+        - Agent no longer has `nut_i`.
+
+11. **Jack down the hub:**
+    - `jack-down(hub_i)`
+      - *Preconditions:*
+        - `hub_i` is not on the ground.
+      - *Effect:*
+        - `hub_i` is on the ground.
+        - Agent has the `jack`.
+
+12. **Tighten the nut on the hub:**
+    - `tighten(nut_i, hub_i)`
+      - *Preconditions:*
+        - Agent has `wrench`.
+        - `nut_i` on `hub_i` is loose.
+        - `hub_i` is on the ground.
+      - *Effect:*
+        - `nut_i` on `hub_i` is now tight.
+        - `nut_i` is not loose.
+
+13. **Put away the flat tyre into the boot:**
+    - `put-away(flat_tyre_i)`
+      - *Preconditions:*
+        - Agent has `flat_tyre_i`.
+        - `boot` is open.
+      - *Effect:*
+        - `flat_tyre_i` is inside the `boot`.
+        - Agent no longer has `flat_tyre_i`.
+
+**After all hubs have been processed, put away the tools:**
+
+14. **Put away the pump:**
+    - `put-away(pump)`
+
+15. **Put away the jack:**
+    - `put-away(jack)`
+
+16. **Put away the wrench:**
+    - `put-away(wrench)`
+
+17. **Close the boot:**
+    - `close(boot)`
+      - *Preconditions:*
+        - `boot` is open.
+      - *Effect:*
+        - `boot` is closed.
+        - `boot` is not open.
+
+**Summary of Actions:**
+
+- **Initial Actions:** 4 actions (steps 1-4).
+- **Per Hub Actions:** 11 actions per hub × 13 hubs = 143 actions (steps 5-17 repeated for each hub).
+- **Final Actions:** 4 actions (steps 14-17).
+
+**Total Actions:** 4 (initial) + 143 (per hub) + 4 (final) = **151 actions**.
+
+This plan ensures that:
+
+- All flat tyres are replaced with inflated, intact tyres on the hubs.
+- The nuts are tight on the hubs.
+- All flat tyres, the wrench, the jack, and the pump are in the boot.
+- The boot is closed at the end.
+
+This is the optimal plan given the constraints and actions defined in the domain.

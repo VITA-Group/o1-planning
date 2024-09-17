@@ -1,0 +1,144 @@
+To solve the problem optimally, we need to perform the required actions efficiently while adhering to the preconditions and effects of each action. Here's an optimal plan:
+
+**Initial Actions:**
+1. **Open Boot**
+   - Precondition: Boot is unlocked and closed.
+   - Effect: Boot is open.
+
+2. **Fetch Wrench**
+   - Precondition: Wrench is inside the boot, and the boot is open.
+   - Effect: You have the wrench.
+
+3. **Fetch Jack**
+   - Precondition: Jack is inside the boot, and the boot is open.
+   - Effect: You have the jack.
+
+4. **Fetch Pump**
+   - Precondition: Pump is inside the boot, and the boot is open.
+   - Effect: You have the pump.
+
+5. **Fetch All Intact Tyres**
+   - Perform 14 **Fetch** actions (one for each intact tyre):
+     - Precondition: Each intact tyre is inside the boot, and the boot is open.
+     - Effect: You have all intact tyres.
+
+6. **Inflate All Intact Tyres**
+   - Perform 14 **Inflate** actions (one for each intact tyre):
+     - Precondition: You have the pump, each tyre is not inflated, and intact.
+     - Effect: All intact tyres are inflated.
+
+**Processing Each Hub (Repeat for all 14 hubs):**
+
+For each hub \( i \) from 1 to 14, perform the following actions:
+
+7. **Loosen Nut on Hub \( i \)**
+   - Precondition: You have the wrench, the nut on hub \( i \) is tight, and hub \( i \) is on the ground.
+   - Effect: Nut on hub \( i \) is loose.
+
+8. **Jack Up Hub \( i \)**
+   - Precondition: You have the jack, and hub \( i \) is on the ground.
+   - Effect: Hub \( i \) is off the ground, and you no longer have the jack.
+
+9. **Undo Nut on Hub \( i \)**
+   - Precondition: Hub \( i \) is off the ground, hub \( i \) is fastened, you have the wrench, and the nut on hub \( i \) is loose.
+   - Effect: You have the nut, hub \( i \) is unfastened.
+
+10. **Remove Flat Tyre from Hub \( i \)**
+    - Precondition: Hub \( i \) is off the ground, flat tyre is on hub \( i \), and hub \( i \) is unfastened.
+    - Effect: You have the flat tyre, and hub \( i \) is free.
+
+11. **Put On Inflated Intact Tyre on Hub \( i \)**
+    - Precondition: You have an inflated intact tyre, hub \( i \) is free, hub \( i \) is unfastened, and hub \( i \) is off the ground.
+    - Effect: Inflated intact tyre is on hub \( i \), and you no longer have that tyre.
+
+12. **Do Up Nut on Hub \( i \)**
+    - Precondition: You have the wrench, hub \( i \) is unfastened, hub \( i \) is off the ground, and you have the nut.
+    - Effect: Nut on hub \( i \) is loose, hub \( i \) is fastened, and you no longer have the nut.
+
+13. **Jack Down Hub \( i \)**
+    - Precondition: Hub \( i \) is off the ground.
+    - Effect: Hub \( i \) is on the ground, and you have the jack.
+
+14. **Tighten Nut on Hub \( i \)**
+    - Precondition: You have the wrench, the nut on hub \( i \) is loose, and hub \( i \) is on the ground.
+    - Effect: Nut on hub \( i \) is tight.
+
+**Final Actions:**
+
+15. **Open Boot** (If not already open)
+    - Precondition: Boot is closed.
+    - Effect: Boot is open.
+
+16. **Put Away All Flat Tyres**
+    - Perform 14 **Put Away** actions (one for each flat tyre):
+      - Precondition: You have the flat tyre, and the boot is open.
+      - Effect: Flat tyre is inside the boot.
+
+17. **Put Away Wrench**
+    - Precondition: You have the wrench, and the boot is open.
+    - Effect: Wrench is inside the boot.
+
+18. **Put Away Jack**
+    - Precondition: You have the jack, and the boot is open.
+    - Effect: Jack is inside the boot.
+
+19. **Put Away Pump**
+    - Precondition: You have the pump, and the boot is open.
+    - Effect: Pump is inside the boot.
+
+20. **Close Boot**
+    - Precondition: Boot is open.
+    - Effect: Boot is closed.
+
+This plan efficiently replaces all flat tyres with inflated intact tyres on the hubs, ensures that the nuts are tight, and places all required items back into the boot before closing it. The boot is only opened twice (once at the beginning to fetch all necessary items and once at the end to put everything back), minimizing the number of open and close actions. All actions adhere strictly to their preconditions and effects as defined in the domain.
+
+**Optimal Plan Summary:**
+- **Total Actions:** 163
+  - **Initial Actions:** 32
+    - 1 Open boot
+    - 1 Fetch wrench
+    - 1 Fetch jack
+    - 1 Fetch pump
+    - 14 Fetch intact tyres
+    - 14 Inflate intact tyres
+- **Per Hub Actions:** 112 (8 actions per hub × 14 hubs)
+  - Loosen nut, jack up, undo nut, remove flat tyre, put on inflated intact tyre, do up nut, jack down, tighten nut.
+- **Final Actions:** 19
+  - 1 Open boot
+  - 14 Put away flat tyres
+  - 1 Put away wrench
+  - 1 Put away jack
+  - 1 Put away pump
+  - 1 Close boot
+
+This plan is optimal because it minimizes the number of actions by maximizing the efficiency of each step and avoiding unnecessary repetitions.
+
+**Answer:**
+
+Yes. Here’s an optimal plan:
+
+1. Open the boot.
+2. Fetch the wrench.
+3. Fetch the jack.
+4. Fetch the pump.
+5. Fetch all 14 intact tyres (14 fetch actions).
+6. Inflate all 14 intact tyres (14 inflate actions).
+
+For each of the 14 hubs:
+7. Loosen the nut on the hub.
+8. Jack up the hub.
+9. Undo the nut on the hub.
+10. Remove the flat tyre from the hub.
+11. Put the inflated intact tyre onto the hub.
+12. Do up the nut on the hub.
+13. Jack down the hub.
+14. Tighten the nut on the hub.
+
+15. Open the boot (if it was closed).
+16. Put away all 14 flat tyres (14 put-away actions).
+17. Put away the wrench.
+18. Put away the jack.
+19. Put away the pump.
+20. Close the boot.
+
+This plan efficiently achieves the goal by using the minimal number of actions required.

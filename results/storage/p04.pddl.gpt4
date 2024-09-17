@@ -1,0 +1,14 @@
+Yes, here's an optimal plan to solve the problem using the actions established:
+
+1. "lift" action: hoist0 lifts crate0 from container-0-0;
+2. "go-out" action: hoist0 moves from container-0-0 to loadarea;
+3. "go-in" action: hoist0 moves from loadarea to depot48-2-1;
+4. "drop" action: hoist0 drops crate0 onto depot48-2-1;
+5. "go-out" action: hoist0 moves from depot48-2-1 to loadarea;
+6. "go-in" action: hoist0 moves from loadarea to container-0-1;
+7. "lift" action: hoist0 lifts crate1 from container-0-1;
+8. "go-out" action: hoist0 moves from container-0-1 to loadarea;
+9. "go-in" action: hoist0 moves from loadarea to depot48-1-2;
+10. "drop" action: hoist0 drops crate1 onto depot48-1-2;
+
+By taking this sequence of actions, both crate0 and crate1 are moved to the depot48 which was the goal.

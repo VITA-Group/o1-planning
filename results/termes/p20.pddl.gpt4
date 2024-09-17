@@ -1,0 +1,59 @@
+Yes, here's a potential optimal plan:
+
+1. Create block at the depot.
+2. Place block at pos-2-1.
+3. Move up to pos-2-1.
+4. Create block at the depot.
+5. Move to pos-1-1.
+6. Place block at pos-1-1.
+7. Move down to pos-2-1.
+8. Move to pos-2-0.
+9. Create block at the depot.
+10. Move to pos-2-1.
+11. Move up to pos-1-1.
+12. Create block at the depot.
+13. Move to pos-0-1.
+14. Place block at pos-0-0.
+15. Move down to pos-1-1.
+16. Move down to pos-2-1.
+17. Move to pos-2-0.
+18. Create block at the depot.
+19. Move to pos-2-1.
+20. Move up to pos-2-1.
+21. Create block at the depot.
+22. Move to pos-1-1.
+23. Place block at pos-1-0.
+24. Move down to pos-2-1.
+25. Move to pos-2-0.
+26. Create block at the depot.
+27. Move to pos-2-1.
+28. Move up to pos-2-1.
+29. Create block at the depot.
+30. Move to pos-1-1.
+31. Move up to pos-1-0.
+32. Create block at the depot.
+33. Place block at pos-0-0.
+34. Move down to pos-1-0.
+35. Move down to pos-2-1.
+36. Move to pos-2-0.
+37. Create block at the depot.
+38. Move to pos-2-1.
+39. Move up to pos-1-1.
+40. Place block at pos-1-1.
+41. Move to pos-0-1.
+42. Place block at pos-0-2.
+43. Move down to pos-1-0.
+44. Move to pos-2-1.
+45. Move to pos-3-1.
+46. Create block at the depot.
+47. Place block at pos-3-0.
+48. Move to pos-2-1.
+49. Move to pos-2-0.
+50. Create block at the depot.
+51. Move to pos-2-1.
+52. Move to pos-3-1.
+53. Move up to pos-3-0.
+54. Create block at the depot.
+55. Place block at pos-3-2.
+
+This sequence places all the blocks correctly and there is no unplaced block at the end. It assumes that the height at all positions is initially zero.

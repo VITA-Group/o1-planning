@@ -1,0 +1,197 @@
+Certainly! Below is an **optimal sequence of actions** to replace all flat tyres with intact, inflated tyres on the hubs while ensuring that all tools and flat tyres are stored back in the boot correctly. This plan minimizes the number of open and close operations on the boot by fetching all necessary tools and tyres at the beginning and storing flat tyres immediately after removal.
+
+### **Overall Plan Overview**
+
+1. **Initial Setup:**
+   - Open the boot.
+   - Fetch all necessary tools and intact tyres.
+   - Close the boot.
+
+2. **Per Hub Replacement (Repeated for Each of the 10 Hubs):**
+   - Loosen the nut on the hub.
+   - Jack up the hub.
+   - Remove the flat tyre.
+   - Store the flat tyre in the boot.
+   - Put the intact tyre onto the hub.
+   - Inflate the intact tyre.
+   - Tighten the nut on the hub.
+   - Jack down the hub.
+
+3. **Finalization:**
+   - Ensure all tools are stored back in the boot.
+   - Close the boot.
+
+### **Detailed Step-by-Step Action Sequence**
+
+---
+
+#### **1. Initial Setup**
+
+1. **Open Boot**
+   - **Action:** `open`
+   - **Preconditions:** Boot is unlocked and closed.
+   - **Effects:** Boot is open.
+
+2. **Fetch Tools and Intact Tyres**
+   - **Action:** `fetch wrench`
+   - **Preconditions:** Wrench is inside the boot and boot is open.
+   - **Effects:** Agent holds the wrench.
+   
+   - **Action:** `fetch pump`
+   - **Preconditions:** Pump is inside the boot and boot is open.
+   - **Effects:** Agent holds the pump.
+   
+   - **Action:** `fetch jack`
+   - **Preconditions:** Jack is inside the boot and boot is open.
+   - **Effects:** Agent holds the jack.
+   
+   - **Action:** `fetch intact_tyre1`
+   - **Preconditions:** Intact Tyre 1 is inside the boot and boot is open.
+   - **Effects:** Agent holds Intact Tyre 1.
+   
+   - *... Repeat `fetch intact_tyreX` for all 10 intact tyres (Intact Tyre 1 to Intact Tyre 10).*
+
+3. **Close Boot**
+   - **Action:** `close`
+   - **Preconditions:** Boot is open.
+   - **Effects:** Boot is closed and not open.
+
+---
+
+#### **2. Per Hub Replacement**
+
+*Repeat the following steps for each of the 10 hubs (Hub 1 to Hub 10). For illustration, steps are shown for Hub 1.*
+
+##### **Hub 1 Replacement**
+
+4. **Loosen Nut on Hub 1**
+   - **Action:** `loosen`
+   - **Preconditions:** Agent has a wrench, nut on Hub 1 is tight, and Hub 1 is on the ground.
+   - **Effects:** Nut on Hub 1 is loose.
+
+5. **Jack Up Hub 1**
+   - **Action:** `jack-up`
+   - **Preconditions:** Agent has a jack, and Hub 1 is on the ground.
+   - **Effects:** Hub 1 is elevated (not on the ground). Agent no longer has the jack.
+
+6. **Remove Flat Tyre from Hub 1**
+   - **Action:** `remove-wheel`
+   - **Preconditions:** Hub 1 is not on the ground, flat tyre is on Hub 1, and Hub 1 is unfastened.
+   - **Effects:** Agent holds the flat tyre. Hub 1 is free.
+
+7. **Open Boot to Store Flat Tyre**
+   - **Action:** `open`
+   - **Preconditions:** Boot is closed and unlocked.
+   - **Effects:** Boot is open.
+
+8. **Put Away Flat Tyre into Boot**
+   - **Action:** `put-away flat_tyre1`
+   - **Preconditions:** Agent holds Flat Tyre 1 and boot is open.
+   - **Effects:** Flat Tyre 1 is inside the boot. Agent no longer holds Flat Tyre 1.
+
+9. **Close Boot**
+   - **Action:** `close`
+   - **Preconditions:** Boot is open.
+   - **Effects:** Boot is closed.
+
+10. **Put On Intact Tyre onto Hub 1**
+    - **Action:** `put-on-wheel intact_tyre1`
+    - **Preconditions:** Agent holds Intact Tyre 1, Hub 1 is free and unfastened, and Hub 1 is not on the ground.
+    - **Effects:** Intact Tyre 1 is on Hub 1. Hub 1 is not free. Agent no longer holds Intact Tyre 1.
+
+11. **Inflate Intact Tyre on Hub 1**
+    - **Action:** `inflate`
+    - **Preconditions:** Agent has a pump, Intact Tyre 1 is not inflated, and it is intact.
+    - **Effects:** Intact Tyre 1 is inflated.
+
+12. **Tighten Nut on Hub 1**
+    - **Action:** `tighten`
+    - **Preconditions:** Agent has a wrench, nut on Hub 1 is loose, and Hub 1 is on the ground.
+    - **Effects:** Nut on Hub 1 is tight.
+
+13. **Jack Down Hub 1**
+    - **Action:** `jack-down`
+    - **Preconditions:** Hub 1 is elevated.
+    - **Effects:** Hub 1 is back on the ground. Agent has the jack.
+
+---
+
+*Repeat **Steps 4 to 13** for **Hub 2** through **Hub 10**, substituting the hub and tyre identifiers accordingly (e.g., `loosen` for Hub 2, `remove-wheel` for Hub 2, `put-on-wheel intact_tyre2`, etc.).*
+
+---
+
+#### **3. Finalization**
+
+14. **Open Boot to Store Tools**
+    - **Action:** `open`
+    - **Preconditions:** Boot is closed and unlocked.
+    - **Effects:** Boot is open.
+
+15. **Put Away Tools into Boot**
+    - **Action:** `put-away wrench`
+    - **Preconditions:** Agent holds the wrench and boot is open.
+    - **Effects:** Wrench is inside the boot. Agent no longer holds the wrench.
+    
+    - **Action:** `put-away pump`
+    - **Preconditions:** Agent holds the pump and boot is open.
+    - **Effects:** Pump is inside the boot. Agent no longer holds the pump.
+    
+    - **Action:** `put-away jack`
+    - **Preconditions:** Agent holds the jack and boot is open.
+    - **Effects:** Jack is inside the boot. Agent no longer holds the jack.
+
+16. **Ensure All Flat Tyres Are in the Boot**
+    - *Assuming all flat tyres have been put away during each hub replacement.*
+
+17. **Close Boot**
+    - **Action:** `close`
+    - **Preconditions:** Boot is open.
+    - **Effects:** Boot is closed.
+
+---
+
+### **Summary of Actions**
+
+Here's a condensed list of all actions in order:
+
+1. `open`
+2. `fetch wrench`
+3. `fetch pump`
+4. `fetch jack`
+5. `fetch intact_tyre1`
+6. `fetch intact_tyre2`
+7. `...` *(Continue fetching all intact tyres up to intact_tyre10)*
+8. `close`
+
+*For each Hub (1 to 10):*
+
+9. `loosen`
+10. `jack-up`
+11. `remove-wheel`
+12. `open`
+13. `put-away flat_tyreX` *(where X is hub number)*
+14. `close`
+15. `put-on-wheel intact_tyreX`
+16. `inflate`
+17. `tighten`
+18. `jack-down`
+
+*After all Hubs:*
+
+19. `open`
+20. `put-away wrench`
+21. `put-away pump`
+22. `put-away jack`
+23. `close`
+
+### **Notes:**
+
+- **Batch Fetching:** Fetch all intact tyres at the beginning to minimize the number of `open` and `close` operations.
+  
+- **Tool Management:** Keep the tools (`wrench`, `pump`, `jack`) in hand during all hub replacements to avoid fetching and putting them away multiple times.
+  
+- **Boot Operations:** Only open the boot twice—once at the beginning to fetch tools and tyres, and once at the end to store the tools. Flat tyres are stored immediately after removal to maintain organization.
+
+- **Inflation:** Ensure the pump is readily accessible while inflating each intact tyre.
+
+This plan ensures that all objectives are met efficiently, with minimal redundant actions. By batching tool retrieval and storage, and systematically replacing each tyre, the sequence remains optimal.

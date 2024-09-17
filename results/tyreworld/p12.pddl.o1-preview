@@ -1,0 +1,137 @@
+To solve the problem of replacing flat tyres with intact, inflated tyres on the hubs, while ensuring the nuts are tight and all specified items are in the boot with the boot closed at the end, we need to follow a sequence of actions that satisfy the preconditions and achieve the desired effects as defined in the domain.
+
+**Initial Actions:**
+
+1. **Open the boot**
+   - *Action*: `open`
+   - *Precondition*: Boot is unlocked and closed.
+   - *Effect*: Boot is open and not closed.
+
+2. **Fetch the wrench from the boot**
+   - *Action*: `fetch(wrench)`
+   - *Precondition*: Wrench is inside the boot, and boot is open.
+   - *Effect*: Agent has the wrench, wrench is not in the boot.
+
+3. **Fetch the jack from the boot**
+   - *Action*: `fetch(jack)`
+   - *Precondition*: Jack is inside the boot, and boot is open.
+   - *Effect*: Agent has the jack, jack is not in the boot.
+
+4. **Fetch the pump from the boot**
+   - *Action*: `fetch(pump)`
+   - *Precondition*: Pump is inside the boot, and boot is open.
+   - *Effect*: Agent has the pump, pump is not in the boot.
+
+**For each hub (repeat the following steps for all 12 hubs):**
+
+5. **Loosen the nut on the hub**
+   - *Action*: `loosen(nut_on_hub)`
+   - *Precondition*: Agent has the wrench, nut on hub is tight, hub is on the ground.
+   - *Effect*: Nut on hub is loose and not tight.
+
+6. **Jack up the hub**
+   - *Action*: `jack-up(hub)`
+   - *Precondition*: Agent has the jack, hub is on the ground.
+   - *Effect*: Hub is not on the ground, agent no longer has the jack.
+
+7. **Undo the nut from the hub**
+   - *Action*: `undo(nut_on_hub)`
+   - *Precondition*: Agent has the wrench, nut is loose, hub is not on the ground, hub is fastened.
+   - *Effect*: Agent has the nut, hub is unfastened, nut is no longer loose, hub is not fastened.
+
+8. **Remove the flat tyre from the hub**
+   - *Action*: `remove-wheel(flat_tyre, hub)`
+   - *Precondition*: Agent has the wrench, hub is unfastened, hub is not on the ground, flat tyre is on the hub.
+   - *Effect*: Agent has the flat tyre, flat tyre is no longer on the hub, hub is free.
+
+9. **Put the flat tyre into the boot**
+   - *Action*: `put-away(flat_tyre)`
+   - *Precondition*: Agent has the flat tyre, boot is open.
+   - *Effect*: Flat tyre is inside the boot, agent no longer has the flat tyre.
+
+10. **Fetch an intact tyre from the boot**
+    - *Action*: `fetch(intact_tyre)`
+    - *Precondition*: Intact tyre is inside the boot, boot is open.
+    - *Effect*: Agent has the intact tyre, intact tyre is not in the boot.
+
+11. **Put the intact tyre onto the hub**
+    - *Action*: `put-on-wheel(intact_tyre, hub)`
+    - *Precondition*: Agent has the intact tyre, hub is free, hub is unfastened, hub is not on the ground.
+    - *Effect*: Intact tyre is on the hub, hub is not free, agent no longer has the intact tyre.
+
+12. **Do up the nut on the hub**
+    - *Action*: `do-up(nut_on_hub)`
+    - *Precondition*: Agent has the wrench, agent has the nut, hub is unfastened, hub is not on the ground.
+    - *Effect*: Nut is loose on hub, hub is fastened, agent no longer has the nut.
+
+13. **Jack down the hub**
+    - *Action*: `jack-down(hub)`
+    - *Precondition*: Hub is not on the ground.
+    - *Effect*: Hub is on the ground, agent has the jack.
+
+14. **Tighten the nut on the hub**
+    - *Action*: `tighten(nut_on_hub)`
+    - *Precondition*: Agent has the wrench, nut on hub is loose, hub is on the ground.
+    - *Effect*: Nut on hub is tight and not loose.
+
+15. **Inflate the tyre on the hub**
+    - *Action*: `inflate(intact_tyre)`
+    - *Precondition*: Agent has the pump, intact tyre is on the hub, intact tyre is not inflated.
+    - *Effect*: Intact tyre is inflated.
+
+**Final Actions:**
+
+16. **Put the wrench into the boot**
+    - *Action*: `put-away(wrench)`
+    - *Precondition*: Agent has the wrench, boot is open.
+    - *Effect*: Wrench is inside the boot, agent no longer has the wrench.
+
+17. **Put the jack into the boot**
+    - *Action*: `put-away(jack)`
+    - *Precondition*: Agent has the jack, boot is open.
+    - *Effect*: Jack is inside the boot, agent no longer has the jack.
+
+18. **Put the pump into the boot**
+    - *Action*: `put-away(pump)`
+    - *Precondition*: Agent has the pump, boot is open.
+    - *Effect*: Pump is inside the boot, agent no longer has the pump.
+
+19. **Close the boot**
+    - *Action*: `close`
+    - *Precondition*: Boot is open.
+    - *Effect*: Boot is closed and not open.
+
+This plan ensures that:
+
+- All flat tyres are replaced with intact, inflated tyres on the hubs.
+- Nuts are tight on the hubs.
+- All flat tyres, wrench, jack, and pump are in the boot.
+- The boot is closed at the end.
+
+**Summary of the Plan:**
+
+1. Open the boot.
+2. Fetch the wrench.
+3. Fetch the jack.
+4. Fetch the pump.
+
+For each of the 12 hubs, perform steps 5 to 15:
+
+5. Loosen the nut on the hub.
+6. Jack up the hub.
+7. Undo the nut from the hub.
+8. Remove the flat tyre from the hub.
+9. Put the flat tyre into the boot.
+10. Fetch an intact tyre from the boot.
+11. Put the intact tyre onto the hub.
+12. Do up the nut on the hub.
+13. Jack down the hub.
+14. Tighten the nut on the hub.
+15. Inflate the tyre on the hub.
+
+16. Put the wrench into the boot.
+17. Put the jack into the boot.
+18. Put the pump into the boot.
+19. Close the boot.
+
+This plan is optimal as it minimizes the number of actions by efficiently organizing the tasks and ensures all goals are met.

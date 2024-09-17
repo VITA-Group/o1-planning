@@ -1,0 +1,24 @@
+The optimal sequence of actions would be as follows:
+
+1. Create a block at the depot.
+2. Move from pos-1-0 to pos-2-0.
+3. Place a block at pos-2-0.
+4. Move from pos-2-0 to pos-1-0.
+5. Repeat steps 1-4 three more times in order to build a height of 4 at pos-2-0.
+6. Create a block at the depot
+7. Move from pos-1-0 to pos-3-0.
+8. Place a block at pos-3-0.
+9. Move from pos-3-0 to pos-1-0.
+10. Repeat steps 6-9 two more times in order to build a height of 3 at pos-3-0.
+11. Create a block at the depot.
+12. Move from pos-1-0 to pos-3-1 through pos-3-0.
+13. Place a block at pos-3-1.
+14. Move from pos-3-1 to pos-1-0 through pos-3-0.
+15. Repeat steps 11-14 two more times in order to build a height of 3 at pos-3-1.
+16. Create a block at the depot.
+17. Move from pos-1-0 to pos-3-2 through pos-3-0 and pos-3-1.
+18. Place a block at pos-3-2.
+19. Move from pos-3-2 to pos-1-0 through pos-3-1 and pos-3-0.
+20. Repeat steps 16-19 three more times in order to build a height of 4 at pos-3-2.
+
+The robot has now achieved its goal and does not have any unused blocks.

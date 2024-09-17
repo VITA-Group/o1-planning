@@ -1,0 +1,193 @@
+Certainly! Below is an **optimal plan** to replace all 12 flat tyres with intact tyres, ensuring that all preconditions are met and the goals are achieved efficiently. The plan is structured to handle each hub sequentially, minimizing redundant actions and efficiently utilizing available tools.
+
+### **Overall Plan Structure:**
+
+1. **Prepare Tools and Materials**
+2. **Process Each Hub (Repeat for Hubs 1 through 12)**
+   - Loosen Nut
+   - Jack Up Hub
+   - Remove Flat Tyre
+   - Store Flat Tyre
+   - Install Intact Tyre
+   - Inflate Intact Tyre
+   - Jack Down Hub
+   - Tighten Nut
+3. **Finalize**
+   - Close Boot
+
+---
+
+### **Detailed Step-by-Step Actions:**
+
+#### **1. Prepare Tools and Materials**
+
+1. **Open the Boot**
+   - **Action:** `open`
+   - **Preconditions Met:** Boot is unlocked and closed.
+   - **Effects:** Boot is open and not closed.
+
+2. **Fetch Necessary Tools and Pump**
+   - **Action:** `fetch wrench`
+     - **Preconditions:** Wrench is inside the open boot.
+     - **Effects:** Agent holds the wrench; wrench is not inside the boot.
+   - **Action:** `fetch jack`
+     - **Preconditions:** Jack is inside the open boot.
+     - **Effects:** Agent holds the jack; jack is not inside the boot.
+   - **Action:** `fetch pump`
+     - **Preconditions:** Pump is inside the open boot.
+     - **Effects:** Agent holds the pump; pump is not inside the boot.
+
+3. **Ensure All Intact Tyres Are Accessed as Needed**
+   - Since there are 12 intact tyres in the boot, the agent will fetch them one by one during each hub processing step.
+
+---
+
+#### **2. Process Each Hub (Repeat Steps 3 to 10 for Each Hub 1 through 12)**
+
+**For demonstration, we'll outline the steps for **Hub 1**. Repeat these steps sequentially for Hubs 2 through 12.**
+
+**a. Loosen the Nut on Hub**
+
+4. **Loosen Nut**
+   - **Action:** `loosen`
+   - **Preconditions:**
+     - Agent has a wrench.
+     - Nut on Hub 1 is tight.
+     - Hub 1 is on the ground.
+   - **Effects:** Nut on Hub 1 is loose and not tight.
+
+**b. Jack Up the Hub**
+
+5. **Jack Up Hub**
+   - **Action:** `jack-up`
+   - **Preconditions:**
+     - Agent has a jack.
+     - Hub 1 is on the ground.
+   - **Effects:**
+     - Hub 1 is no longer on the ground.
+     - Agent no longer has the jack.
+
+**c. Remove the Flat Tyre**
+
+6. **Remove Flat Tyre**
+   - **Action:** `remove-wheel`
+   - **Preconditions:**
+     - Hub 1 is not on the ground.
+     - Flat tyre is on Hub 1.
+     - Hub 1 is unfastened.
+   - **Effects:**
+     - Agent holds the removed flat tyre.
+     - Hub 1 is free (no tyre on it).
+
+**d. Store the Flat Tyre in the Boot**
+
+7. **Put Flat Tyre Away**
+   - **Action:** `put-away` (for flat tyre)
+   - **Preconditions:**
+     - Agent holds the flat tyre.
+     - Boot is open.
+   - **Effects:**
+     - Flat tyre is inside the boot.
+     - Agent no longer holds the flat tyre.
+
+**e. Install the Intact Tyre**
+
+8. **Fetch Intact Tyre**
+   - **Action:** `fetch intact tyre 1`
+     - **Preconditions:** Intact tyre 1 is inside the open boot.
+     - **Effects:** Agent holds intact tyre 1; intact tyre 1 is not inside the boot.
+
+9. **Put On Intact Tyre**
+   - **Action:** `put-on-wheel`
+   - **Preconditions:**
+     - Agent holds intact tyre 1.
+     - Hub 1 is free.
+     - Hub 1 is unfastened.
+     - Hub 1 is not on the ground.
+   - **Effects:**
+     - Intact tyre 1 is on Hub 1.
+     - Hub 1 is no longer free.
+     - Agent no longer holds intact tyre 1.
+
+**f. Inflate the Intact Tyre**
+
+10. **Inflate Intact Tyre**
+    - **Action:** `inflate`
+    - **Preconditions:**
+      - Agent has the pump.
+      - Intact tyre 1 is not inflated.
+      - Intact tyre 1 is intact.
+    - **Effects:** Intact tyre 1 is inflated.
+
+**g. Jack Down the Hub**
+
+11. **Jack Down Hub**
+    - **Action:** `jack-down`
+    - **Preconditions:**
+      - Hub 1 is not on the ground.
+      - Agent does not have the jack but has previously jacked up the hub.
+    - **Effects:**
+      - Hub 1 is back on the ground.
+      - Agent has the jack.
+
+**h. Tighten the Nut on Hub**
+
+12. **Tighten Nut**
+    - **Action:** `tighten`
+    - **Preconditions:**
+      - Agent has the wrench.
+      - Nut on Hub 1 is loose.
+      - Hub 1 is on the ground.
+    - **Effects:** Nut on Hub 1 is tight and not loose.
+
+**i. (Optional) Put Away Tools if Not Needed Immediately**
+   - Depending on the planning system's flexibility, you might choose to keep tools out until all hubs are processed or return them to the boot immediately. For optimality, keeping tools out minimizes repeated fetch and put-away actions.
+
+---
+
+#### **3. Finalize**
+
+After processing all 12 hubs with the above steps:
+
+13. **Ensure All Flat Tyres, Tools, and Pump Are in the Boot**
+    - **Action:** If any tools or flat tyres are not yet in the boot, perform `put-away` actions accordingly.
+    - **Note:** In this plan, flat tyres are stored in the boot during each hub's processing, and tools remain held by the agent until finalization.
+
+14. **Close the Boot**
+    - **Action:** `close`
+    - **Preconditions:** Boot is open.
+    - **Effects:** Boot is closed and not open.
+
+---
+
+### **Summary of Actions Sequence:**
+
+1. `open`
+2. `fetch wrench`
+3. `fetch jack`
+4. `fetch pump`
+5. *(Repeat the following steps 12 times, once for each hub)*
+   - `loosen` (for current hub)
+   - `jack-up` (for current hub)
+   - `remove-wheel` (for current hub)
+   - `put-away` flat tyre (into boot)
+   - `fetch` intact tyre (from boot)
+   - `put-on-wheel` (onto current hub)
+   - `inflate` (intact tyre on current hub)
+   - `jack-down` (current hub)
+   - `tighten` (nut on current hub)
+6. `close`
+
+---
+
+### **Notes for Optimality:**
+
+- **Tool Management:** By fetching all necessary tools (`wrench`, `jack`, `pump`) at the beginning, the plan minimizes the need to repeatedly access the boot, reducing action steps.
+
+- **Batch Processing:** Handling one hub completely before moving to the next ensures that tools remain in use without unnecessary put-away and fetch actions between hubs.
+
+- **Inflation Efficiency:** Inflating each tyre right after installation ensures that the pump is used efficiently without idle time.
+
+- **Finalization:** Closing the boot at the end ensures that all tools and flat tyres are stored as per the goal state without additional actions.
+
+This plan ensures that all 12 hubs are processed efficiently with the minimal number of actions, adhering strictly to the preconditions and effects of each defined action.

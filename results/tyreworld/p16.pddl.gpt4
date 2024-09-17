@@ -1,0 +1,25 @@
+Sure, here is the sequence of actions that you can undertake:
+
+1. "Open" the boot.
+2. "Fetch" the jack from the boot.
+3. "Fetch" the wrench from the boot.
+4. "Fetch" the pump from the boot.
+5. Repeat the following steps 16 times (once for each hub):
+    5.1 "Loosen" the hub's nut using the wrench.
+    5.2 "Jack-up" the hub using the jack.
+    5.3 "Undo" the nut on the hub.
+    5.4 "Remove-wheel" the flat tyre from the hub.
+    5.5 "Fetch" an intact tyre from the boot.
+    5.6 "Inflate" the tyre using the pump.
+    5.7 "Put-on-wheel" the inflated tyre onto the hub.
+    5.8 "Do-up" the nut on the hub.
+    5.9 "Jack-down" the hub using the jack.
+    5.10 "Tighten" the hub's nut using the wrench.
+    5.11 "Fetch" the flat tyre
+    5.12 "Put-away" the flat tyre in the boot.
+6. "Put-away" the jack in the boot.
+7. "Put-away" the wrench in the boot.
+8. "Put-away" the pump in the boot.
+9. "Close" the boot.
+
+This plan follows the problem description exactly, replaces all flat tyres with inflated tyres, returns all items to the boot, and closes the boot.

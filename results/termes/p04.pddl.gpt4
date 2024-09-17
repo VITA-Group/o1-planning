@@ -1,0 +1,19 @@
+1. Create a block at pos-1-0 (the depot).
+2. Move from the depot to pos-2-0.
+3. Place the block at pos-2-0.
+4. Move from pos-2-0 to pos-1-0 (the depot).
+5. Repeat steps 1-4 two more times to achieve the desired height of 3 at pos-2-0.
+6. After building up pos-2-0, move from pos-1-0 (the depot) back to pos-2-0.
+7. Move from pos-2-0 to pos-3-0.
+8. Move from pos-3-0 to pos-3-1.
+9. Move from pos-3-1 to pos-3-2.
+10. Move from pos-3-2 back to pos-1-0 (the depot).
+11. Create a block at pos-1-0 (the depot).
+12. Move from the depot to pos-2-0.
+13. Move from pos-2-0 to pos-3-0.
+14. Move from pos-3-0 to pos-3-1.
+15. Move from pos-3-1 to pos-3-2.
+16. Place the block at pos-3-2.
+17. Repeat steps 10-16 three more times to achieve the desired height of 4 at pos-3-2.
+
+These sets of actions will ensure that pos-2-0 has a height of 3, and pos-3-2 has a height of 4, which is the desired outcome. At the end there are no unplaced blocks as required.

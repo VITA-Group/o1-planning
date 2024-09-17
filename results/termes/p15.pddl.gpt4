@@ -1,0 +1,15 @@
+Here is a sequence of actions to achieve your goal:
+
+1. Create a block at the depot. 
+2. Move from pos-2-0 to pos-2-1.
+3. Move from pos-2-1 to pos-2-2.
+4. Move from pos-2-2 to pos-1-2.
+5. Move from pos-1-2 to pos-0-2.
+6. Place a block at pos-0-2.
+7. Repeat the steps from 1 to 6, four more times to create a tower of height 5 at pos-0-2.
+8. Repeat steps 1 to 4, move to pos-0-0 instead of pos-0-2 in step 5, and then move to pos-1-0 and then to pos-2-0 and finally to pos-3-0 in steps 6, then place the block at pos-3-0.
+9. Repeat the steps from 8, two more times to create a tower of height 3 at pos-3-0.
+10. Repeat step 8, but move to pos-3-2 instead of pos-3-0 at the end, and place the block at pos-3-2.
+11. Again, repeat step 10 to create a tower of height 2 at pos-3-2. 
+
+Now, the robot should have achieved the goal. The height at pos-0-2 is 5, the height at pos-3-0 is 3, the height at pos-3-2 is 2 and the robot is not holding any unplaced block.

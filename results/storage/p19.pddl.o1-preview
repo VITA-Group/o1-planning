@@ -1,0 +1,150 @@
+To achieve the goal of moving all crates to `depot48` in an optimal way, we can create a plan that utilizes both hoists (`hoist0` and `hoist1`) efficiently. Below is the step-by-step optimal plan:
+
+**Initial State Summary:**
+- **Hoists:**
+  - `hoist0` is available and located at `depot48-2-1`.
+  - `hoist1` is available and located at `depot48-1-1`.
+- **Crates:**
+  - `crate0` is on `container-0-0`.
+  - `crate1` is on `container-0-1`.
+  - `crate2` is on `container-0-2`.
+- **Store Areas:**
+  - Clear depot store areas: `depot48-1-2`, `depot48-1-3`, `depot48-2-2`, `depot48-2-3`.
+  - All container store areas are connected to `loadarea`.
+  - `depot48-2-2` is connected to `loadarea`.
+
+**Plan:**
+
+---
+
+**Actions for Hoist0 to Move Crate0:**
+
+1. **Move hoist0 to depot48-2-2:**
+   - Action: `move(hoist0, depot48-2-1, depot48-2-2)`
+   - Precondition: `hoist0` is at `depot48-2-1`, `depot48-2-2` is clear.
+   - Effect: `hoist0` is now at `depot48-2-2`, `depot48-2-1` becomes clear.
+
+2. **Go out from depot48-2-2 to loadarea:**
+   - Action: `go-out(hoist0, depot48-2-2, loadarea)`
+   - Precondition: `hoist0` is at `depot48-2-2`, `depot48-2-2` and `loadarea` are connected.
+   - Effect: `hoist0` is now at `loadarea`, `depot48-2-2` becomes clear.
+
+3. **Lift crate0 from container-0-0:**
+   - Action: `lift(hoist0, crate0, container-0-0, loadarea, container0)`
+   - Precondition: 
+     - `hoist0` is at `loadarea` and available.
+     - `crate0` is on `container-0-0`.
+     - `container-0-0` is in `container0`.
+   - Effect:
+     - `hoist0` is lifting `crate0` and becomes unavailable.
+     - `container-0-0` becomes clear.
+
+4. **Go in to depot48-2-2 with crate0:**
+   - Action: `go-in(hoist0, loadarea, depot48-2-2)`
+   - Precondition: 
+     - `hoist0` (lifting `crate0`) is at `loadarea`.
+     - `depot48-2-2` is clear.
+     - `loadarea` and `depot48-2-2` are connected.
+   - Effect: `hoist0` is at `depot48-2-2`, `depot48-2-2` becomes occupied.
+
+5. **Drop crate0 at depot48-2-2:**
+   - Action: `drop(hoist0, crate0, depot48-2-2, depot48-2-2, depot48)`
+   - Precondition: 
+     - `hoist0` is at `depot48-2-2` lifting `crate0`.
+     - `depot48-2-2` is considered clear for dropping since the hoist is the one lifting the crate.
+   - Effect:
+     - `hoist0` becomes available.
+     - `crate0` is now in `depot48-2-2`.
+     - `depot48-2-2` remains occupied by `crate0`.
+
+---
+
+**Actions for Hoist1 to Move Crate1:**
+
+6. **Move hoist1 to depot48-1-2:**
+   - Action: `move(hoist1, depot48-1-1, depot48-1-2)`
+   - Precondition: `hoist1` is at `depot48-1-1`, `depot48-1-2` is clear.
+   - Effect: `hoist1` is now at `depot48-1-2`, `depot48-1-1` becomes clear.
+
+7. **Move hoist1 to depot48-2-2:**
+   - Action: `move(hoist1, depot48-1-2, depot48-2-2)`
+   - Precondition: `hoist1` is at `depot48-1-2`, `depot48-2-2` is now clear after `crate0` was dropped.
+   - Effect: `hoist1` is at `depot48-2-2`, `depot48-1-2` becomes clear.
+
+8. **Go out from depot48-2-2 to loadarea:**
+   - Action: `go-out(hoist1, depot48-2-2, loadarea)`
+   - Precondition: `hoist1` is at `depot48-2-2`.
+   - Effect: `hoist1` is now at `loadarea`, `depot48-2-2` becomes clear.
+
+9. **Lift crate1 from container-0-1:**
+   - Action: `lift(hoist1, crate1, container-0-1, loadarea, container0)`
+   - Precondition: Similar to previous `lift` action for `crate0`.
+
+10. **Go in to depot48-1-2 with crate1:**
+    - Action: `go-in(hoist1, loadarea, depot48-1-2)`
+    - Precondition: 
+      - `hoist1` (lifting `crate1`) is at `loadarea`.
+      - `depot48-1-2` is clear.
+    - Effect: `hoist1` is at `depot48-1-2`, `depot48-1-2` becomes occupied.
+
+11. **Drop crate1 at depot48-1-2:**
+    - Action: `drop(hoist1, crate1, depot48-1-2, depot48-1-2, depot48)`
+    - Precondition: Similar to previous `drop` action.
+
+---
+
+**Actions for Hoist0 to Move Crate2:**
+
+12. **Go out from depot48-2-2 to loadarea:**
+    - Action: `go-out(hoist0, depot48-2-2, loadarea)`
+    - Precondition: `hoist0` is at `depot48-2-2`.
+    - Effect: `hoist0` is now at `loadarea`, `depot48-2-2` becomes clear.
+
+13. **Lift crate2 from container-0-2:**
+    - Action: `lift(hoist0, crate2, container-0-2, loadarea, container0)`
+
+14. **Go in to depot48-2-3 with crate2:**
+    - Action: `go-in(hoist0, loadarea, depot48-2-3)`
+    - Precondition: 
+      - `hoist0` (lifting `crate2`) is at `loadarea`.
+      - `depot48-2-3` is clear.
+    - Effect: `hoist0` is at `depot48-2-3`, `depot48-2-3` becomes occupied.
+
+15. **Drop crate2 at depot48-2-3:**
+    - Action: `drop(hoist0, crate2, depot48-2-3, depot48-2-3, depot48)`
+
+---
+
+**Summary of the Plan Steps:**
+
+- **Hoist0 Actions:**
+  1. Move to `depot48-2-2`.
+  2. Go out to `loadarea`.
+  3. Lift `crate0` from `container-0-0`.
+  4. Go in to `depot48-2-2` with `crate0`.
+  5. Drop `crate0` at `depot48-2-2`.
+  6. Go out to `loadarea`.
+  7. Lift `crate2` from `container-0-2`.
+  8. Go in to `depot48-2-3` with `crate2`.
+  9. Drop `crate2` at `depot48-2-3`.
+
+- **Hoist1 Actions:**
+  1. Move to `depot48-1-2`.
+  2. Move to `depot48-2-2`.
+  3. Go out to `loadarea`.
+  4. Lift `crate1` from `container-0-1`.
+  5. Go in to `depot48-1-2` with `crate1`.
+  6. Drop `crate1` at `depot48-1-2`.
+
+**Notes:**
+
+- By using both hoists in parallel, we minimize the total number of actions and avoid bottlenecks at `depot48-2-2`.
+- The plan ensures that all actions' preconditions are met and effects are properly applied.
+- The plan moves each crate directly to a clear depot store area, efficiently utilizing the available clear store areas.
+- The hoists only occupy clear areas and free them up after moving, allowing for smooth transitions.
+
+---
+
+**Conclusion:**
+
+This sequence of actions provides an optimal plan to move all crates from the container store areas to `depot48`, utilizing both hoists effectively while adhering to all action preconditions and effects. The plan ensures that all crates are moved to `depot48` in the least number of steps possible, satisfying the goal of the problem.

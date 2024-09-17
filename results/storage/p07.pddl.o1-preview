@@ -1,0 +1,127 @@
+To solve this problem optimally, we'll plan a sequence of actions that moves all crates from their initial positions in the container area to the depot area using the single available hoist. Here's the step-by-step plan:
+
+**Initial State:**
+
+- Hoist0 is in `depot48-1-3`.
+- Crate0 is on `container-0-0`.
+- Crate1 is on `container-0-1`.
+- Crate2 is on `container-0-2`.
+- All crates are in `container0`.
+- All container storeareas (`container-0-0`, `container-0-1`, `container-0-2`) are connected to `loadarea`.
+- `Loadarea` is connected to `depot48-2-1`.
+- `Depot48` storeareas `depot48-1-1`, `depot48-1-2`, `depot48-2-1`, `depot48-2-2`, and `depot48-2-3` are clear.
+
+**Goal:**
+
+- Move all crates (`crate0`, `crate1`, `crate2`) to `depot48`.
+
+**Plan:**
+
+1. **Move hoist0 from `depot48-1-3` to `depot48-2-3`.**
+   - **Action:** `move(hoist0, depot48-1-3, depot48-2-3)`
+   - **Reasoning:** `depot48-2-3` is clear and connected to `depot48-1-3`.
+
+2. **Move hoist0 from `depot48-2-3` to `depot48-2-2`.**
+   - **Action:** `move(hoist0, depot48-2-3, depot48-2-2)`
+   - **Reasoning:** `depot48-2-2` is clear and connected to `depot48-2-3`.
+
+3. **Move hoist0 from `depot48-2-2` to `depot48-2-1`.**
+   - **Action:** `move(hoist0, depot48-2-2, depot48-2-1)`
+   - **Reasoning:** `depot48-2-1` is clear and connected to `depot48-2-2`.
+
+4. **Go out from `depot48-2-1` to `loadarea`.**
+   - **Action:** `go-out(hoist0, depot48-2-1, loadarea)`
+   - **Reasoning:** `loadarea` is connected to `depot48-2-1`.
+
+5. **Lift `crate0` from `container-0-0` while in `loadarea`.**
+   - **Action:** `lift(hoist0, crate0, container-0-0, loadarea)`
+   - **Reasoning:** Hoist is available, at `loadarea`, and `container-0-0` (with `crate0`) is connected to `loadarea`.
+
+6. **Go in from `loadarea` to `depot48-2-1`.**
+   - **Action:** `go-in(hoist0, loadarea, depot48-2-1)`
+   - **Reasoning:** `depot48-2-1` is clear and connected to `loadarea`.
+
+7. **Move hoist0 from `depot48-2-1` to `depot48-2-2`.**
+   - **Action:** `move(hoist0, depot48-2-1, depot48-2-2)`
+   - **Reasoning:** `depot48-2-2` is clear and connected to `depot48-2-1`.
+
+8. **Drop `crate0` at `depot48-2-2`.**
+   - **Action:** `drop(hoist0, crate0, depot48-2-2)`
+   - **Reasoning:** Hoist is lifting `crate0` and `depot48-2-2` is clear.
+
+9. **Move hoist0 from `depot48-2-2` to `depot48-2-1`.**
+   - **Action:** `move(hoist0, depot48-2-2, depot48-2-1)`
+   - **Reasoning:** `depot48-2-1` is clear and connected to `depot48-2-2`.
+
+10. **Go out from `depot48-2-1` to `loadarea`.**
+    - **Action:** `go-out(hoist0, depot48-2-1, loadarea)`
+    - **Reasoning:** `loadarea` is connected to `depot48-2-1`.
+
+11. **Lift `crate1` from `container-0-1` while in `loadarea`.**
+    - **Action:** `lift(hoist0, crate1, container-0-1, loadarea)`
+    - **Reasoning:** Hoist is available, at `loadarea`, and `container-0-1` (with `crate1`) is connected to `loadarea`.
+
+12. **Go in from `loadarea` to `depot48-2-1`.**
+    - **Action:** `go-in(hoist0, loadarea, depot48-2-1)`
+    - **Reasoning:** `depot48-2-1` is clear and connected to `loadarea`.
+
+13. **Move hoist0 from `depot48-2-1` to `depot48-1-1`.**
+    - **Action:** `move(hoist0, depot48-2-1, depot48-1-1)`
+    - **Reasoning:** `depot48-1-1` is clear and connected to `depot48-2-1`.
+
+14. **Drop `crate1` at `depot48-1-1`.**
+    - **Action:** `drop(hoist0, crate1, depot48-1-1)`
+    - **Reasoning:** Hoist is lifting `crate1` and `depot48-1-1` is clear.
+
+15. **Move hoist0 from `depot48-1-1` to `depot48-1-2`.**
+    - **Action:** `move(hoist0, depot48-1-1, depot48-1-2)`
+    - **Reasoning:** `depot48-1-2` is clear and connected to `depot48-1-1`.
+
+16. **Move hoist0 from `depot48-1-2` to `depot48-1-3`.**
+    - **Action:** `move(hoist0, depot48-1-2, depot48-1-3)`
+    - **Reasoning:** `depot48-1-3` is clear and connected to `depot48-1-2`.
+
+17. **Go out from `depot48-1-3` to `loadarea`.**
+    - **Action:** `go-out(hoist0, depot48-1-3, loadarea)`
+    - **Reasoning:** Since only `depot48-2-1` is connected to `loadarea`, we'll adjust our route.
+
+    *(Note: Since `depot48-1-3` is not connected to `loadarea`, we need to move back to `depot48-2-1`.)*
+
+   - **Move hoist0 from `depot48-1-3` to `depot48-2-3`.**
+     - **Action:** `move(hoist0, depot48-1-3, depot48-2-3)`
+   - **Move hoist0 from `depot48-2-3` to `depot48-2-1`.**
+     - **Action:** `move(hoist0, depot48-2-3, depot48-2-1)`
+   - **Go out from `depot48-2-1` to `loadarea`.**
+     - **Action:** `go-out(hoist0, depot48-2-1, loadarea)`
+
+18. **Lift `crate2` from `container-0-2` while in `loadarea`.**
+    - **Action:** `lift(hoist0, crate2, container-0-2, loadarea)`
+    - **Reasoning:** Hoist is available, at `loadarea`, and `container-0-2` (with `crate2`) is connected to `loadarea`.
+
+19. **Go in from `loadarea` to `depot48-2-1`.**
+    - **Action:** `go-in(hoist0, loadarea, depot48-2-1)`
+    - **Reasoning:** `depot48-2-1` is clear and connected to `loadarea`.
+
+20. **Move hoist0 from `depot48-2-1` to `depot48-2-3`.**
+    - **Action:** `move(hoist0, depot48-2-1, depot48-2-3)`
+    - **Reasoning:** `depot48-2-3` is clear and connected to `depot48-2-1`.
+
+21. **Drop `crate2` at `depot48-2-3`.**
+    - **Action:** `drop(hoist0, crate2, depot48-2-3)`
+    - **Reasoning:** Hoist is lifting `crate2` and `depot48-2-3` is clear.
+
+At the end of these actions, all crates are moved into `depot48` storeareas:
+
+- `crate0` is in `depot48-2-2`.
+- `crate1` is in `depot48-1-1`.
+- `crate2` is in `depot48-2-3`.
+
+**Summary of the Optimal Plan:**
+
+- **Actions 1-4:** Move hoist0 from its initial position to `loadarea` via `depot48-2-1`.
+- **Actions 5-8:** Lift `crate0` and place it in `depot48-2-2`.
+- **Actions 9-14:** Return to `loadarea`, lift `crate1`, and place it in `depot48-1-1`.
+- **Actions 15-17:** Return to `loadarea` via `depot48-2-1`.
+- **Actions 18-21:** Lift `crate2` and place it in `depot48-2-3`.
+
+This plan efficiently uses the hoist's movements and adheres to all the domain's action preconditions and effects, ensuring that all crates are moved to the depot in an optimal sequence.

@@ -1,0 +1,27 @@
+Here is a sequence of actions that can be taken to move all the crates to the depot48:
+
+1. "go-out" hoist0 from depot48-2-3 to loadarea.
+2. "move" hoist0 from loadarea to container-0-0.
+3. "lift" hoist0 crate0 from container-0-0 to loadarea.
+4. "go-in" hoist0 with crate0 from loadarea to depot48-1-1.
+5. "drop" hoist0 with crate0 at depot48-1-1.
+
+Repeat steps 1-5 for each of the other hoists and crates, substituting the appropriate hoist, crate, and container-0-x numbers each time. 
+
+For example, to move crate1 to depot48-1-2, the sequence would be:
+
+6. "go-out" hoist1 from depot48-2-2 to loadarea.
+7. "move" hoist1 from loadarea to container-0-1.
+8. "lift" hoist1 crate1 from container-0-1 to loadarea.
+9. "go-in" hoist1 with crate1 from loadarea to depot48-1-2.
+10. "drop" hoist1 with crate1 at depot48-1-2.
+
+And to move crate2 to depot48-1-3, the sequence would be:
+
+11. "go-out" hoist2 from depot48-2-1 to loadarea.
+12. "move" hoist2 from loadarea to container-0-2.
+13. "lift" hoist2 crate2 from container-0-2 to loadarea.
+14. "go-in" hoist2 with crate2 from loadarea to depot48-1-3.
+15. "drop" hoist2 with crate2 at depot48-1-3.
+
+In this plan, each hoist is assigned one crate to move, which minimizes the time it takes to complete the goal.

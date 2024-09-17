@@ -1,0 +1,45 @@
+Yes, the following plan describes the necessary actions to solve the problem:
+
+1. "open" action on the boot.
+
+2. "fetch" action on the jack from the boot.
+
+3. "fetch" action on the wrench from the boot.
+
+4. Repeat the following steps (4 to 12) twelve times, once for each hub and corresponding tyre:
+
+4. "fetch" action on a intact tyre from the boot.
+
+5. "jack-up" action on the hub.
+
+6. "loosen" action on the nut on the hub.
+
+7. "undo" action on the tightened nut on the hub.
+
+8. "remove-wheel" action on the flat tyre from the hub.
+
+9. "put-away" action on the flat tyre into the boot.
+
+10. "put-on-wheel" action on the intact tyre onto the hub.
+
+11. "do-up" action on the nut onto the hub in order to secure the new tyre.
+
+12. "jack-down" action on the hub.
+
+5. "fetch" action on the pump from the boot.
+
+6. Repeat the following steps (6 to 7) twelve times, once for each intact tyre:
+
+6. "inflate" action on the intact tyre with the pump.
+
+7. "put-away" action on the intact tyre into the boot.
+
+8. "put-away" action on the pump.
+
+9. "put-away" action on the wrench.
+
+10. "put-away" action on the jack.
+
+11. "close" action on the boot.
+
+This sequence of actions should replace all 12 flat tyres with inflated intact tyres, and return all tools and flat tyres to the boot, which is then closed.

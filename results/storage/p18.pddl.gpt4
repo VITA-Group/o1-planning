@@ -1,0 +1,13 @@
+Here is an example of an optimal plan. In this plan, the hoist moves to the loadarea then opens and closes to move each crate in order to the depot48's storeareas.
+
+1. "go-out" action with parameters hoist0 and depot48-1-2(load area) to make hoist0 available in the load area. 
+
+2. "move" action with parameters hoist0 and load area(container-0-0) to place hoist0 in container-0-0. 
+
+3. "lift" action with parameters hoist0, crate0 and container-0-0(depot48-1-1) to lift crate0 from container-0-0 to depot48-1-1.
+
+4. "drop" action with parameters hoist0, crate0 and depot48-1-1 to put crate0 from hoist0 onto depot48-1-1.
+
+5. Repeat steps 2-4 for crate1 and crate2, change the destination to depot48-1-2 and depot48-1-3 respectively for each crate. 
+
+Please note that this plan assumes the hoist can move freely between the container storeareas and depot storeareas without needing to drop off the crate at a temporary location. Depending on the exact conditions of your puzzle, you may need to adjust this plan slightly. Also this solution doesn't account for possible issues like obstructions or capacity limits of the hoist, etc.

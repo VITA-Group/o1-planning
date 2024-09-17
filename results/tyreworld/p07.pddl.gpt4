@@ -1,0 +1,20 @@
+1. "open" action: Open the boot.
+2. "fetch" action: Fetch the wrench from the boot.
+3. "fetch" action: Fetch the jack from the boot.
+4. Repeat for 7 times:
+    1. "jack-up" action: Jack up a hub.
+    2. "loosen" action: Loosen the nut on the hub with the wrench.
+    3. "undo" action: Undo the fastening of the nut on the hub.
+    4. "remove-wheel" action: Remove the flat tyre from the hub.
+    5. "put-away" action: Put away the flat tyre into the boot.
+    6. "fetch" action: Fetch an intact tyre from the boot.
+    7. "inflate" action: Inflate the intact tyre with the pump.
+    8. "put-on-wheel" action: Put on the inflated tyre onto the hub.
+    9. "do-up" action: Fasten the nut onto the hub.
+    10. "tighten" action: Tighten the nut on the hub with the wrench.
+    11. "jack-down" action: Lower the hub back to the ground.
+5. "put-away" action: Put away the wrench into the boot.
+6. "put-away" action: Put away the jack into the boot.
+7. "close" action: Close the boot.
+
+After these actions, all the flat tyres would have been replaced with inflated intact tyres on the hubs, the nuts would be tight on the hubs, the flat tyres, wrench, jack, and pump would be in the boot and the boot would be closed, which is the goal state.

@@ -1,0 +1,25 @@
+Here's the sequence of behaviors:
+
+1. Grasp shaker with left hand.
+2. Grasp shot1 with right hand.
+3. Clean shot1.
+4. Fill shot1 with ingredient1 from dispenser1.
+5. Pour from shot1 to shaker.
+6. Leave shot1 on the table.
+7. Grasp shot1 with right hand.
+8. Refill shot1 with ingredient3 from dispenser3.
+9. Pour from shot1 to shaker.
+10. Shake a cocktail in shaker.
+11. Pour from shaker to shot1.
+12. Leave shot1 on the table.
+13. Empty the shaker.
+14. Clean the shaker.
+
+Repeat Steps 2 to 14 with the respective ingredients for each cocktail for shot2, shot3, shot4, and shot5. Make sure to refill the shot glass with the proper ingredients for each cocktail: 
+
+For shot2, refill with ingredient1 and ingredient3 from dispenser1 and dispenser3, respectively.
+For shot3, refill with ingredient2 and ingredient3 from dispenser2 and dispenser3, respectively.
+For shot4, refill with ingredient1 and ingredient2 from dispenser1 and dispenser2, respectively.
+For shot5, refill with ingredient2 and ingredient1 from dispenser2 and dispenser1, respectively.
+
+Hence, you've made and served 5 cocktails in shot glasses.

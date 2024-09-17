@@ -1,0 +1,47 @@
+Given the problem description, it seems like cocktails 1, 2, 4, 5 require the same ingredients, ingredient1 and ingredient3, but in different glasses, while cocktail 3 requires ingredient1 and ingredient2. Here is a sequence of actions you can take to make all 5 cocktails:
+
+1. Grasp shot glass 1.
+2. Fill shot glass 1 with ingredient1 using dispenser 1.
+3. Pour ingredient1 from shot glass 1 to the shaker.
+4. Leave shot glass 1 on the table.
+5. Grasp shot glass 2.
+6. Fill shot glass 2 with ingredient3 using dispenser 3.
+7. Pour ingredient3 from shot glass 2 to the shaker.
+8. Shake the cocktail in the shaker. 
+9. Pour from the shaker to shot glass 1.
+10. Leave shaker on the table.
+
+At this point, cocktail1 has been made. Repeat this process for cocktail2 in shot4 keeping in mind that the shot glass and shaker should be cleaned and emptied before use:
+
+11. Empty and clean the shaker.
+12. Grasp, fill, pour ingredient1 using shot glass 4, and leave shot glass 4 on the table.
+13. Grasp, fill, pour ingredient3 using shot glass 2, and leave shot glass 2 on the table.
+14. Shake the cocktail in the shaker.
+15. Pour from the shaker to shot glass 4.
+16. Leave shaker on the table.
+
+Cocktail2 is now ready. For cocktail3 in shot2, you will need to use ingredient1 and ingredient2:
+
+17. Empty and clean the shaker.
+18. Grasp, fill, pour ingredient1 using shot glass 1, and leave shot glass 1 on the table.
+19. Grasp, fill, pour ingredient2 using shot glass 3, and leave shot glass 3 on the table.
+20. Shake the cocktail in the shaker.
+21. Pour from the shaker to shot glass 2.
+22. Leave shaker on the table.
+
+Cocktail3 is ready. Now, repeat the process for cocktails 4 and 5, which have the same ingredients as cocktail1:
+
+23. Empty and clean the shaker.
+24. Grasp, fill, pour ingredient1 using shot glass 5, and leave shot glass 5 on the table.
+25. Grasp, fill, pour ingredient3 using shot glass 2, and leave shot glass 2 on the table.
+26. Shake the cocktail in the shaker.
+27. Pour from the shaker to shot glass 3.
+28. Leave shaker on the table.
+29. Empty and clean the shaker.
+30. Grasp, fill, pour ingredient1 using shot glass 1, and leave shot glass 1 on the table.
+31. Grasp, fill, pour ingredient3 using shot glass 2, and leave shot glass 2 on the table.
+32. Shake the cocktail in the shaker.
+33. Pour from the shaker to shot glass 5.
+34. Leave shaker on the table.
+
+Now all the 5 cocktails are ready.

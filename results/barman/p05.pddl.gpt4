@@ -1,0 +1,21 @@
+Bartender Robot’s plan:
+
+1. Grasp the first shot glass (shot1) 
+2. Fill shot1 with ingredient2 
+3. Grasp the shaker with your other hand
+4. Pour ingredient2 from shot1 into the shaker
+5. Leave shot1 on the table
+6. Leave the shaker on the table
+7. Grasp shot1 again
+8. Fill shot1 with ingredient1
+9. Grasp the shaker with your other hand 
+10. Pour ingredient1 from shot1 into the shaker
+11. Shake the cocktail in the shaker
+12. Clean shot1
+13. Pour the cocktail from the shaker to shot1
+14. Clean and empty the shaker
+15. Repeat the process (steps 1-13, replacing shot1 with shot2 and using ingredients 3 and 2 (in this order) for step 2 and 8 respectively. 
+16. Similarly, repeat the process for shot3 (with ingredients 1 and 3) and shot4 (with ingredients 1 and 2).
+17. Now you have prepared 4 cocktails. Leave them on the table.
+
+Please note that this plan does not take into account the time consumption and the order in which the cocktails are made. It aims at making one cocktail at a time from start to finish with a clean start every time.

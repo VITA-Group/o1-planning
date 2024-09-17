@@ -1,0 +1,23 @@
+Sure. Here is the plan:
+
+1. Grasp the shot glass1 with the left hand. 
+2. Fill shot glass1 with ingredient2 from the dispenser.
+3. Grasp shaker with the right hand.
+4. Pour ingredient2 from shot glass1 to the shaker.
+5. Leave the shot glass1 on the table.
+6. Grasp the shot glass2 with the left hand. 
+7. Fill shot glass2 with ingredient3 from the dispenser.
+8. Pour ingredient3 from shot glass2 to the shaker.
+9. Shake the cocktail in the shaker.
+10. Pour from the shaker to the shot glass1.
+11. Empty the shaker.
+12. Leave the shaker on the table.
+13. Leave the shot glass1 on the table.
+
+The cocktail1 in shot glass1 is ready. Repeat these 13 steps for the other two shot glasses adjusting ingredients for each cocktail.
+
+For shot glass2 fill shot glass with ingredient1 pour into shaker, then fill shot glass with ingredient3 pour into shaker and continue with the original sequence from step 9.
+
+For shot glass3 fill shot glass with ingredient2 pour into shaker, then fill shot glass with ingredient1 pour into shaker and continue with the original sequence from step 9.
+
+This would be the most optimal plan given the constraints of action described for the robot.

@@ -1,0 +1,49 @@
+Sure. Here's the plan sequence:
+
+1. Grasp the shot glass 1 with right hand.
+2. Fill shot glass 1 with ingredient2 from one of the dispensers with the left hand.
+3. Pour ingredient2 from shot glass 1 to the clean shaker.
+4. Leave shot glass 1 on the table.
+5. Grasp shot glass 1 again.
+6. Fill shot glass 1 with ingredient1 from one of the dispensers with the left hand.
+7. Pour ingredient1 from shot glass 1 to the shaker.
+8. Leave shot glass 1 on the table.
+9. Shake the cocktail in the shaker.
+10. Grasp shot glass 1.
+11. Pour from the shaker to shot glass 1.
+12. Leave the shaker on the table.
+13. Leave shot glass 1 on the table.
+
+Following the exact same sequence but replacing shot glass 1 with shot glass 2 and ingredients 1 and 2 with ingredients 2 and 3 respectively, you will get cocktail2.
+
+14. Grasp shot glass 2.
+15. Fill shot glass 2 with ingredient2 from one of the dispensers with the left hand.
+16. Pour ingredient2 from shot glass 2 to the shaker.
+17. Leave shot glass 2 on the table.
+18. Grasp shot glass 2 again.
+19. Fill shot glass 2 with ingredient3 from one of the dispensers with the left hand.
+20. Pour ingredient3 from shot glass 2 to the shaker.
+21. Leave shot glass 2 on the table.
+22. Shake the cocktail in the shaker.
+23. Grasp shot glass 2.
+24. Pour from the shaker to shot glass 2.
+25. Leave the shaker on the table.
+26. Leave shot glass 2 on the table.
+
+And finally, repeat the initial sequence but replacing shot glass 1 with shot glass 3, and ingredients 2 and 1 with ingredients 1 and 2, you will get cocktail3.
+
+27. Grasp the shot glass 3.
+28. Fill shot glass 3 with ingredient1 from the dispenser.
+29. Pour ingredient1 from shot glass 3 to the shaker.
+30. Leave shot glass 3 on the table.
+31. Grasp shot glass 3 again.
+32. Fill shot glass 3 with ingredient2 from the dispenser.
+33. Pour ingredient2 from shot glass 3 to the shaker.
+34. Leave shot glass 3 on the table.
+35. Shake the cocktail in the shaker.
+36. Grasp shot glass 3.
+37. Pour from the shaker to shot glass 3.
+38. Leave the shaker on the table.
+39. Leave shot glass 3 on the table.
+
+This means that now shot1 contains cocktail1, shot2 contains cocktail3, and shot3 contains cocktail2.

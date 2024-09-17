@@ -1,0 +1,29 @@
+Here is an optimal sequence of behaviors to solve the problem:
+
+1. Grasp the first shot glass (shot1).
+2. Fill shot1 with ingredient1.
+3. Leave shot1 on the table.
+4. Grasp shaker.
+5. Pour ingredient1 from shot1 to clean shaker.
+6. Leave shaker on the table.
+7. Clean shot1.
+8. Fill shot1 with ingredient2.
+9. Grasp shaker.
+10. Pour ingredient2 from shot1 to the shaker.
+11. Shake cocktail in the shaker (creating cocktail4).
+12. Clean shot1 and Pour from shaker to shot1.
+13. Leave shot1 on the table and Empty the shaker.
+14. Grasp second shot glass (shot2).
+15. Fill shot2 with ingredient1.
+16. Leave shot2 on the table.
+17. Grasp shaker.
+18. Pour ingredient1 from shot2 to the shaker.
+19. Leave shaker on the table.
+20. Clean shot2.
+21. Fill shot2 with ingredient2.
+22. Grasp shaker.
+23. Pour ingredient2 from shot2 to the shaker.
+24. Shake cocktail in the shaker (creating cocktail1).
+25. Clean shot2 and Pour from shaker to shot2.
+26. Leave shot2 on the table and Empty the shaker.
+27. Repeat from step 1 to step 26 for each of the other shot glasses (shot3 and shot4), but replace ingredient1, ingredient2, and cocktail1 in their respective steps with ingredient2, ingredient3, and cocktail2 while making cocktail2, and replace ingredient1, ingredient2, and cocktail1 in their respective steps with ingredient2, ingredient1, and cocktail3 while making cocktail3.

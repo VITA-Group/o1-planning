@@ -1,0 +1,22 @@
+1. Grasp shot glass 1 (shot1)
+2. Fill shot1 with ingredient2
+3. Grasp the shaker with the other hand
+4. Pour ingredient from shot1 to the shaker
+5. Leave the shaker on the table
+6. Refill shot1 with ingredient1
+7. Grasp the shaker again
+8. Pour the ingredient from shot1 to the shaker
+9. Shake the cocktail (now we have cocktail2 in the shaker)
+10. Leave the shaker on the table and make shot1 clean and empty
+11. Grasp the shaker again
+12. Pour from the shaker to shot1 (now shot1 contains cocktail2)
+
+13. Empty the shaker and make it clean
+14. Repeat steps 1-13 for shots 2, 3 and 4 using the respective ingredients for cocktails 3, 1 and 4.
+    For shot2 (cocktail3): ingredient1 & ingredient2
+    For shot3 (cocktail1): ingredient3 & ingredient1
+    For shot4 (cocktail4): ingredient2 & ingredient3
+
+Upon completing these steps, each shot glass will contain the desired cocktail:
+
+shot1 contains cocktail2, shot2 contains cocktail3, shot3 contains cocktail1, shot4 contains cocktail4.

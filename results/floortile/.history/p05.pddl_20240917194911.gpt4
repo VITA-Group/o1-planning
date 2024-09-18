@@ -66,3 +66,9 @@ Robot1 efficiently paints the entire bottom row from left to right, matching the
 Robot2 takes on more complex tasks, handling three rows. It starts in the middle of the grid, moves to complete the current row, transitions down to complete the lower row, then moves up to finish the uppermost row.
 The sequence ensures that all movements are on unpainted tiles and that each robot paints according to its immediate positioning and the spray gun's color.
 This methodical sequence allows both robots to operate efficiently within their zones, covering all required tiles without retracing steps or violating movement constraints. This plan should successfully achieve the painting pattern desired with optimal robot utility.
+
+
+
+
+
+

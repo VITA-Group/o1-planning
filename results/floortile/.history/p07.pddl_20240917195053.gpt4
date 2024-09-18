@@ -64,3 +64,9 @@ Robot1 starts by completing row 3, then works systematically upwards, completing
 Robot2 starts in the middle of row 4 and works systematically right, then proceeds to row 5, covering it completely.
 Each robot operates efficiently in designated areas to avoid crossing paths or entering already painted tiles.
 This methodical sequence ensures each robot contributes effectively to achieving the painting pattern, adhering to movement restrictions and maximizing efficiency. This plan should successfully achieve the painting pattern desired with optimal robot utility.
+
+
+
+
+
+

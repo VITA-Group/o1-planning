@@ -100,3 +100,8 @@ Summary:
 Both robots have collaborated to paint all the required tiles according to the goal pattern.
 All actions respect the constraints: robots do not stand on painted tiles, and they only paint tiles that are up or down from their current position.
 The plan minimizes unnecessary movements and paint actions, aiming for optimality.
+
+
+
+
+

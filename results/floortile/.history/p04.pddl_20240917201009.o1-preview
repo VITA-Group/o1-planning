@@ -151,3 +151,8 @@ However, these adjustments go beyond the given problem's constraints.
 Final Note:
 Given the strict constraints and the robots' starting positions, the optimal plan provided paints as many tiles as possible without violating the rules. While it's not possible to fully achieve the goal pattern under these conditions, the plan maximizes coverage within the limitations.
 
+
+
+
+
+

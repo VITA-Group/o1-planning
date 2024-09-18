@@ -55,3 +55,9 @@ Robot2 handles the initial row, efficiently covering it from left to right.
 The robots work mostly independently without needing to cross paths, which optimizes their paths and ensures they don't violate the movement constraints.
 Both robots are utilized in a way that minimizes unnecessary movements and maximizes their painting capability based on their starting positions and available actions.
 This plan provides a comprehensive method for achieving the desired tile pattern using the movement and painting capabilities of the robots.
+
+
+
+
+
+

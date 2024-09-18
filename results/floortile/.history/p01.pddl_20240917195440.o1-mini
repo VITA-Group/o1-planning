@@ -67,7 +67,7 @@ robot1: Change Spray Gun to White.
 
 robot1: Paint tile_2-2 White from tile_2-2.
 
-Central tile is now painted White.
+Central tile is now painted Wite.
 
 Final State:
 Column 1	Column 2	Column 3
@@ -84,5 +84,9 @@ Optimality: This sequence ensures that both robots work in tandem without unnece
 
 Conclusion:
 The above sequence efficiently utilizes both robots to paint the grid according to the specified pattern while respecting all movement and painting constraints. By strategically coordinating their actions, both robots can complete the task optimally.
+
+
+
+
 
 

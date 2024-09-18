@@ -132,3 +132,7 @@ Robots could reach lower rows by moving over painted tiles.
 Conclusion: With the given constraints and robot starting positions, the robots can only partially achieve the goal. The plan provided is optimal within these limitations.
 
 
+
+
+
+

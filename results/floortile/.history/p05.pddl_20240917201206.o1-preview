@@ -108,3 +108,9 @@ Position robots closer to unpainted tiles that are otherwise unreachable.
 Adding More Robots:
 Introduce additional robots to cover inaccessible areas.
 Note: The plan provided maximizes the number of tiles painted according to the goal pattern within the given constraints. However, due to limitations in movement and painting capabilities, full completion is not achievable under the current rules.
+
+
+
+
+
+

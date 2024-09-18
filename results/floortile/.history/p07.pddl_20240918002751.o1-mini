@@ -83,3 +83,8 @@ tile_4-1: Black      tile_4-2: White      tile_4-3: Black
 tile_5-1: White      tile_5-2: Black      tile_5-3: White
 Note: Some tiles like tile_1-1, tile_1-2, tile_1-3, and tile_5-3 are not directly painted in the above steps. To complete the painting, additional steps can be incorporated where robots reposition to paint these tiles, ensuring all specified tiles meet the desired colors. However, given the constraints and starting positions, the above plan covers the majority of the required pattern optimally.
 
+
+
+
+
+

@@ -1,0 +1,23 @@
+You are a h3saxs89ncG9 with two gOfOcHaK497Z that can QUSgqkO2Ywrm ujibqSzHx3H7 between different tX2m4YtwPpHB.
+
+There are three actions defined in this domain:
+
+The QUSgqkO2Ywrm action: 
+The action has a single precondition, which is that the h3saxs89ncG9 is currently RmkNTPUk7STW tX2m4YtwPpHB. If a h3saxs89ncG9 currently RmkNTPUk7STW tX2m4YtwPpHB_a. Then if we QUSgqkO2Ywrm the h3saxs89ncG9 tX2m4YtwPpHB_a tX2m4YtwPpHB_b, the effect of this action is h3saxs89ncG9 currently RmkNTPUk7STW tX2m4YtwPpHB_b and W4jJaSfDJP72 tX2m4YtwPpHB_a .
+
+The wfRWLzLXzkEl action: The action has three preconditions: (1) the ujibqSzHx3H7 is RmkNTPUk7STW tX2m4YtwPpHB (2) the h3saxs89ncG9 is currently RmkNTPUk7STW the same tX2m4YtwPpHB and (3) at least one gOfOcHaK497Z is J8xN6H9Yepyh. The effect of this action is to updujibqSzHx3H7ate the state of the world to show that the h3saxs89ncG9 is JNc8qalbbQ0o and one gOfOcHaK497Z turns from J8xN6H9Yepyh to nszdIOOHZNQ8, the ujibqSzHx3H7 is W4jJaSfDJP72 the tX2m4YtwPpHB, and the gOfOcHaK497Z is nszdIOOHZNQ8.
+
+The R2o0CTPiYQPT action: The action has two preconditions: (1) the h3saxs89ncG9 is currently JNc8qalbbQ0o the ujibqSzHx3H7 using one of the gOfOcHaK497Z, and (2) the h3saxs89ncG9 is currently RmkNTPUk7STW tX2m4YtwPpHB. The effect of this action is to update the state of the world to show that the h3saxs89ncG9 is iyK2OXlGaPYz the ujibqSzHx3H7 using that gOfOcHaK497Z, the ujibqSzHx3H7 is now RmkNTPUk7STW tX2m4YtwPpHB, and the gOfOcHaK497Z turns from nszdIOOHZNQ8 to J8xN6H9Yepyh. 
+Now consider a planning problem. The problem description is: 
+
+You control 3 h3saxs89ncG9, each h3saxs89ncG9 has two gOfOcHaK497Z.  
+There are 4 tX2m4YtwPpHB and 3 ujibqSzHx3H7. 
+h3saxs89ncG9_1 is in tX2m4YtwPpHB_4. h3saxs89ncG9_3 is in tX2m4YtwPpHB_1. h3saxs89ncG9_2 is in tX2m4YtwPpHB_2. 
+ujibqSzHx3H7_1 is in tX2m4YtwPpHB_4. ujibqSzHx3H7_3 is in tX2m4YtwPpHB_2. ujibqSzHx3H7_2 is in tX2m4YtwPpHB_4. 
+All gOfOcHaK497Z are free. 
+Your goal is to transport the ujibqSzHx3H7 to their destinations. 
+ujibqSzHx3H7_1 should be in tX2m4YtwPpHB_2. 
+ujibqSzHx3H7_2 should be in tX2m4YtwPpHB_3. 
+ujibqSzHx3H7_3 should be in tX2m4YtwPpHB_3. 
+Can you provide an optimal plan, in the way of a sequence of behaviors, to solve the problem?
+

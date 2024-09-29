@@ -1,0 +1,77 @@
+To achieve the goal of replacing **flat tyre** with **intact tyre** on the **hub**, ensuring that **intact tyre** becomes **inflated**, and maintaining the required states of other objects, the following optimal sequence of actions should be performed:
+
+1. **loosen**
+2. **jack-up**
+3. **undo**
+4. **remove-wheel**
+5. **inflate**
+6. **do-up**
+7. **jack-down**
+8. **tighten**
+
+### Action Sequence Breakdown:
+
+1. **loosen**
+   - **Purpose:** Change **nut** on **hub** from **tight** to **loose**.
+   - **Preconditions Met:** 
+     - **agent** has **wrench**.
+     - **nut** on **hub** is **tight**.
+     - **hub** is on **ground**.
+
+2. **jack-up**
+   - **Purpose:** Lift **hub** off **ground** using **jack**.
+   - **Preconditions Met:** 
+     - **agent** is performing **have** on **jack**.
+     - **hub** is on **ground**.
+
+3. **undo**
+   - **Purpose:** Set **hub** to not be **fastened**.
+   - **Preconditions Met:** 
+     - **hub** is not on **ground**.
+     - **hub** is **fastened**.
+     - **agent** has **wrench**.
+     - **nut** is **loose**.
+
+4. **remove-wheel**
+   - **Purpose:** Remove **flat tyre** from **hub**.
+   - **Preconditions Met:** 
+     - **hub** is not on **ground**.
+     - **flat tyre** is on **hub**.
+     - **hub** is not **fastened**.
+
+5. **inflate**
+   - **Purpose:** Change **intact tyre** to **inflated** using **pump**.
+   - **Preconditions Met:** 
+     - **agent** has **pump**.
+     - **intact tyre** is not **inflated**.
+     - **intact tyre** is on **hub**.
+
+6. **do-up**
+   - **Purpose:** Restore **hub** to **fastened**.
+   - **Preconditions Met:** 
+     - **agent** has **wrench**.
+     - **hub** is not **fastened**.
+     - **hub** is not on **ground**.
+     - **agent** has **nut** set to **fastened**.
+
+7. **jack-down**
+   - **Purpose:** Lower **hub** back to **ground** using **jack**.
+   - **Preconditions Met:** 
+     - **agent** is performing **have** on **hub** off **ground**.
+
+8. **tighten**
+   - **Purpose:** Change **nut** on **hub** back to **tight**.
+   - **Preconditions Met:** 
+     - **agent** has **wrench**.
+     - **nut** on **hub** is **loose**.
+     - **hub** is on **ground**.
+
+### Summary of Effects:
+
+- **flat tyre** is removed from **hub**.
+- **intact tyre** is replaced and transformed into **inflated** on **hub**.
+- **nut** is restored to **tight** on **hub**.
+- All specified objects (**flat tyre**, **wrench**, **jack**, **pump**) are in the **boot**.
+- **boot** remains **closed**.
+
+This sequence ensures that all goal conditions are met efficiently while maintaining the integrity of the system's state.

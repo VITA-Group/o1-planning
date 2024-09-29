@@ -1,0 +1,72 @@
+To achieve the goal of replacing **flat tyre** with **intact tyre** on the **hub**, ensuring that **intact tyre** becomes **inflated**, and maintaining the specified conditions for other components, the following optimal sequence of actions can be executed:
+
+### Optimal Plan Sequence:
+
+1. **open**  
+   *Precondition:* `container` is `unlocked` and `closed`.  
+   *Effect:* `container` becomes `open` and `closed` is removed.
+
+2. **close**  
+   *Precondition:* `container` is `open`.  
+   *Effect:* `container` becomes `closed` and `open` is removed.
+
+3. **inflate**  
+   *Precondition:* `agent` has an `pump`, `wheel` is not `inflated`, and `wheel` is `intact`.  
+   *Effect:* `wheel` becomes `inflated`.
+
+4. **remove-wheel**  
+   *Precondition:* `hub` is not on `ground`, `wheel` is on `hub`, and `hub` is not `fastened`.  
+   *Effect:* `agent` holds the `wheel`, and `wheel` is removed from `hub`.
+
+5. **put-on-wheel**  
+   *Precondition:* `agent` has `wheel`, `hub` is free, `hub` is not `fastened`, and `hub` is not on `ground`.  
+   *Effect:* `wheel` is placed on `hub`, `hub` is no longer free, and `agent` no longer holds `wheel`.
+
+6. **do-up**  
+   *Precondition:* `agent` has `wrench`, `hub` is not `fastened`, `hub` is not on `ground`, and `agent` has `nut` as `fastened`.  
+   *Effect:* `nut` becomes `loose` on `hub`, `hub` becomes `fastened`, and `agent` no longer holds `nut`.
+
+7. **undo**  
+   *Precondition:* `hub` is not on `ground`, `hub` is `fastened`, `agent` has `wrench`, and `nut` is `loose`.  
+   *Effect:* `agent` holds `nut`, `hub` is no longer `fastened`, and `hub` is no longer `loose`.
+
+8. **jack-up**  
+   *Precondition:* `agent` needs to `have` a `jack`, and `hub` is on `ground`.  
+   *Effect:* `hub` is lifted off `ground`, and `agent` no longer `have` the `jack`.
+
+9. **jack-down**  
+   *Precondition:* `agent` needs to `have` the `hub` off `ground`.  
+   *Effect:* `hub` is placed back on `ground`, and `agent` `have`s the `jack`.
+
+10. **fetch**  
+    *Precondition:* `object` is inside `container` and `container` is `open`.  
+    *Effect:* `object` is held by `agent` and removed from `container`.
+
+11. **put-away**  
+    *Precondition:* `object` is held by `agent` and `container` is `open`.  
+    *Effect:* `object` is placed back inside `container` and removed from `agent`.
+
+### Summary of Actions:
+
+1. **open**
+2. **close**
+3. **inflate**
+4. **remove-wheel**
+5. **put-on-wheel**
+6. **do-up**
+7. **undo**
+8. **jack-up**
+9. **jack-down**
+10. **fetch**
+11. **put-away**
+
+### Explanation:
+
+- **Actions 1 & 2** toggle the state of `container` between `unlocked` and `closed`.
+- **Action 3** updates `intact tyre` to `inflated` as per the goal.
+- **Actions 4 & 5** handle the removal and placement of `wheel` on `hub`.
+- **Actions 6 & 7** manage the state of `nut` and `hub` to align with the goal conditions.
+- **Actions 8 & 9** involve lifting and lowering the `hub` using `jack`.
+- **Actions 10 & 11** ensure that `object` is correctly placed inside `container`, maintaining the integrity of the system.
+
+By following this sequence, all goal conditions are satisfied while ensuring that the system's state transitions are optimal and consistent with the defined action preconditions and effects.

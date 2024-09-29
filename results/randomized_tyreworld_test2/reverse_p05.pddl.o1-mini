@@ -1,0 +1,36 @@
+To achieve the goal of replacing `flat tyre` with `intact tyre` on the `hub`, ensuring that `intact tyre` becomes `inflated`, and maintaining the desired state of other components, the following optimal sequence of actions should be executed:
+
+1. **jack-up**  
+   *Purpose*: Lift the `hub` off the `ground` using a `jack`. This makes the `hub` free for manipulation.
+
+2. **remove-wheel**  
+   *Purpose*: Remove `flat tyre` from the `hub`. After this action, `flat tyre` will be in the `boot`.
+
+3. **put-on-wheel**  
+   *Purpose*: Place `intact tyre` onto the now-free `hub`. This replaces `flat tyre` with `intact tyre` on the `hub`.
+
+4. **inflate**  
+   *Purpose*: Transform `intact tyre` into `inflated` using an `pump`. This satisfies the condition that `intact tyre` should be `inflated`.
+
+5. **jack-down**  
+   *Purpose*: Lower the `hub` back onto the `ground` using the `jack`. This finalizes the placement of `intact tyre` as `inflated` on the `hub`.
+
+**Optimal Plan Sequence:**
+
+1. `jack-up`
+2. `remove-wheel`
+3. `put-on-wheel`
+4. `inflate`
+5. `jack-down`
+
+**Explanation of the Plan:**
+
+- **Lifting and Lowering (`jack-up` and `jack-down`)**: These actions ensure that the `hub` is free from its initial position on the `ground`, allowing for the removal and placement of components without interference.
+  
+- **Removing `flat tyre` (`remove-wheel`)**: This action clears the existing component (`flat tyre`) from the `hub`, making space for the new component.
+  
+- **Placing `intact tyre` (`put-on-wheel`)**: This action introduces the desired component (`intact tyre`) onto the `hub`.
+  
+- **Transforming to `inflated` (`inflate`)**: This finalizes the transformation of `intact tyre` into the required state (`inflated`), completing the objective.
+
+This sequence ensures that all preconditions are met for each action and that the final state aligns perfectly with the specified goals.

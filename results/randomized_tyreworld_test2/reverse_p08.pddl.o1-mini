@@ -1,0 +1,104 @@
+To achieve your goal of replacing `flat tyre` with `intact tyre` on the `hub` while satisfying all specified conditions, the following **optimal plan** outlines the necessary sequence of actions:
+
+1. **`loosen` Action**
+   - **Purpose:** Change `nut` on `hub` from `tight` to `loose`.
+   - **Preconditions:**
+     - `agent` has a `wrench`.
+     - `nut` on `hub` is `tight`.
+     - `hub` is on `ground`.
+   - **Effect:** 
+     - `nut` on `hub` becomes `loose`.
+     - `tight` is no longer present.
+
+2. **`jack-up` Action**
+   - **Purpose:** Lift the `hub` off the `ground` using a `jack`.
+   - **Preconditions:**
+     - `agent` is actively using a `jack`.
+     - `hub` is on `ground`.
+   - **Effect:** 
+     - `hub` is no longer on `ground`.
+     - `agent` stops using the `jack`.
+
+3. **`undo` Action**
+   - **Purpose:** Remove the `fastened` status from `hub` and update `nut`.
+   - **Preconditions:**
+     - `hub` is not on `ground`.
+     - `hub` has the `fastened` property.
+     - `agent` has a `wrench`.
+     - `nut` is `loose`.
+   - **Effect:** 
+     - `agent` now holds `nut`.
+     - `hub` no longer has the `fastened` property.
+     - `hub` is no longer `loose`.
+
+4. **`remove-wheel` Action**
+   - **Purpose:** Remove `flat tyre` from `hub` and place it into `boot`.
+   - **Preconditions:**
+     - `hub` is not on `ground`.
+     - `flat tyre` is currently on `hub`.
+     - `hub` is not `fastened`.
+   - **Effect:** 
+     - `flat tyre` is no longer on `hub`.
+     - `flat tyre` is now in `boot`.
+
+5. **`put-on-wheel` Action**
+   - **Purpose:** Place `intact tyre` onto `hub`.
+   - **Preconditions:**
+     - `agent` has the `wheel` (which is `intact tyre`).
+     - `hub` is free.
+     - `hub` is not `fastened`.
+     - `hub` is not on `ground`.
+   - **Effect:** 
+     - `intact tyre` is now on `hub`.
+     - `hub` is no longer free.
+     - `agent` no longer holds the `wheel`.
+
+6. **`inflate` Action**
+   - **Purpose:** Change `intact tyre` to `inflated`.
+   - **Preconditions:**
+     - `agent` has an `pump`.
+     - `intact tyre` is not already `inflated`.
+     - `intact tyre` is in the state `intact`.
+   - **Effect:** 
+     - `intact tyre` becomes `inflated`.
+
+7. **`jack-down` Action**
+   - **Purpose:** Lower the `hub` back onto the `ground` using a `jack`.
+   - **Preconditions:**
+     - `agent` is actively using the `hub` off the `ground`.
+   - **Effect:** 
+     - `hub` is back on `ground`.
+     - `agent` resumes using the `jack`.
+
+8. **`tighten` Action**
+   - **Purpose:** Reset `nut` on `hub` back to `tight`.
+   - **Preconditions:**
+     - `agent` has a `wrench`.
+     - `nut` on `hub` is currently `loose`.
+     - `hub` is on `ground`.
+   - **Effect:** 
+     - `nut` on `hub` becomes `tight`.
+     - `loose` is no longer present.
+
+### **Summary of the Plan:**
+
+1. **`loosen`**
+2. **`jack-up`**
+3. **`undo`**
+4. **`remove-wheel`**
+5. **`put-on-wheel`**
+6. **`inflate`**
+7. **`jack-down`**
+8. **`tighten`**
+
+### **Explanation:**
+
+- **Steps 1-3:** Prepare the `hub` by updating `nut`, lifting it off `ground`, and removing the `fastened` status to satisfy the preconditions for removing `flat tyre`.
+  
+- **Step 4:** Remove `flat tyre` from `hub` and place it into `boot`.
+
+- **Steps 5-6:** Place `intact tyre` onto `hub` and change its state to `inflated` as required.
+
+- **Steps 7-8:** Lower the `hub` back onto `ground` and reset `nut` to its original state `tight` to fully satisfy the goal conditions.
+
+This sequence ensures that all preconditions for each action are met before execution and that the final state aligns perfectly with your specified goals.

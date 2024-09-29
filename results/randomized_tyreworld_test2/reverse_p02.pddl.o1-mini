@@ -1,0 +1,53 @@
+Certainly! To achieve the goal of replacing `flat tyre` with `intact tyre` on the `hub`, while ensuring all other conditions are met, the following **optimal plan** consists of **8 actions** executed in sequence:
+
+1. **loosen**
+   - **Purpose:** Change `nut` on `hub` from `tight` to `loose`.
+   - **Reasoning:** This sets up the necessary condition for modifying the `hub` state in subsequent steps.
+
+2. **jack-up**
+   - **Purpose:** Lift the `hub` off the `ground` using a `jack`.
+   - **Reasoning:** Removes `hub` from its current position, allowing further modifications.
+
+3. **undo**
+   - **Purpose:** Change the state of `hub` from `fastened` to not `fastened`.
+   - **Reasoning:** This is necessary to free `hub` for the replacement of `flat tyre`.
+
+4. **remove-wheel**
+   - **Purpose:** Remove `flat tyre` from the `hub`.
+   - **Reasoning:** Clears the `hub` to make room for `intact tyre`.
+
+5. **put-on-wheel**
+   - **Purpose:** Place `intact tyre` onto the `hub`.
+   - **Reasoning:** Completes the replacement of `flat tyre` with `intact tyre`.
+
+6. **inflate**
+   - **Purpose:** Transform `intact tyre` into `inflated`.
+   - **Reasoning:** Ensures that `intact tyre` meets the desired state `inflated`.
+
+7. **jack-down**
+   - **Purpose:** Lower the `hub` back onto the `ground`.
+   - **Reasoning:** Restores `hub` to its original position after modifications.
+
+8. **tighten**
+   - **Purpose:** Change `nut` on `hub` back from `loose` to `tight`.
+   - **Reasoning:** Ensures that the `nut` meets the goal condition of being `tight` on the `hub`.
+
+### **Summary of the Optimal Plan:**
+
+1. **loosen**
+2. **jack-up**
+3. **undo**
+4. **remove-wheel**
+5. **put-on-wheel**
+6. **inflate**
+7. **jack-down**
+8. **tighten**
+
+### **Explanation:**
+
+- **Initialization:** Start by changing the state of `nut` to allow modifications to `hub`.
+- **Modification:** Lift `hub` and alter its state to make it receptive to the replacement.
+- **Replacement:** Remove the existing `flat tyre` and place `intact tyre` in its stead.
+- **Finalization:** Transform `intact tyre` to the desired state `inflated`, lower `hub` back, and restore `nut` to its original state.
+
+This sequence ensures that all preconditions for each action are met and that the goal state is achieved efficiently.

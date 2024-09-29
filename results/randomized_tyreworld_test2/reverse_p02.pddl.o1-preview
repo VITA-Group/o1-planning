@@ -1,0 +1,120 @@
+To solve the given planning problem and achieve the goal of replacing **flat tyre** with **intact tyre** on the **hub**, ensuring that **intact tyre** is **inflated** and that the **nut** are **tight** on the **hub**, and finally returning the **flat tyre**, **wrench**, **jack**, and **pump** to the **boot**, while the **boot** remains **closed**, the following sequence of actions provides an optimal plan:
+
+1. **Perform the "loosen" action**:
+   - *Purpose*: Change the **nut** on the **hub** from **tight** to **loose**.
+   - *Preconditions*:
+     - The **agent** has an **wrench**.
+     - The **nut** on the **hub** is **tight**.
+     - The **hub** is on the **ground**.
+   - *Effects*:
+     - The **nut** on the **hub** becomes **loose**.
+     - The **nut** is no longer **tight**.
+
+2. **Perform the "jack-up" action**:
+   - *Purpose*: Lift the **hub** off the **ground** using the **jack**.
+   - *Preconditions*:
+     - The **agent** has the **jack**.
+     - The **hub** is on the **ground**.
+   - *Effects*:
+     - The **hub** is no longer on the **ground**.
+     - The **agent** no longer has the **jack**.
+
+3. **Perform the "undo" action**:
+   - *Purpose*: Remove the **nut** from the **hub**, powering it down.
+   - *Preconditions*:
+     - The **hub** is not on the **ground**.
+     - The **hub** is **fastened**.
+     - The **agent** has the **wrench**.
+     - The **nut** is **loose**.
+   - *Effects*:
+     - The **agent** has the **nut**.
+     - The **hub** is no longer **fastened**.
+
+4. **Perform the "remove-wheel" action**:
+   - *Purpose*: Remove the **flat tyre** (**wheel**) from the **hub**.
+   - *Preconditions*:
+     - The **hub** is not on the **ground**.
+     - The **flat tyre** (**wheel**) is on the **hub**.
+     - The **hub** is not **fastened**.
+   - *Effects*:
+     - The **agent** has the removed **flat tyre** (**wheel**).
+     - The **flat tyre** is no longer on the **hub**.
+
+5. **Place the "flat tyre" into the "boot"**:
+   - *Purpose*: Store the removed **flat tyre** in the **boot**.
+   - *Assumption*: Direct placement as per domain rules.
+
+6. **Retrieve the "intact tyre" from the "boot"**:
+   - *Purpose*: Obtain the new **intact tyre** for installation.
+   - *Assumption*: Direct retrieval as per domain rules.
+
+7. **Perform the "inflate" action**:
+   - *Purpose*: **inflate** the **intact tyre** using the **pump**.
+   - *Preconditions*:
+     - The **agent** has the **pump**.
+     - The **intact tyre** (**wheel**) is not **inflated**.
+     - The **wheel** is **intact**.
+   - *Effects*:
+     - The **intact tyre** is now **inflated**.
+
+8. **Perform the "put-on-wheel" action**:
+   - *Purpose*: Install the **intact tyre** (**wheel**) onto the **hub**.
+   - *Preconditions*:
+     - The **agent** has the **intact tyre** (**wheel**).
+     - The **hub** is free (no **wheel** installed).
+     - The **hub** is not **fastened**.
+     - The **hub** is not on the **ground**.
+   - *Effects*:
+     - The **intact tyre** is now on the **hub**.
+     - The **hub** is no longer free.
+     - The **agent** no longer has the **intact tyre**.
+
+9. **Perform the "do-up" action**:
+   - *Purpose*: Reinstall the **nut** back into the **hub**, powering it up.
+   - *Preconditions*:
+     - The **agent** has the **nut**.
+     - The **hub** is not **fastened**.
+     - The **hub** is not on the **ground**.
+   - *Effects*:
+     - The **nut** is now **loose** on the **hub**.
+     - The **hub** is **fastened**.
+     - The **agent** no longer has the **nut**.
+
+10. **Perform the "jack-down" action**:
+    - *Purpose*: Lower the **hub** back onto the **ground**.
+    - *Preconditions*:
+      - The **agent** has lifted the **hub** off the **ground**.
+    - *Effects*:
+      - The **hub** is back on the **ground**.
+      - The **agent** now has the **jack**.
+
+11. **Perform the "tighten" action**:
+    - *Purpose*: Change the **nut** on the **hub** from **loose** back to **tight**.
+    - *Preconditions*:
+      - The **agent** has an **wrench**.
+      - The **nut** on the **hub** is **loose**.
+      - The **hub** is on the **ground**.
+    - *Effects*:
+      - The **nut** on the **hub** is now **tight**.
+      - The **nut** is no longer **loose**.
+
+12. **Return the tools and "flat tyre" to the "boot"**:
+    - *Purpose*: Place the **jack**, **pump**, **wrench**, and **flat tyre** back into the **boot**.
+    - *Assumption*: Direct placement as per domain rules.
+
+**Summary of the Plan**:
+
+- **Step 1**: Disable the **nut** on the **hub**.
+- **Step 2**: Lift the **hub** off the **ground**.
+- **Step 3**: Power down and remove the **nut** from the **hub**.
+- **Step 4**: Remove the old **flat tyre** from the **hub**.
+- **Step 5**: Store the old **flat tyre** in the **boot**.
+- **Step 6**: Retrieve the new **intact tyre** from the **boot**.
+- **Step 7**: **inflate** the new **intact tyre** using the **pump**.
+- **Step 8**: Install the new **intact tyre** onto the **hub**.
+- **Step 9**: Reinstall the **nut** into the **hub** to power it up.
+- **Step 10**: Lower the **hub** back onto the **ground**.
+- **Step 11**: Re-enable the **nut** on the **hub**.
+- **Step 12**: Return all tools and the old part to the **boot**.
+
+This plan efficiently accomplishes the goal with the minimal necessary actions while adhering to the preconditions and effects defined in the domain. All tools and the old **flat tyre** are returned to the **boot**, which remains **closed**, fulfilling the final condition of the problem.

@@ -1,0 +1,81 @@
+To achieve your goal of replacing **flat tyre** with **intact tyre** on the **hub** and ensuring all other conditions are met, the following optimal sequence of actions should be executed:
+
+1. **loosen**
+2. **jack-up**
+3. **undo**
+4. **remove-wheel**
+5. **put-on-wheel**
+6. **inflate**
+
+### Step-by-Step Explanation:
+
+1. **loosen**
+   - **Purpose:** Change the state of **nut** on **hub** from **tight** to **loose**.
+   - **Preconditions:**
+     - **agent** has **wrench**.
+     - **nut** on **hub** is **tight**.
+     - **hub** is on **ground**.
+   - **Effects:**
+     - **nut** on **hub** becomes **loose**.
+     - **tight** is no longer present on **hub**.
+
+2. **jack-up**
+   - **Purpose:** Lift **hub** off **ground** using **jack**.
+   - **Preconditions:**
+     - **agent** is executing (**have**) a **jack**.
+     - **hub** is on **ground**.
+   - **Effects:**
+     - **hub** is no longer on **ground**.
+     - **agent** stops executing (**have**) the **jack**.
+
+3. **undo**
+   - **Purpose:** Update the state of **hub** to no longer be **fastened** and manage **nut**.
+   - **Preconditions:**
+     - **hub** is not on **ground** (achieved by **jack-up**).
+     - **hub** is **fastened**.
+     - **agent** has **wrench**.
+     - **nut** is **loose** on **hub** (achieved by **loosen**).
+   - **Effects:**
+     - **agent** now has **nut**.
+     - **hub** is no longer **fastened**.
+     - **loose** is removed from **hub**.
+
+4. **remove-wheel**
+   - **Purpose:** Remove **flat tyre** from **hub**.
+   - **Preconditions:**
+     - **hub** is not on **ground** (achieved by **jack-up**).
+     - **wheel** (**flat tyre**) is currently on **hub**.
+     - **hub** is not **fastened** (achieved by **undo**).
+   - **Effects:**
+     - **agent** stops executing (**have**) the **removed wheel**.
+     - **hub** becomes free (i.e., **wheel** is no longer on **hub**).
+
+5. **put-on-wheel**
+   - **Purpose:** Place **intact tyre** onto **hub**.
+   - **Preconditions:**
+     - **agent** has **wheel** (**intact tyre**).
+     - **hub** is free.
+     - **hub** is not **fastened** (maintained by **undo**).
+     - **hub** is not on **ground** (maintained by **jack-up**).
+   - **Effects:**
+     - **wheel** (**intact tyre**) is now on **hub**.
+     - **hub** is no longer free.
+     - **agent** stops executing (**have**) **wheel**.
+
+6. **inflate**
+   - **Purpose:** Change the state of **intact tyre** to **inflated**.
+   - **Preconditions:**
+     - **agent** has **pump**.
+     - **wheel** (**intact tyre**) is not **inflated**.
+     - **wheel** is **intact**.
+   - **Effects:**
+     - **wheel** (**intact tyre**) becomes **inflated**.
+
+### Final State Achieved:
+
+- **intact tyre** has been successfully replaced by **inflated** on **hub**.
+- **nut** remains as **tight** on **hub**.
+- **flat tyre**, **wrench**, **jack**, and **pump** are all within **boot**.
+- **boot** remains in the **closed** state.
+
+This sequence ensures that all preconditions are met before each action and that the final state aligns perfectly with your specified goals.

@@ -1,0 +1,40 @@
+Your goal is to replace s5t6 u7v8 with s4f5 u7v8 on the w9x0. s4f5 u7v8 should be s9t0d. The y1z2 should be e1f2 on the w9x0. The s5t6 u7v8, a2b3, c4d5, and e6f7 should be in the g8h9. The g8h9 should be w3x4d.
+
+There are 11 actions defined in this domain:
+
+"u1v2" action: The precondition for this action is that the k2l3 is 930d and w3x4d. The effect of this action is that the k2l3 is u1v2 and not w3x4d.
+
+"w3x4" action: The precondition for this action is that the k2l3 is u1v2. The effect of this action is that the k2l3 is w3x4d and not u1v2.
+
+"y5z6" action: The precondition for this action is that the m4n5 is inside the k2l3 and the k2l3 is u1v2. The effect of this action is that the m4n5 is held by the o6p7 and not inside the k2l3.
+
+"q7r8-away" action: The precondition for this action is that the m4n5 is held by the o6p7 and the k2l3 is u1v2. The effect of this action is that the m4n5 is inside the k2l3 and not held by the o6p7.
+
+"c9d0" action: The precondition for this action is that the o6p7 has a a2b3, the y1z2 on w9x0 is e1f2, and the w9x0 is on the q8r9. The effect of this action is that the y1z2 on w9x0 is f03k and not e1f2.
+
+"f8k1" action: The precondition for this action is that the o6p7 has a a2b3, the y1z2 on w9x0 is f03k, and the w9x0 is on the q8r9. The effect of this action is that the y1z2 on w9x0 is e1f2 and not f03k.
+
+"g3h4" action: This action represents the process of lifting a w9x0 off the q8r9 using a c4d5. It requires the o6p7 to e5f6 a c4d5 and for the w9x0 to be on the q8r9. After i9j0ing this action, the w9x0 will no longer be on the q8r9 and the o6p7 will no longer e5f6 the c4d5.
+
+"i5j6" action: This action represents the process of lowering a w9x0 back to the q8r9 from an elevated position using a c4d5. It requires the o6p7 to e5f6 the w9x0 off the q8r9. After i9j0ing this action, the w9x0 will be back on the q8r9 and the o6p7 will e5f6 the c4d5.
+
+"k1l2" action:. The preconditions are the w9x0 is not on the q8r9 (i.e., it has been c4d5ed up), the w9x0 is m3n4, the o6p7 has a a2b3 and the y1z2 is f03k. The effects are the o6p7 has the y1z2, the w9x0 is not m3n4, the w9x0 is no longer f03k and the w9x0 is not m3n4 anymore.
+
+"k7l8" action:. The preconditions are the o6p7 has a a2b3, the w9x0 is not m3n4, the w9x0 is not on the q8r9 (i.e., it has been c4d5ed up) and the o6p7 has the y1z2 to be m3n4. The effects are the y1z2 is now f03k on the w9x0, the w9x0 is m3n4, the w9x0 is no longer not m3n4 and the o6p7 no longer has the y1z2.
+
+"o5p6-s0t1" action: This action o5p6s a s0t1 from a w9x0. It can only be i9j0ed if the w9x0 is not on the q8r9, the s0t1 is currently on the w9x0, and the w9x0 is not m3n4. After the action is i9j0ed, the o6p7 will e5f6 the o5p6d s0t1 and the w9x0 will be free, meaning that the s0t1 is no longer on the w9x0.
+
+"q7r8-on-s0t1" action: This action q7r8s a s0t1 onto a w9x0. It can only be i9j0ed if the o6p7 has the s0t1, the w9x0 is free, the w9x0 is not m3n4, and the w9x0 is not on the q8r9. After the action is i9j0ed, the s0t1 will be on the w9x0, the w9x0 will no longer be free, and the o6p7 will no longer e5f6 the s0t1.
+
+"s9t0" action: This action s9t0s a s0t1 using a e6f7. It can only be i9j0ed if the o6p7 has a e6f7, the s0t1 is not s9t0d, and the s0t1 is s4f5. After the action is i9j0ed, the s0t1 will be s9t0d. 
+Now consider a planning problem. The problem description is: 
+ You e5f6 a c4d5, a e6f7, a a2b3, a g8h9, 4 w9x0, 4 y1z2, 4 s5t6 u7v8, and 4 s4f5 u7v8. 
+The c4d5, e6f7, a2b3, and s4f5 u7v8 are in the g8h9. 
+The g8h9 is 930d but is w3x4d. 
+The s4f5 u7v8 are not s9t0d. 
+The s5t6 u7v8 are on the w9x0. 
+The w9x0 are on the q8r9. 
+The y1z2 are e1f2 on the w9x0. 
+The w9x0 are m3n4. 
+Your goal is to replace s5t6 u7v8 with s4f5 u7v8 on the w9x0. s4f5 u7v8 should be s9t0d. The y1z2 should be e1f2 on the w9x0. The s5t6 u7v8, a2b3, c4d5, and e6f7 should be in the g8h9. The g8h9 should be w3x4d. 
+Can you provide an optimal plan, in the way of a sequence of behaviors, to solve the problem?

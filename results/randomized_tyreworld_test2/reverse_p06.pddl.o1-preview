@@ -1,0 +1,90 @@
+To solve the problem, we need an optimal plan that replaces the `flat tyre` (old components) with the `intact tyre` (new components) on the `hub` (machines), ensures that the `intact tyre` are `inflated` (activated/configured), and returns the tools and old components to the `boot` (storage container), which should be closed at the end. The `nut` (covers) should remain `tight` (secured/unlocked) on the `hub`.
+
+Here is the optimal plan:
+
+1. **Open the Storage Container**:
+   - **Action**: `open` (Open `boot`)
+   - **Preconditions**: `boot` is `unlocked` (unlocked) and `closed` (closed)
+   - **Effects**: `boot` becomes `open` (open) and not `closed`
+
+2. **Retrieve Tools from `boot`**:
+   - **Action**: `fetch` (Retrieve items)
+   - **Items to Retrieve**: `wrench` (tool), `jack` (lifting device), and `pump` (tool)
+   - **Preconditions**: Each item is inside `boot`, which is `open` (open)
+   - **Effects**: Agent `agent` holds each item after retrieval
+
+3. **For Each `hub` (Repeat Steps 3a to 3k for each machine)**:
+
+   a. **Lock the Cover on `hub`**:
+      - **Action**: `loosen` (Lock `nut`)
+      - **Preconditions**: `agent` has `wrench`, `nut` on `hub` is `tight`, `hub` is on `ground` (ground)
+      - **Effects**: `nut` on `hub` becomes `loose` (locked)
+
+   b. **Lift the `hub` Off the Ground**:
+      - **Action**: `jack-up` (Lift `hub` using `jack`)
+      - **Preconditions**: `agent` holds `jack`, `hub` is on `ground`
+      - **Effects**: `hub` is not on `ground`, `agent` no longer holds `jack`
+
+   c. **Remove the Cover from `hub`**:
+      - **Action**: `undo` (Remove `nut`)
+      - **Preconditions**: `hub` is not on `ground`, `hub` is `fastened` (covered), `agent` has `wrench`, `nut` is `loose`
+      - **Effects**: `agent` holds `nut`, `hub` becomes not `fastened`
+
+   d. **Remove the Old Component from `hub`**:
+      - **Action**: `remove-wheel` (Remove `flat tyre`)
+      - **Preconditions**: `hub` is not on `ground`, `flat tyre` is on `hub`, `hub` is not `fastened`
+      - **Effects**: `agent` holds `flat tyre`, `hub` becomes free (no component)
+
+   e. **Place the Old Component into `boot`**:
+      - **Action**: `put-away` (Store `flat tyre` in `boot`)
+      - **Preconditions**: `agent` holds `flat tyre`, `boot` is `open` (open)
+      - **Effects**: `flat tyre` is inside `boot`, `agent` no longer holds `flat tyre`
+
+   f. **Retrieve the New Component from `boot`**:
+      - **Action**: `fetch` (Retrieve `intact tyre`)
+      - **Preconditions**: `intact tyre` is inside `boot`, which is `open` (open)
+      - **Effects**: `agent` holds `intact tyre`
+
+   g. **Install the New Component onto `hub`**:
+      - **Action**: `put-on-wheel` (Install `intact tyre`)
+      - **Preconditions**: `agent` has `intact tyre`, `hub` is free, `hub` is not `fastened`, `hub` is not on `ground`
+      - **Effects**: `intact tyre` is on `hub`, `hub` becomes not free, `agent` no longer holds `intact tyre`
+
+   h. **Activate/Configure the New Component**:
+      - **Action**: `inflate` (Configure `intact tyre` using `pump`)
+      - **Preconditions**: `agent` has `pump`, `intact tyre` is not `inflated`, `intact tyre` is on `hub`
+      - **Effects**: `intact tyre` becomes `inflated`
+
+   i. **Reattach the Cover onto `hub`**:
+      - **Action**: `do-up` (Attach `nut`)
+      - **Preconditions**: `agent` has `wrench`, `hub` is not `fastened`, `hub` is not on `ground`, `agent` has `nut` to be `fastened`
+      - **Effects**: `nut` is `loose` on `hub`, `hub` becomes `fastened`, `agent` no longer holds `nut`
+
+   j. **Lower the `hub` Back to the Ground**:
+      - **Action**: `jack-down` (Lower `hub`)
+      - **Preconditions**: `agent` holds `hub` off `ground`
+      - **Effects**: `hub` is on `ground`, `agent` holds `jack`
+
+   k. **Unlock the Cover on `hub`**:
+      - **Action**: `tighten` (Unlock `nut`)
+      - **Preconditions**: `agent` has `wrench`, `nut` on `hub` is `loose`, `hub` is on `ground`
+      - **Effects**: `nut` on `hub` becomes `tight`
+
+4. **Return Tools to `boot`**:
+   - **Action**: `put-away` (Store items in `boot`)
+   - **Items to Return**: `jack`, `pump`, `wrench`
+   - **Preconditions**: Each item is held by `agent`, `boot` is `open` (open)
+   - **Effects**: Each item is inside `boot`, `agent` no longer holds the items
+
+5. **Close the Storage Container**:
+   - **Action**: `close` (Close `boot`)
+   - **Preconditions**: `boot` is `open` (open)
+   - **Effects**: `boot` becomes `closed` (closed) and not `open`
+
+This plan ensures that:
+- All `flat tyre` (old components), `wrench`, `jack`, and `pump` are stored in the `boot` at the end.
+- The `intact tyre` (new components) are installed and `inflated` (configured) on the `hub`.
+- The `nut` (covers) are `tight` (secured/unlocked) on the `hub`.
+- The `boot` is closed at the end.
+
+By following this sequence of actions, the goal state is achieved efficiently, adhering to all the preconditions and effects defined in the domain.

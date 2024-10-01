@@ -35,8 +35,7 @@ We evaluated the GPT4 and o1 on planning tasks, highlighting their strength in p
 ## TODO List
 We will update the detailed information and share access to more files soon. 
 - [ ] Released detailed experiments evaluation
-- [ ] project page 
-- [ ] Automation script (this would take a while to format)
+- [ ] Project page 
 
 
 ## The File Hierarchy:

@@ -40,7 +40,6 @@ We will update the detailed information and share access to more files soon.
 
 
 ## The File Hierarchy:
-On The Planning Abilities of 
 ```
 OpenAI's o1 Models
   └─results

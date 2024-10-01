@@ -20,7 +20,7 @@
   </p>
       <em>*Equal contribution and co-first authors</em>
 
-<h3 align="center"><a href="https://arxiv.org/abs/2409.19924">arXiv</a> | <a href="">Project Page(coming soon)</a> | <a href="">more examples + evaluation(coming soon)</a> </h3>
+<h3 align="center"><a href="https://arxiv.org/abs/2409.19924">arXiv</a> | <a href="">Project Page(coming soon)</a> | <a href="">more examples + evaluations(coming soon)</a> </h3>
 
 <p align="center">
   <a href="">
@@ -34,9 +34,9 @@ We evaluated the GPT4 and o1 on planning tasks, highlighting their strength in p
 
 ## TODO List
 We will update the detailed information and share access to more files soon. 
-- [ ] Released detail experiments evaluation
+- [ ] Released detailed experiments evaluation
 - [ ] project page 
-- [ ] Automation script (this would be take a while to format)
+- [ ] Automation script (this would take a while to format)
 
 
 ## The File Hierarchy:
@@ -46,17 +46,17 @@ OpenAI's o1 Models
      └─barman (the domains)
      ...
      └─tyreworld
-        └─p_.pddl.prompt (the prompt we used for experiments, include the domain and problem in natural language)
+        └─p_.pddl.prompt (the prompt we used for experiments, including the domain and problem in natural language)
         └─p_.pddl.gpt4 (GPT4 results to the prompt)
         └─p_.pddl.o1-mini (O1-mini results to the prompt)
         └─p_.pddl.o1-preivew(o1-preview results to the prompt)
         └─random.py(only in randomized example, this encode the problem with random symbol)
-  └─visual (this would include more visual example and graphic)
-  └─scripts (scripts used to generate files, update in the future)
+  └─visual (this would include more visual examples and graphic)
+  └─scripts (scripts used to generate files, and update in the future)
 
 ```
 # Citation
-If you find our paper useful or intreasting, please consider giving a star ⭐ and citing the following paper 📝.
+If you find our paper useful or interesting, please consider giving a star ⭐ and citing the following paper 📝.
 
 ```bibtex
 @misc{wang2024planningabilitiesopenaiso1,
@@ -73,7 +73,7 @@ If you find our paper useful or intreasting, please consider giving a star ⭐ a
 # Acknowledgements
 The basic prompts are from llm+p available at [this GitHub repository](https://github.com/Cranial-XIX/llm-pddl). We thank all the authors for their great work and repos. 
 
-There are also some concurrent works that are released recently or will be released soon:
+There are also some concurrent works that were released recently or will be released soon:
 - [LLMs Still Can't Plan; Can LRMs? A Preliminary Evaluation of OpenAI's o1 on PlanBench](https://www.arxiv.org/abs/2409.13373)
 - [Embodied Agent Interface: A Single Line to Evaluate LLMs for Embodied Decision Making](https://embodied-agent-interface.github.io/)
 

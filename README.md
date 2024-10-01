@@ -40,11 +40,25 @@ We will update the detailed information and share access to more files soon.
 
 
 ## The File Hierarchy:
-On The Planning Abilities of OpenAI's o1 Models
-└─results
+On The Planning Abilities of 
+```
+OpenAI's o1 Models
+  └─results
+     └─barman (the domains)
+     ...
+     └─tyreworld
+        └─p_.pddl.prompt (the prompt we used for experiments, include the domain and problem in natural language)
+        └─p_.pddl.gpt4 (GPT4 results to the prompt)
+        └─p_.pddl.o1-mini (O1-mini results to the prompt)
+        └─p_.pddl.o1-preivew(o1-preview results to the prompt)
+        └─random.py(only in randomized example, this encode the problem with random symbol)
+  └─visual (this would include more visual example and graphic)
+  └─scripts (scripts used to generate files, update in the future)
 
+```
 # Citation
-If you find our paper useful or instreasting, please cite
+If you find our paper useful or intreasting, please consider giving a star ⭐ and citing the following paper 📝.
+
 ```bibtex
 @misc{wang2024planningabilitiesopenaiso1,
       title={On The Planning Abilities of OpenAI's o1 Models: Feasibility, Optimality, and Generalizability}, 

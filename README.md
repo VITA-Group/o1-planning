@@ -1,6 +1,66 @@
-# o1-planning-benchmark
-We will update the detailed information and share access to files soon. (in 1 to 2 weeks)
+# On The Planning Abilities of OpenAI's o1 Models: Feasibility, Optimality, and Generalizability
 
-The detailed evaluation and results for success rate can be found [here](https://docs.google.com/spreadsheets/d/1p7tgO159NcmjjBCThzS6Q3dz2fZi9BVUQtsXNP4SBzE/edit?usp=sharing).
+<p align="center">
+    <a href="https://kevin-2017.github.io/">Kevin Wang *</a>
+    ·
+    <a href="https://ljb121002.github.io/">Junbo Li *</a>
+    ·
+    <a href="https://neel1302.github.io/">Neel P. Bhatt *</a>
+    ·
+    <a href="https://scholar.google.com/citations?user=34s2YS0AAAAJ&hl=en">Yihan Xi</a>
+    <br>
+    .
+    <a href="https://www.cs.utexas.edu/~lqiang/">Qiang Liu</a>
+    .
+    <a href="https://oden.utexas.edu/people/directory/ufuk--topcu/">Ufuk Topcu</a>
+    .
+    <a href="https://vita-group.github.io/group.html">Atlas Wang</a>
+    .
+    
+  </p>
+      <em>*Equal contribution and co-first authors</em>
 
-The basic prompts are from llm+p available at [this GitHub repository](https://github.com/Cranial-XIX/llm-pddl).
+<h3 align="center"><a href="https://arxiv.org/abs/2409.19924">arXiv</a> | <a href="">Project Page(coming soon)</a> | <a href="">more examples + evaluation(coming soon)</a> </h3>
+
+<p align="center">
+  <a href="">
+    <img src="./visual/radar_chart.png" alt="Logo" width="35%" style="margin-right: 20px;">
+    <img src="./visual/Feasibility_rate.png" alt="Logo" width="60%">
+  </a>
+</p>
+<p>
+We evaluated the GPT4 and o1 on planning tasks, highlighting their strength in problem understanding and identifying challenges in spatial reasoning and generalization.
+</p>
+
+## TODO List
+We will update the detailed information and share access to more files soon. 
+- [ ] Released detail experiments evaluation
+- [ ] project page 
+- [ ] Automation script (this would be take a while to format)
+
+
+## The File Hierarchy:
+On The Planning Abilities of OpenAI's o1 Models
+└─results
+
+# Citation
+If you find our paper useful or instreasting, please cite
+```bibtex
+@misc{wang2024planningabilitiesopenaiso1,
+      title={On The Planning Abilities of OpenAI's o1 Models: Feasibility, Optimality, and Generalizability}, 
+      author={Kevin Wang and Junbo Li and Neel P. Bhatt and Yihan Xi and Qiang Liu and Ufuk Topcu and Zhangyang Wang},
+      year={2024},
+      eprint={2409.19924},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2409.19924}, 
+}
+```
+
+# Acknowledgements
+The basic prompts are from llm+p available at [this GitHub repository](https://github.com/Cranial-XIX/llm-pddl). We thank all the authors for their great work and repos. 
+
+There are also some concurrent works that are released recently or will be released soon:
+- [LLMs Still Can't Plan; Can LRMs? A Preliminary Evaluation of OpenAI's o1 on PlanBench](https://www.arxiv.org/abs/2409.13373)
+- [Embodied Agent Interface: A Single Line to Evaluate LLMs for Embodied Decision Making](https://embodied-agent-interface.github.io/)
+

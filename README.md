@@ -34,7 +34,7 @@ We evaluated the GPT4 and o1 on planning tasks, highlighting their strength in p
 
 ## TODO List
 We will update the detailed information and share access to more files soon. 
-- [ ] Release detailed experiments evaluation
+- [x] Release detailed experiments evaluation
 - [ ] Project page
 - [ ] Release automoation evaluation script (This would take a while) 
 
@@ -56,6 +56,8 @@ OpenAI's o1 Models
   └─scripts (scripts used to generate files, and update in the future)
 
 ```
+The detailed [experiment results](https://docs.google.com/spreadsheets/d/1QPrIUQJQukDYdV_ZCtsRmzeUwwhHthLxAkXaLcfho-0/edit?gid=0#gid=0)
+
 # Citation
 If you find our paper useful or interesting, please consider giving a star ⭐ and citing the following paper 📝.
 

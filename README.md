@@ -32,6 +32,9 @@
 We evaluated the GPT4 and o1 on planning tasks, highlighting their strength in problem understanding and identifying challenges in spatial reasoning and generalization.
 </p>
 
+## News
+- [2025/1] We are currently working on developing the benchmark and plan to release the code and data within a month.
+
 ## TODO List
 We will update the detailed information and share access to more files soon. 
 - [x] Release detailed experiments evaluation

@@ -33,6 +33,7 @@ We evaluated the GPT4 and o1 on planning tasks, highlighting their strength in p
 </p>
 
 ## News
+- [2025/7] We launch a NeurIPS competition, MindGames, designed to further explore LLM performance in dynamic planning environments through a series of interactive games.Check it out here: [Mindgames](https://www.mindgamesarena.com/)
 - [2025/4] The code and dataset for SPINBench are now available! Check it out here: [SPINbench](https://github.com/spinbench/spinbench)
 - [2025/3] We introduce **SPINBench**, a benchmark designed to evaluate the strategic planning and social reasoning capabilities of large language models
 - [2025/1] We are currently working on developing the benchmark and plan to release the code and data within a month.
